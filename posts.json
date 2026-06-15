@@ -1,5 +1,14 @@
 [
   {
+    "slug": "turn-product-ideas-into-cinematic-launch-videos-with-gemini-veo-3-1-on-token-station",
+    "title": "Turn product ideas into cinematic launch videos with Gemini Veo 3.1 on Token Station",
+    "summary": "Gemini Veo 3.1 Generate Preview is the quality-first option for polished product launch videos, landing page hero clips, social ads, and brand storytelling.",
+    "category": "product",
+    "date": "2026-06-12",
+    "cover": "",
+    "featured": false
+  },
+  {
     "slug": "try-kimi-k2-7-code-in-your-coding-agent",
     "title": "Kimi K2.7 Code: Cheap Enough to Try, Maybe Good Enough to Share the Work",
     "summary": "Moonshot's new 1T open-weights coding model costs $0.95/$4 per million tokens. Pair it with your SOTA model in Claude Code, Codex, or OpenClaw and let it carry the routine work.",
