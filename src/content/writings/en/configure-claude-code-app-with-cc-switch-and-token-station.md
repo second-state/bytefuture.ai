@@ -6,6 +6,7 @@ summary: "Configure a Token Station provider for the Claude Code App, enable mod
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-claude-code-app-with-cc-switch-and-token-station-cover.png"
 draft: false
 ---
 

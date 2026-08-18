@@ -6,6 +6,7 @@ summary: "A detailed guide to routing Codex subagents by complexity, risk, and v
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/codex-multi-model-subagents-cover.png"
 draft: false
 ---
 

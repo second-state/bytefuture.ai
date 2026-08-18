@@ -6,6 +6,7 @@ summary: "Windows, macOS, Linux에서 Claude Code CLI를 Token Station에 연결
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-claude-code-cli-with-token-station-cover.png"
 draft: false
 ---
 

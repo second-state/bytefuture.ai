@@ -6,6 +6,7 @@ summary: "Codex CLIにToken StationをカスタムProviderとして設定し、�
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-cli-with-token-station-cover.png"
 draft: false
 ---
 

@@ -6,6 +6,7 @@ summary: "介绍如何在 Codex App 中注册 Token Station 模型提供方，�
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-app-with-token-station-cover.png"
 draft: false
 ---
 

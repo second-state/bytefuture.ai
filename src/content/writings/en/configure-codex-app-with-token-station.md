@@ -6,6 +6,7 @@ summary: "Register Token Station as a custom model provider in the Codex App, lo
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-app-with-token-station-cover.png"
 draft: false
 ---
 

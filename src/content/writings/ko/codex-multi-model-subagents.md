@@ -6,6 +6,7 @@ summary: "Codex 주 Agent가 복잡도, 위험, 검증 가능성에 따라 Subag
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/codex-multi-model-subagents-cover.png"
 draft: false
 ---
 

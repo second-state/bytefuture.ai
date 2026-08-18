@@ -6,6 +6,7 @@ summary: "Configure Token Station as a custom provider for Codex CLI, load the A
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-cli-with-token-station-cover.png"
 draft: false
 ---
 

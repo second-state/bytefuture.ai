@@ -6,6 +6,7 @@ summary: "介绍如何在 Windows、macOS 和 Linux 中配置 Claude Code CLI，
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-claude-code-cli-with-token-station-cover.png"
 draft: false
 ---
 

@@ -6,6 +6,7 @@ summary: "Configure Claude Code CLI to call models through Token Station on Wind
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-claude-code-cli-with-token-station-cover.png"
 draft: false
 ---
 

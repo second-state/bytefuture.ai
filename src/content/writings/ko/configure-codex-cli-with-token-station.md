@@ -6,6 +6,7 @@ summary: "Codex CLI에 Token Station 사용자 지정 Provider를 설정하고 �
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-cli-with-token-station-cover.png"
 draft: false
 ---
 

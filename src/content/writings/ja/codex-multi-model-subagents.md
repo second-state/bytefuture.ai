@@ -6,6 +6,7 @@ summary: "Codexの主Agentが複雑さ、リスク、検証可能性に応じて
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/codex-multi-model-subagents-cover.png"
 draft: false
 ---
 

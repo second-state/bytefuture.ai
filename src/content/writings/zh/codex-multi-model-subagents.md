@@ -6,6 +6,7 @@ summary: "详细介绍如何让 Codex 主 Agent 按任务复杂度、风险和�
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/codex-multi-model-subagents-cover.png"
 draft: false
 ---
 

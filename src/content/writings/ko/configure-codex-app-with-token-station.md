@@ -6,6 +6,7 @@ summary: "Codex App에 Token Station을 사용자 지정 모델 Provider로 등�
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-app-with-token-station-cover.png"
 draft: false
 ---
 

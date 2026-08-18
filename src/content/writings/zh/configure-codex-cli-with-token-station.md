@@ -6,6 +6,7 @@ summary: "介绍如何为 Codex CLI 配置 Token Station 自定义模型提供�
 category: "tutorial"
 date: "2026-08-17"
 cta: "https://bec.bytefuture.ai/intro.html"
+cover: "blog/configure-codex-cli-with-token-station-cover.png"
 draft: false
 ---
 
