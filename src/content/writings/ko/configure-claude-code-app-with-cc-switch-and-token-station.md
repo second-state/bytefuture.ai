@@ -19,7 +19,7 @@ CC Switch를 사용하면 여러 Claude Code Provider를 저장하고 설정 파
 
 - CC Switch와 Claude Code App
 - 유효한 Token Station API Key
-- 사용할 모델에 대한 접근 권한 또는 사용 가능한 크레딧
+- 사용할 모델에 대한 접근 권한과 사용 가능한 크레딧
 
 [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)를 열고 전체 모델 ID를 확인합니다. API Key를 스크린샷, 채팅 메시지, Git 저장소에 노출하지 마세요.
 
@@ -108,7 +108,7 @@ openai/gpt-5.6-sol
 
 ## CC Switch 로컬 라우팅 활성화하기
 
-모델 매핑은 컴퓨터에서 실행되는 CC Switch 서비스가 적용합니다. Provider만 활성화해서는 충분하지 않습니다.
+이 단계는 가장 자주 건너뛰는 단계이고, 건너뛰면 앱이 계속 이전 서비스로 응답하게 됩니다. Provider만 활성화하는 것으로는 부족합니다. 모델 매핑은 컴퓨터에서 실행되는 CC Switch 서비스가 적용하므로 그 서비스가 실행 중이어야 합니다.
 
 1. **CC Switch Settings → Routing** 열기
 2. **Show local routing switch on the home page** 켜기

@@ -19,7 +19,7 @@ Claude Code CLI 可以通过 Anthropic Messages API 连接第三方模型网关�
 
 - 已安装 Claude Code CLI，运行 `claude --version` 可以看到版本信息；
 - 一个可用的 [Token Station](https://bec.bytefuture.ai/intro.html) 账户和 API Key；
-- 目标模型的调用权限或可用额度。
+- 目标模型的调用权限和可用额度。
 
 本文以 `openai/gpt-5.6-sol` 为例。模型 ID 可能随平台更新，请以 [Token Station 模型列表](https://bec.bytefuture.ai/models) 显示的完整 ID 为准。
 
@@ -48,6 +48,8 @@ openai/gpt-5.6-sol
 ```
 
 不要简写为 `gpt-5.6-sol`。
+
+这三个变量的加载方式因操作系统而异。
 
 ## Windows 配置
 

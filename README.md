@@ -1,1 +1,1 @@
-# tokens.bytefuture.ai
+# bytefuture.ai

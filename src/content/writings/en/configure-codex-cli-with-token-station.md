@@ -15,11 +15,11 @@ This guide is for the command-line version of Codex. The Codex App can inherit e
 
 ## Before you start
 
-Confirm that:
+Three things need to be in place before you edit any configuration:
 
 - Codex CLI is installed and `codex --version` returns version information
 - You have a working Token Station API key
-- Your account has access or available credit for the target model
+- Your account has access to the target model, and credit to spend on it
 
 > Never expose a real API key in documentation, screenshots, chats, or repositories.
 
@@ -30,7 +30,7 @@ Codex CLI reads its user configuration from:
 - Windows: `%USERPROFILE%\.codex\config.toml`
 - macOS and Linux: `~/.codex/config.toml`
 
-Add:
+Add this block:
 
 ```toml
 model = "openai/gpt-5.6-sol"
@@ -54,7 +54,7 @@ Merge these fields with any existing configuration instead of overwriting settin
 | `env_key` | Environment variable that stores the API key |
 | `wire_api` | Selects the Responses API |
 
-Check these details:
+Four details here are easy to get wrong:
 
 - `model_provider = "token_station"` matches `[model_providers.token_station]`
 - `base_url` ends at `/v1`, without `/responses`
@@ -63,11 +63,13 @@ Check these details:
 
 The examples use `openai/gpt-5.6-sol`. Use the complete current ID shown by Token Station.
 
-## Configure Windows
+The provider block names the environment variable but does not supply its value. That part depends on your operating system.
+
+## Windows: load the API key
 
 ### Load the key temporarily
 
-Run in PowerShell:
+Run this in PowerShell:
 
 ```powershell
 $env:TOKEN_STATION_API_KEY = "YOUR_REAL_API_KEY"
@@ -85,7 +87,7 @@ The variable applies only to the current PowerShell process and its child proces
 )
 ```
 
-Close the terminal and open a new PowerShell window. Existing processes do not receive newly saved variables.
+Close the terminal and open a new PowerShell window, since a process that is already running will not pick up a variable saved after it started.
 
 Check that the variable exists without printing the key:
 
@@ -107,7 +109,7 @@ To remove it later:
 )
 ```
 
-## Configure macOS and Linux
+## macOS and Linux: load the API key
 
 Set the variable in the terminal that will run Codex CLI:
 
@@ -137,15 +139,15 @@ Open a new terminal after editing, or run `source ~/.zshrc` or `source ~/.bashrc
 
 > A key in a shell configuration file is stored as plaintext. Keep that file out of Git and public sync folders.
 
-## Verify the configuration
+## Verify the connection
 
-Start an interactive session:
+A `config.toml` that parses is not proof that requests reach Token Station. Start an interactive session:
 
 ```bash
 codex
 ```
 
-Then send:
+Then send this prompt:
 
 ```text
 Reply only: Token Station test succeeded
@@ -163,7 +165,7 @@ In PowerShell, use double quotes:
 codex exec "Reply only: Token Station test succeeded"
 ```
 
-After the response arrives, open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard). Match the request time, status, and model under `Recent Activity`.
+After the response arrives, open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard). Check the request time, status, and model under `Recent Activity`.
 
 The setup is complete only when:
 
@@ -179,7 +181,7 @@ Confirm that Codex CLI is installed and its installation directory is in `PATH`.
 
 ### Codex cannot find the API key
 
-Confirm that:
+Four things have to line up:
 
 - The variable is named `TOKEN_STATION_API_KEY`
 - `config.toml` uses `env_key = "TOKEN_STATION_API_KEY"`
@@ -192,7 +194,7 @@ The key may be invalid, contain extra whitespace, lack model access, or have no 
 
 ### 404 response
 
-Check:
+Recheck these two fields:
 
 ```toml
 base_url = "https://bec.bytefuture.ai/v1"

@@ -15,11 +15,11 @@ CC Switch can store several Claude Code providers and switch between them withou
 
 ## Before you start
 
-Prepare:
+You need the following in place:
 
 - CC Switch and the Claude Code App
 - A valid Token Station API key
-- Access or available credit for the models you plan to use
+- Access to the models you plan to use, and credit to spend on them
 
 Open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard) and copy the complete model IDs. Keep the API key out of screenshots, chat messages, and version control.
 
@@ -35,7 +35,7 @@ The complete setup is:
 6. Enable the provider and fully restart the Claude Code App
 7. Send a request and verify it in Token Station
 
-Skipping model mapping or local routing can leave the App on its previous service even when CC Switch shows Token Station as the current provider.
+Skipping model mapping or local routing can leave the app on its previous service even when CC Switch shows Token Station as the current provider.
 
 ## Add the Token Station provider
 
@@ -86,7 +86,7 @@ The **Needs model mapping** switch must be On. The Claude Code App requests mode
   <figcaption>Enable “Needs model mapping” before saving the Token Station provider.</figcaption>
 </figure>
 
-If this option is disabled, selecting a Claude role can send an unmapped model name and produce a model-not-found error, or the App may continue using an unintended route.
+If this option is disabled, selecting a Claude role can send an unmapped model name and produce a model-not-found error, or the app may continue using an unintended route.
 
 ## Configure model mapping
 
@@ -108,7 +108,7 @@ Sonnet is normally used for the default general-purpose role, Opus for more dema
 
 ## Enable CC Switch local routing
 
-Model mapping is applied by the CC Switch service running on your computer. Enabling the provider alone is not enough.
+This is the step most often skipped, and skipping it is why the app keeps answering from its old service. Enabling the provider is not enough on its own: the mapping is applied by the CC Switch service running on your computer, so that service has to be up.
 
 1. Open **CC Switch Settings → Routing**
 2. Turn on **Show local routing switch on the home page**
@@ -139,7 +139,7 @@ Before saving, confirm that the URL has no extra path, the API key has no surrou
 
 Save the provider, select **Token Station**, and click Enable, Apply, or Switch. Then completely quit the Claude Code App and reopen it. Closing only the window may leave the process running with its old configuration.
 
-On Windows, check the system tray and choose Quit if necessary. On macOS, use `Command + Q`. Keep CC Switch and its routing service running when you reopen the App.
+On Windows, check the system tray and choose Quit if necessary. On macOS, use `Command + Q`. Keep CC Switch and its routing service running when you reopen the app.
 
 ## Verify the complete route
 
@@ -155,7 +155,7 @@ After the response arrives, open the [Token Station dashboard](https://bec.bytef
 - The request completed successfully
 - The recorded model matches the role mapping in CC Switch
 
-A response in the App and a matching Token Station record together prove that the complete route is active. The Current Provider label in CC Switch is not sufficient evidence by itself.
+A response in the app and a matching Token Station record together prove that the complete route is active. The Current Provider label in CC Switch is not sufficient evidence by itself.
 
 ## Switch back to the original provider
 
@@ -163,9 +163,9 @@ Keep the official provider instead of overwriting it. To restore it, select the 
 
 ## Troubleshooting
 
-### The App still uses the old provider
+### The app still uses the old provider
 
-Fully quit the App, apply the Token Station provider again, confirm local routing and Claude routing are On, then reopen the App.
+Fully quit the app, apply the Token Station provider again, confirm local routing and Claude routing are On, then reopen the app.
 
 ### Model mapping is disabled
 
@@ -189,11 +189,11 @@ Use `https://bec.bytefuture.ai` as the base URL and remove manually appended `/m
 
 ### Model not found or access denied
 
-Copy the complete model ID from Token Station and verify the corresponding Sonnet, Opus, or Haiku mapping. Do not infer an ID from the App's display name.
+Copy the complete model ID from Token Station and verify the corresponding Sonnet, Opus, or Haiku mapping. Do not infer an ID from the app's display name.
 
-### The App responds, but Token Station has no record
+### The app responds, but Token Station has no record
 
-The request may still be using the original service. Check the active provider, model mapping, both routing switches, the App restart, the Token Station account, and the activity time filter.
+The request may still be using the original service. Check the active provider, model mapping, both routing switches, the app restart, the Token Station account, and the activity time filter.
 
 ## Security notes
 

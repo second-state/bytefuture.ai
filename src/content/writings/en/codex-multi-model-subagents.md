@@ -11,7 +11,7 @@ draft: false
 
 Codex does not need to run every part of a large engineering task through one model. A capable main agent can interpret the goal, delegate bounded work to specialized subagents, and retain final responsibility for testing and acceptance.
 
-The useful pattern is a controlled loop:
+What works is a controlled loop:
 
 ```text
 Goal
@@ -21,7 +21,7 @@ Goal
   → Main agent integrates and accepts
 ```
 
-This avoids spending a flagship model on mechanical changes, makes parallel work possible, and separates implementation from review. The main agent decides whether to delegate, what context and permissions each task receives, and which checks must pass.
+This avoids paying flagship prices for mechanical changes, makes parallel work possible, and separates implementation from review. The main agent decides whether to delegate, what context and permissions each task receives, and which checks must pass.
 
 ## Main agent, subagents, and tools
 
@@ -29,13 +29,13 @@ The main agent handles planning, dependencies, risk, routing, conflict resolutio
 
 Subagents work best on narrow, verifiable tasks: inspect `src/auth` without editing, add tests for one module, migrate a specified directory, extract APIs from official documentation, or compare two implementations.
 
-Tools provide access to files, code search, tests, browsers, MCP services, and Git. Model choice cannot compensate for excessive permissions or an unclear write scope.
+Tools, not the model, decide what an agent can actually touch: files, code search, tests, browsers, MCP services, and Git. No model choice compensates for permissions that are too broad or a write scope that is unclear.
 
 ## Profiles are not agent roles
 
 A named Codex profile layers configuration onto a session. It does not by itself become a role that the main agent can select automatically. Multi-agent routing also needs a role description and delegation boundary.
 
-Codex may define roles through `[agents.<name>]` entries and separate configuration files. These fields can change between versions. Check the installed version:
+Depending on the version, Codex defines roles through `[agents.<name>]` entries and separate configuration files, and these fields change between releases. Check what you have installed:
 
 ```bash
 codex --version
@@ -168,7 +168,7 @@ Other models can replace these examples when their complete Token Station IDs ar
 | Security review | Careful reasoning | False negatives and positives are costly |
 | Final review | Different model from implementer | Reduces correlated mistakes |
 
-Keep cross-module decisions and high-risk authentication, permissions, migrations, payments, and deletion with a strong model and independent review. Fast models fit work that tests, type checks, or formatters can verify cheaply. Tasks that depend heavily on implicit conversation context may be safer with the main agent.
+Two kinds of work belong with a strong model and an independent reviewer: decisions that cross module boundaries, and anything high-risk, which means authentication, permissions, migrations, payments, and deletion. Fast models fit work that tests, type checks, or formatters can verify cheaply. Work that leans on implicit conversation context is usually safer with the main agent.
 
 ## Write explicit routing rules
 
@@ -191,7 +191,7 @@ Task routing rules:
 
 ## Validate every third-party model
 
-OpenAI-compatible APIs do not necessarily support every Codex behavior. Test each model in stages: plain text, accurate file reading, read-only search, a small temporary edit, correction after a test failure, permission and timeout errors, and the resulting Token Station activity record.
+OpenAI-compatible APIs do not necessarily support every Codex behavior. Promote each model through the same stages: a plain text reply, an accurate file read, a read-only search, a small temporary edit, a correction after a failing test, a clean failure on a permission or timeout error, and a matching record in the Token Station activity log.
 
 One successful text response does not establish reliable agentic coding or tool use.
 
@@ -269,27 +269,65 @@ The main agent then inspects the diff, runs the full test suite, resolves confli
 
 ## Common failure modes
 
-Do not create subagents for one-line work. Do not allow two writable agents to edit the same file. Treat “completed” as a claim until the main agent checks the diff and runs tests.
+### Do not create a subagent for one-line work
 
-Keep API keys in environment variables or a credential manager. Sending work to a third-party provider may transmit prompts and source context. Private projects should review retention, training use, storage location, compliance requirements, and directories that must not leave the environment.
+Every subagent costs context transfer and coordination. Splitting pays off when the work is parallelizable, large enough to matter, needs different expertise, needs independent review, or has a very clear boundary.
 
-Cheaper tokens do not guarantee a lower total cost:
+### Do not let two writable agents touch the same file
+
+Divide write scope by directory or module. One agent implements while another reviews read-only, dependent tasks run in sequence, and the main agent does the final integration.
+
+### The main agent cannot take results on trust
+
+A subagent reporting “completed” means only that it believes it finished. The main agent still has to read the diff, run the tests, check the error output, confirm nothing was modified out of scope, and decide whether the result answers the original requirement.
+
+### Protect API keys and private code
+
+Supply keys through environment variables, a secret manager, or the operating system credential store. Handing a task to a third-party provider can send prompts and source context to that service. For private projects, settle data retention, training use, storage region, compliance requirements, and the directories that must never leave the environment before you route anything.
+
+Give each subagent the minimum context its task needs, and no more.
+
+### Cheaper tokens do not guarantee a lower total cost
+
+A cheap model that fails often, retries, and then needs rework from a strong model can cost more than the strong model would have:
 
 ```text
-Effective cost =
-Invocation cost
-+ Retry cost
-+ Main-agent review cost
-+ Cost of repairing incorrect changes
+effective cost =
+invocation cost
++ retry cost
++ main-agent review cost
++ cost of repairing incorrect changes
 ```
 
-Measure success rate, latency, retries, and human rework for each task class.
+Judge a model on measured outcomes per task class, not on price per million tokens.
 
 ## Roll out in stages
 
-Start with a read-only researcher. Add a fast worker for formatting, test scaffolds, and bounded replacements. Grant workspace write access only after tool use is stable. Add an independent reviewer, then introduce automatic routing based on observed task results.
+### Stage 1: main agent plus a read-only researcher
 
-The mature design does not always choose the strongest or cheapest model. It selects an adequate model for each job while keeping critical decisions, permission control, and final quality with the main agent.
+Prove out repository search, documentation investigation, and structured reporting first. Read-only permissions keep the cost of a mistake low.
+
+### Stage 2: add a fast worker
+
+Hand the fast worker formatting, test scaffolds, documentation gaps, and bulk replacements inside an explicit scope, and require tool verification of the result.
+
+### Stage 3: add an implementer
+
+Grant workspace write access only once tool calls and file edits are stable, and limit that write scope to named directories or files.
+
+### Stage 4: add an independent reviewer
+
+Put implementation and review on different models, then compare what each one actually catches.
+
+### Stage 5: measure before automating routing
+
+Record success rate, latency, token spend, retry rate, and human rework time, then adjust the mapping from tasks to models on that record.
+
+## Summary
+
+A mature multi-model setup does not spawn an agent for every task, and does not always reach for the strongest or the cheapest model. It picks an adequate executor based on complexity, risk, verifiability, and context dependence, while keeping critical decisions, permission control, and final quality with the main agent.
+
+Configure one reliable provider first, then define a small number of roles with clear boundaries. Use `--strict-config` to check whether your Codex version recognizes the fields, start with read-only tasks, and open up automatic routing and write access last.
 
 ## References
 

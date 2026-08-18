@@ -17,9 +17,9 @@ Codex CLI는 `config.toml`에서 사용자 지정 모델 Provider를 지원합�
 
 - `codex --version`으로 확인할 수 있는 Codex CLI
 - 사용 가능한 Token Station API key
-- 대상 모델의 사용 권한 또는 잔액
+- 대상 모델의 사용 권한과 잔액
 
-> 실제 API key를 문서, 이미지, 채팅 또는 저장소에 공개하지 마세요.
+> 실제 API key를 문서, 스크린샷, 채팅 또는 저장소에 공개하지 마세요.
 
 ## Token Station Provider 설정
 
@@ -60,6 +60,8 @@ wire_api = "responses"
 - 모델 ID에 제공자 접두사가 있음
 
 예시는 `openai/gpt-5.6-sol`을 사용합니다. Token Station에 표시되는 현재 전체 ID를 사용하세요.
+
+Provider 설정은 환경 변수의 이름만 지정하고 값은 제공하지 않습니다. 값을 넣는 방법은 운영체제마다 다릅니다.
 
 ## Windows 설정
 
@@ -137,7 +139,7 @@ fi
 
 ## 설정 검증
 
-대화형 세션을 시작합니다.
+`config.toml`이 정상적으로 파싱된다는 것은 요청이 Token Station에 도달했다는 증거가 아닙니다. 대화형 세션을 시작합니다.
 
 ```bash
 codex

@@ -17,7 +17,7 @@ CC Switch を使うと、複数の Claude Code Provider を保存し、設定フ
 
 - CC Switch と Claude Code App
 - 有効な Token Station API Key
-- 利用するモデルへのアクセス権または利用可能なクレジット
+- 利用するモデルへのアクセス権と利用可能なクレジット
 
 [Token Station ダッシュボード](https://bec.bytefuture.ai/dashboard)を開き、完全なモデル ID を確認します。API Key をスクリーンショット、チャット、Git リポジトリに含めないでください。
 
@@ -106,7 +106,7 @@ openai/gpt-5.6-sol
 
 ## CC Switch のローカルルーティングを有効にする
 
-モデルマッピングは、ローカルで動作する CC Switch サービスによって適用されます。Provider を有効にするだけでは不十分です。
+この手順は最も飛ばされやすく、飛ばすとアプリが以前のサービスから返答し続ける原因になります。Provider を有効にするだけでは不十分で、モデルマッピングはローカルで動作する CC Switch サービスによって適用されるため、そのサービスが起動している必要があります。
 
 1. **CC Switch Settings → Routing** を開く
 2. **Show local routing switch on the home page** を有効にする
@@ -195,7 +195,7 @@ Token Station から完全なモデル ID をコピーし、対応する Sonnet�
 
 ## セキュリティ上の注意
 
-- 実際の API Key をチュートリアルの画像に含めない
+- 実際の API Key をチュートリアルのスクリーンショットに含めない
 - CC Switch の設定や認証情報を Git にコミットしない
 - 漏えいの可能性があれば、すぐに Key を無効化して再発行する
 - CC Switch や Claude Code App の更新前に、動作する Provider をバックアップする

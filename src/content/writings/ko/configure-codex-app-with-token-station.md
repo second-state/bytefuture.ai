@@ -17,7 +17,7 @@ Codex App은 `config.toml`에 사용자 지정 모델 Provider를 등록할 수 
 
 - Codex App
 - [Token Station](https://bec.bytefuture.ai/intro.html) 계정과 API key
-- 대상 모델의 사용 권한 또는 잔액
+- 대상 모델의 사용 권한과 잔액
 
 예시는 `openai/gpt-5.6-sol`을 사용합니다. Token Station에 표시되는 현재 전체 모델 ID를 확인하세요.
 
@@ -57,6 +57,8 @@ model_provider = "token_station"
 ```
 
 `base_url`은 `/v1`까지만 입력하고 `/responses`를 추가하지 마세요. 모델 ID의 제공자 접두사도 유지합니다.
+
+Provider 설정은 환경 변수의 이름만 지정하고 값은 제공하지 않습니다. 게다가 데스크톱 앱이 보는 환경은 터미널이 보는 환경과 같지 않을 수 있습니다. 다음 세 절에서 운영체제별 방법을 다룹니다.
 
 ## Windows: API key 설정
 
@@ -131,12 +133,14 @@ systemctl --user unset-environment TOKEN_STATION_API_KEY
 
 ## 전체 경로 검증
 
+Codex App이 응답하는 것은 증거의 절반일 뿐입니다. 경로의 양쪽 끝을 모두 확인하세요.
+
 1. Codex App을 완전히 종료하고 다시 열기
 2. 새 대화 만들기
 3. 다음 메시지 보내기
 
    ```text
-Token Station 테스트 성공이라고만 답하세요
+   Token Station 테스트 성공이라고만 답하세요
    ```
 
 4. 정상 응답 확인하기

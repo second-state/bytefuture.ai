@@ -19,7 +19,7 @@ Codex App 可以通过 `config.toml` 注册自定义模型提供方。将 provid
 
 - 已安装 Codex App；
 - 一个可用的 [Token Station](https://bec.bytefuture.ai/intro.html) 账户和 API Key；
-- 目标模型的调用权限或可用额度。
+- 目标模型的调用权限和可用额度。
 
 本文以 `openai/gpt-5.6-sol` 为例。请以 Token Station 当前显示的完整模型 ID 为准。
 
@@ -59,6 +59,8 @@ model_provider = "token_station"
 ```
 
 `base_url` 只写到 `/v1`，不要手动添加 `/responses`。模型名称也要保留 `openai/` 等提供方前缀。
+
+Provider 配置只声明了环境变量的名字，并没有提供它的值；而桌面应用看到的环境未必和你的终端一致。下面三节分别说明各操作系统的做法。
 
 ## Windows：配置 API Key
 
@@ -134,6 +136,8 @@ systemctl --user unset-environment TOKEN_STATION_API_KEY
 > 将 API Key 写入 Shell 配置文件会以明文保存在磁盘上。请确保文件不会进入 Git 或公共同步目录。
 
 ## 端到端验证
+
+Codex App 能回复只是证据的一半。链路两端都要检查：
 
 1. 完全退出并重新打开 Codex App；
 2. 新建对话；

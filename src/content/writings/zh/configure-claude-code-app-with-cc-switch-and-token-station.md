@@ -19,7 +19,7 @@ CC Switch 可以保存多组 Claude Code Provider，让你在不同服务之间�
 
 - 已安装的 CC Switch 和 Claude Code App
 - 有效的 Token Station API Key
-- 目标模型的调用权限或可用额度
+- 目标模型的调用权限和可用额度
 
 打开 [Token Station 控制台](https://bec.bytefuture.ai/dashboard)，复制模型的完整 ID。不要在截图、聊天记录或 Git 仓库中暴露真实 API Key。
 
@@ -108,7 +108,7 @@ openai/gpt-5.6-sol
 
 ## 开启 CC Switch 本地路由
 
-模型映射由本机运行的 CC Switch 服务完成，因此只启用 Provider 还不够。
+这一步最容易被跳过，而跳过它正是应用继续用旧服务回复的原因。模型映射由本机运行的 CC Switch 服务完成，因此只启用 Provider 还不够。
 
 1. 打开 **CC Switch 设置 → 路由**
 2. 开启 **在主页显示本地路由开关**

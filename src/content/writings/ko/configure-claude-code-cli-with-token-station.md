@@ -17,7 +17,7 @@ Claude Code CLI는 Anthropic Messages API를 통해 서드파티 모델 게이�
 
 - `claude --version`으로 확인할 수 있는 Claude Code CLI
 - [Token Station](https://bec.bytefuture.ai/intro.html) 계정과 API key
-- 대상 모델의 사용 권한 또는 사용 가능한 잔액
+- 대상 모델의 사용 권한과 사용 가능한 잔액
 
 예시는 `openai/gpt-5.6-sol`을 사용합니다. 모델 ID는 바뀔 수 있으므로 [Token Station 모델 목록](https://bec.bytefuture.ai/models)에 표시되는 전체 ID를 사용하세요.
 
@@ -46,6 +46,8 @@ openai/gpt-5.6-sol
 ```
 
 `gpt-5.6-sol`로 줄이지 마세요.
+
+이 세 변수를 어떻게 불러오는지는 운영체제마다 다릅니다.
 
 ## Windows 설정
 

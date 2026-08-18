@@ -15,11 +15,11 @@ This guide covers Windows, macOS, and Linux. Two details matter most: do not app
 
 ## Before you start
 
-You need:
+Start with these three things in place:
 
 - Claude Code CLI installed, with `claude --version` returning version information
 - A [Token Station](https://bec.bytefuture.ai/intro.html) account and API key
-- Access or available credit for the target model
+- Access to the target model, and credit to spend on it
 
 The examples use `openai/gpt-5.6-sol`. Model IDs can change, so copy the complete ID from the current [Token Station model list](https://bec.bytefuture.ai/models).
 
@@ -49,7 +49,9 @@ openai/gpt-5.6-sol
 
 Do not shorten it to `gpt-5.6-sol`.
 
-## Configure Windows
+How you load these three variables depends on your operating system.
+
+## Windows: set the environment variables
 
 ### Temporary configuration
 
@@ -89,7 +91,7 @@ To make new terminals load the configuration, run:
 )
 ```
 
-Close the current PowerShell window and open a new one before running `claude`. Existing processes do not receive newly saved variables.
+Close the current PowerShell window and open a new one before running `claude`. A process keeps the environment it started with, so an open terminal will never see the variables you just saved.
 
 To remove the variables later:
 
@@ -99,7 +101,7 @@ To remove the variables later:
 [Environment]::SetEnvironmentVariable("ANTHROPIC_MODEL", $null, "User")
 ```
 
-## Configure macOS and Linux
+## macOS and Linux: set the environment variables
 
 Run these commands in the terminal that will start Claude Code:
 
@@ -149,7 +151,7 @@ claude -p "Reply only: Token Station test succeeded"
 
 After the response arrives, open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard). Check the request time, status, and model under `Recent Activity`.
 
-The connection is complete only when:
+The setup is complete only when:
 
 - Claude Code returns a normal response
 - The matching request appears in Token Station

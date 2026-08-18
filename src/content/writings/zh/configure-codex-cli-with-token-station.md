@@ -19,7 +19,7 @@ Codex CLI 支持通过 `config.toml` 注册自定义模型提供方。配置 Tok
 
 - 已安装 Codex CLI，运行 `codex --version` 可以看到版本信息；
 - 已获取可用的 Token Station API Key；
-- 账户拥有目标模型的调用权限或可用额度。
+- 账户拥有目标模型的调用权限和可用额度。
 
 > 不要在文档、截图、聊天记录或代码仓库中公开真实密钥。
 
@@ -62,6 +62,8 @@ wire_api = "responses"
 - 模型 ID 保留 `openai/` 等提供方前缀。
 
 本文以 `openai/gpt-5.6-sol` 为例。实际使用时，以 Token Station 当前模型列表为准。
+
+Provider 配置只声明了环境变量的名字，并没有提供它的值。这一步因操作系统而异。
 
 ## Windows 配置
 
@@ -139,7 +141,7 @@ fi
 
 ## 验证配置
 
-可以先启动交互模式：
+`config.toml` 能被解析，并不等于请求真的到达了 Token Station。可以先启动交互模式：
 
 ```bash
 codex
