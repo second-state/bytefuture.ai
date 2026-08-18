@@ -5,7 +5,7 @@ title: "用 CC Switch 和 Token Station 配置 Claude Code App"
 summary: "为 Claude Code App 配置 Token Station Provider，开启模型映射、CC Switch 本地路由和 Claude 路由，再通过真实请求验证完整链路。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -21,7 +21,7 @@ CC Switch 可以保存多组 Claude Code Provider，让你在不同服务之间�
 - 有效的 Token Station API Key
 - 目标模型的调用权限或可用额度
 
-打开 [Token Station 控制台](https://models.bytefuture.ai/dashboard)，复制模型的完整 ID。不要在截图、聊天记录或 Git 仓库中暴露真实 API Key。
+打开 [Token Station 控制台](https://bec.bytefuture.ai/dashboard)，复制模型的完整 ID。不要在截图、聊天记录或 Git 仓库中暴露真实 API Key。
 
 ## 完整配置流程
 
@@ -55,7 +55,7 @@ Token Station
 
 | 字段 | 填写内容 |
 | --- | --- |
-| 请求地址 / Base URL | `https://models.bytefuture.ai` |
+| 请求地址 / Base URL | `https://bec.bytefuture.ai` |
 | API Key / Auth Token | 你的 Token Station API Key |
 | API 格式 | Anthropic Messages（原生） |
 | 需要模型映射 | 开启 |
@@ -70,7 +70,7 @@ Base URL 后不要追加 `/v1/messages`。客户端会自动拼接请求路径�
 如果当前版本以环境变量方式展示配置，请使用：
 
 ```text
-ANTHROPIC_BASE_URL=https://models.bytefuture.ai
+ANTHROPIC_BASE_URL=https://bec.bytefuture.ai
 ANTHROPIC_AUTH_TOKEN=<你的 Token Station API Key>
 ANTHROPIC_MODEL=<完整模型 ID>
 ```
@@ -149,7 +149,7 @@ Windows 用户应检查系统托盘，必要时选择“退出”；macOS 用户
 请只回复：Token Station 测试成功
 ```
 
-收到回复后，打开 [Token Station 控制台](https://models.bytefuture.ai/dashboard)，进入 `Recent Activity` 或请求记录，确认：
+收到回复后，打开 [Token Station 控制台](https://bec.bytefuture.ai/dashboard)，进入 `Recent Activity` 或请求记录，确认：
 
 - 对应时间出现了新请求
 - 请求状态为成功
@@ -185,7 +185,7 @@ App 正常回复，并且 Token Station 出现匹配记录，才能证明整条�
 
 ### 返回 404
 
-Base URL 应为 `https://models.bytefuture.ai`。删除手动追加的 `/messages`、`/v1/messages` 或其他重复路径。
+Base URL 应为 `https://bec.bytefuture.ai`。删除手动追加的 `/messages`、`/v1/messages` 或其他重复路径。
 
 ### 返回模型不存在或无权限
 
@@ -208,5 +208,5 @@ Base URL 应为 `https://models.bytefuture.ai`。删除手动追加的 `/message
 
 ## 参考资料
 
-- [Token Station 控制台](https://models.bytefuture.ai/dashboard)
+- [Token Station 控制台](https://bec.bytefuture.ai/dashboard)
 - [CC Switch 项目](https://github.com/farion1231/cc-switch)

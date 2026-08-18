@@ -5,7 +5,7 @@ title: "Claude Code CLI를 Token Station에 연결하기: Windows, macOS, Linux"
 summary: "Windows, macOS, Linux에서 Claude Code CLI를 Token Station에 연결하고 실제 요청과 Token Station 활동 기록으로 전체 경로를 검증합니다."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -16,10 +16,10 @@ Claude Code CLI는 Anthropic Messages API를 통해 서드파티 모델 게이�
 ## 준비 사항
 
 - `claude --version`으로 확인할 수 있는 Claude Code CLI
-- [Token Station](https://models.bytefuture.ai/intro.html) 계정과 API key
+- [Token Station](https://bec.bytefuture.ai/intro.html) 계정과 API key
 - 대상 모델의 사용 권한 또는 사용 가능한 잔액
 
-예시는 `openai/gpt-5.6-sol`을 사용합니다. 모델 ID는 바뀔 수 있으므로 [Token Station 모델 목록](https://models.bytefuture.ai/models)에 표시되는 전체 ID를 사용하세요.
+예시는 `openai/gpt-5.6-sol`을 사용합니다. 모델 ID는 바뀔 수 있으므로 [Token Station 모델 목록](https://bec.bytefuture.ai/models)에 표시되는 전체 ID를 사용하세요.
 
 > 실제 API key를 저장소, 공개 문서, 스크린샷 또는 채팅에 넣지 마세요.
 
@@ -27,17 +27,17 @@ Claude Code CLI는 Anthropic Messages API를 통해 서드파티 모델 게이�
 
 | 환경 변수 | 용도 | 예시 |
 | --- | --- | --- |
-| `ANTHROPIC_BASE_URL` | Claude Code 요청을 Token Station으로 전송 | `https://models.bytefuture.ai` |
+| `ANTHROPIC_BASE_URL` | Claude Code 요청을 Token Station으로 전송 | `https://bec.bytefuture.ai` |
 | `ANTHROPIC_AUTH_TOKEN` | Token Station API key | 실제 key |
 | `ANTHROPIC_MODEL` | 전체 기본 모델 ID | `openai/gpt-5.6-sol` |
 
 Claude Code는 Base URL 뒤에 Anthropic Messages API 경로를 붙입니다. 다음 주소를 사용하세요.
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
-`https://models.bytefuture.ai/v1`로 설정하면 경로가 중복되어 404가 발생할 수 있습니다.
+`https://bec.bytefuture.ai/v1`로 설정하면 경로가 중복되어 404가 발생할 수 있습니다.
 
 모델 ID도 전체 형식을 유지합니다.
 
@@ -54,7 +54,7 @@ openai/gpt-5.6-sol
 PowerShell에서 실행합니다.
 
 ```powershell
-$env:ANTHROPIC_BASE_URL = "https://models.bytefuture.ai"
+$env:ANTHROPIC_BASE_URL = "https://bec.bytefuture.ai"
 $env:ANTHROPIC_AUTH_TOKEN = "실제 API Key"
 $env:ANTHROPIC_MODEL = "openai/gpt-5.6-sol"
 
@@ -70,7 +70,7 @@ claude
 ```powershell
 [Environment]::SetEnvironmentVariable(
   "ANTHROPIC_BASE_URL",
-  "https://models.bytefuture.ai",
+  "https://bec.bytefuture.ai",
   "User"
 )
 
@@ -102,7 +102,7 @@ claude
 Claude Code를 실행할 터미널에서 설정합니다.
 
 ```bash
-export ANTHROPIC_BASE_URL='https://models.bytefuture.ai'
+export ANTHROPIC_BASE_URL='https://bec.bytefuture.ai'
 export ANTHROPIC_AUTH_TOKEN='실제 API Key'
 export ANTHROPIC_MODEL='openai/gpt-5.6-sol'
 
@@ -145,7 +145,7 @@ PowerShell에서는:
 claude -p "Token Station 테스트 성공이라고만 답하세요"
 ```
 
-응답을 받은 뒤 [Token Station 대시보드](https://models.bytefuture.ai/dashboard)의 `Recent Activity`에서 요청 시간, 상태, 모델을 확인합니다.
+응답을 받은 뒤 [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)의 `Recent Activity`에서 요청 시간, 상태, 모델을 확인합니다.
 
 다음 조건을 모두 충족해야 연결이 완료된 것입니다.
 
@@ -188,7 +188,7 @@ API key가 잘못되었거나 공백이 포함되었거나 모델 권한 또는 
 Base URL은 다음 값이어야 합니다.
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
 `/v1` 또는 `/v1/messages`를 추가하지 마세요.
@@ -203,6 +203,6 @@ Token Station에 표시되는 전체 모델 ID와 제공자 접두사를 사용�
 
 ## 참고 자료
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 모델 목록](https://models.bytefuture.ai/models)
-- [Token Station 대시보드](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 모델 목록](https://bec.bytefuture.ai/models)
+- [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)

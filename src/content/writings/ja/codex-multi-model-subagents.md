@@ -5,7 +5,7 @@ title: "Codexで複数モデルのSubagentを編成する"
 summary: "Codexの主Agentが複雑さ、リスク、検証可能性に応じてSubagentを振り分ける方法を、Provider、役割、権限、実例、段階的な導入手順とともに解説します。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -270,6 +270,6 @@ API keyは環境変数や認証情報管理に保存します。第三者Provide
 ## 参考資料
 
 - [OpenAI Docs：Codex Multi-agent](https://developers.openai.com/codex/multi-agent/)
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Stationモデル一覧](https://models.bytefuture.ai/models)
-- [Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Stationモデル一覧](https://bec.bytefuture.ai/models)
+- [Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)

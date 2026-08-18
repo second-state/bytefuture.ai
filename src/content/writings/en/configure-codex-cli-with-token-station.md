@@ -5,7 +5,7 @@ title: "Connect Codex CLI to Token Station on Windows, macOS, and Linux"
 summary: "Configure Token Station as a custom provider for Codex CLI, load the API key safely on Windows, macOS, or Linux, and verify a Responses API request."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -163,7 +163,7 @@ In PowerShell, use double quotes:
 codex exec "Reply only: Token Station test succeeded"
 ```
 
-After the response arrives, open the [Token Station dashboard](https://models.bytefuture.ai/dashboard). Match the request time, status, and model under `Recent Activity`.
+After the response arrives, open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard). Match the request time, status, and model under `Recent Activity`.
 
 The setup is complete only when:
 
@@ -218,5 +218,5 @@ Confirm that you edited the current user's `config.toml`, that the file extensio
 
 ## References
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station dashboard](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station dashboard](https://bec.bytefuture.ai/dashboard)

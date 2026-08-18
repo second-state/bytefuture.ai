@@ -5,7 +5,7 @@ title: "CC Switch와 Token Station으로 Claude Code App 설정하기"
 summary: "Claude Code App용 Token Station Provider를 만들고 모델 매핑, CC Switch 로컬 라우팅, Claude 라우팅을 활성화한 뒤 실제 요청으로 전체 경로를 검증합니다."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -21,7 +21,7 @@ CC Switch를 사용하면 여러 Claude Code Provider를 저장하고 설정 파
 - 유효한 Token Station API Key
 - 사용할 모델에 대한 접근 권한 또는 사용 가능한 크레딧
 
-[Token Station 대시보드](https://models.bytefuture.ai/dashboard)를 열고 전체 모델 ID를 확인합니다. API Key를 스크린샷, 채팅 메시지, Git 저장소에 노출하지 마세요.
+[Token Station 대시보드](https://bec.bytefuture.ai/dashboard)를 열고 전체 모델 ID를 확인합니다. API Key를 스크린샷, 채팅 메시지, Git 저장소에 노출하지 마세요.
 
 ## 전체 설정 흐름
 
@@ -55,7 +55,7 @@ Provider 유형이나 API 형식을 선택해야 한다면 Claude, Anthropic 또
 
 | 항목 | 설정값 |
 | --- | --- |
-| Request URL / Base URL | `https://models.bytefuture.ai` |
+| Request URL / Base URL | `https://bec.bytefuture.ai` |
 | API Key / Auth Token | Token Station API Key |
 | API 형식 | Anthropic Messages (native) |
 | Needs model mapping | 켬 |
@@ -70,7 +70,7 @@ Base URL 뒤에 `/v1/messages`를 추가하지 마세요. 클라이언트가 요
 현재 CC Switch 버전이 환경 변수를 표시한다면 다음을 사용합니다.
 
 ```text
-ANTHROPIC_BASE_URL=https://models.bytefuture.ai
+ANTHROPIC_BASE_URL=https://bec.bytefuture.ai
 ANTHROPIC_AUTH_TOKEN=<Token Station API Key 입력>
 ANTHROPIC_MODEL=<전체 모델 ID 입력>
 ```
@@ -149,7 +149,7 @@ Claude Code App에서 새 대화를 시작하고 다음을 전송합니다.
 Token Station 테스트 성공이라고만 답하세요
 ```
 
-응답을 받은 후 [Token Station 대시보드](https://models.bytefuture.ai/dashboard)의 `Recent Activity` 또는 요청 로그에서 다음을 확인합니다.
+응답을 받은 후 [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)의 `Recent Activity` 또는 요청 로그에서 다음을 확인합니다.
 
 - 요청한 시간에 새 기록이 나타나는지
 - 요청이 성공적으로 완료되었는지
@@ -185,7 +185,7 @@ Provider를 편집해 **Needs model mapping**을 켜고 Sonnet, Opus, Haiku가 �
 
 ### 404 응답
 
-Base URL을 `https://models.bytefuture.ai`로 설정하고 직접 추가한 `/messages`, `/v1/messages` 또는 다른 중복 경로를 제거합니다.
+Base URL을 `https://bec.bytefuture.ai`로 설정하고 직접 추가한 `/messages`, `/v1/messages` 또는 다른 중복 경로를 제거합니다.
 
 ### 모델을 찾을 수 없거나 접근 권한이 없음
 
@@ -208,5 +208,5 @@ Token Station에서 전체 모델 ID를 복사하고 해당 Sonnet, Opus, Haiku 
 
 ## 참고 자료
 
-- [Token Station 대시보드](https://models.bytefuture.ai/dashboard)
+- [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)
 - [CC Switch 프로젝트](https://github.com/farion1231/cc-switch)

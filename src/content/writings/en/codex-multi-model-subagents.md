@@ -5,7 +5,7 @@ title: "Orchestrate Multi-Model Subagents in Codex"
 summary: "A detailed guide to routing Codex subagents by complexity, risk, and verifiability, with provider setup, role configuration, permission boundaries, a complete example, and a staged rollout plan."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -294,6 +294,6 @@ The mature design does not always choose the strongest or cheapest model. It sel
 ## References
 
 - [OpenAI Docs: Codex Multi-agent](https://developers.openai.com/codex/multi-agent/)
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station model list](https://models.bytefuture.ai/models)
-- [Token Station dashboard](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station model list](https://bec.bytefuture.ai/models)
+- [Token Station dashboard](https://bec.bytefuture.ai/dashboard)

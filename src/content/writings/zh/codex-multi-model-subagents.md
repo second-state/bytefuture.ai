@@ -5,7 +5,7 @@ title: "用 Codex 编排多模型 Subagent：配置、路由与验收"
 summary: "详细介绍如何让 Codex 主 Agent 按任务复杂度、风险和可验证性调度不同模型的 Subagent，包括 Provider、角色配置、权限边界、路由规则、完整案例和分阶段落地方法。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -410,6 +410,6 @@ API key 应通过环境变量、密钥管理系统或操作系统凭据存储提
 ## 参考资料
 
 - [OpenAI Docs：Codex Multi-agent](https://developers.openai.com/codex/multi-agent/)
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 模型列表](https://models.bytefuture.ai/models)
-- [Token Station 控制台](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 模型列表](https://bec.bytefuture.ai/models)
+- [Token Station 控制台](https://bec.bytefuture.ai/dashboard)

@@ -5,7 +5,7 @@ title: "Codex CLI를 Token Station에 연결하기: Windows, macOS, Linux"
 summary: "Codex CLI에 Token Station 사용자 지정 Provider를 설정하고 각 운영체제에서 API key를 안전하게 로드한 뒤 Responses API 요청을 검증합니다."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -161,7 +161,7 @@ PowerShell에서는 큰따옴표를 사용합니다.
 codex exec "Token Station 테스트 성공이라고만 답하세요"
 ```
 
-응답 후 [Token Station 대시보드](https://models.bytefuture.ai/dashboard)의 `Recent Activity`에서 시간, 상태, 모델을 비교하세요.
+응답 후 [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)의 `Recent Activity`에서 시간, 상태, 모델을 비교하세요.
 
 다음 조건을 모두 충족해야 설정이 완료됩니다.
 
@@ -211,5 +211,5 @@ Token Station이 현재 제공하는 전체 모델 ID와 제공자 접두사를 
 
 ## 참고 자료
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 대시보드](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)

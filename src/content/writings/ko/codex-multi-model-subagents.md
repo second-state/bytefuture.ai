@@ -5,7 +5,7 @@ title: "Codex에서 다중 모델 Subagent 구성하기"
 summary: "Codex 주 Agent가 복잡도, 위험, 검증 가능성에 따라 Subagent를 배정하는 방법을 Provider 설정, 역할과 권한, 전체 사례, 단계별 도입 절차와 함께 설명합니다."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -270,6 +270,6 @@ API key는 환경 변수나 자격 증명 관리자에 저장합니다. 서드�
 ## 참고 자료
 
 - [OpenAI Docs: Codex Multi-agent](https://developers.openai.com/codex/multi-agent/)
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 모델 목록](https://models.bytefuture.ai/models)
-- [Token Station 대시보드](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 모델 목록](https://bec.bytefuture.ai/models)
+- [Token Station 대시보드](https://bec.bytefuture.ai/dashboard)

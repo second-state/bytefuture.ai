@@ -5,7 +5,7 @@ title: "Configure the Claude Code App with CC Switch and Token Station"
 summary: "Configure a Token Station provider for the Claude Code App, enable model mapping and CC Switch local routing, then verify the complete route with a real request."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -21,7 +21,7 @@ Prepare:
 - A valid Token Station API key
 - Access or available credit for the models you plan to use
 
-Open the [Token Station dashboard](https://models.bytefuture.ai/dashboard) and copy the complete model IDs. Keep the API key out of screenshots, chat messages, and version control.
+Open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard) and copy the complete model IDs. Keep the API key out of screenshots, chat messages, and version control.
 
 ## Configuration flow
 
@@ -55,7 +55,7 @@ If a provider type or API format is required, select Claude, Anthropic, or **Ant
 
 | Field | Value |
 | --- | --- |
-| Request URL / Base URL | `https://models.bytefuture.ai` |
+| Request URL / Base URL | `https://bec.bytefuture.ai` |
 | API Key / Auth Token | Your Token Station API key |
 | API format | Anthropic Messages (native) |
 | Needs model mapping | On |
@@ -70,7 +70,7 @@ Do not append `/v1/messages` to the base URL. The client builds the request path
 If your CC Switch version displays environment variables, use:
 
 ```text
-ANTHROPIC_BASE_URL=https://models.bytefuture.ai
+ANTHROPIC_BASE_URL=https://bec.bytefuture.ai
 ANTHROPIC_AUTH_TOKEN=<YOUR_TOKEN_STATION_API_KEY>
 ANTHROPIC_MODEL=<FULL_MODEL_ID>
 ```
@@ -149,7 +149,7 @@ Start a new conversation in the Claude Code App and send:
 Reply only: Token Station test succeeded
 ```
 
-After the response arrives, open the [Token Station dashboard](https://models.bytefuture.ai/dashboard) and check `Recent Activity` or the request log. Confirm that:
+After the response arrives, open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard) and check `Recent Activity` or the request log. Confirm that:
 
 - The new request appears at the expected time
 - The request completed successfully
@@ -185,7 +185,7 @@ Check whether the template expects `ANTHROPIC_AUTH_TOKEN` or `ANTHROPIC_API_KEY`
 
 ### The response is 404
 
-Use `https://models.bytefuture.ai` as the base URL and remove manually appended `/messages`, `/v1/messages`, or other repeated paths.
+Use `https://bec.bytefuture.ai` as the base URL and remove manually appended `/messages`, `/v1/messages`, or other repeated paths.
 
 ### Model not found or access denied
 
@@ -208,5 +208,5 @@ This setup depends on four parts working together: a Token Station provider, **N
 
 ## References
 
-- [Token Station dashboard](https://models.bytefuture.ai/dashboard)
+- [Token Station dashboard](https://bec.bytefuture.ai/dashboard)
 - [CC Switch project](https://github.com/farion1231/cc-switch)

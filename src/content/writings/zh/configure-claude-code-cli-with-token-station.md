@@ -5,7 +5,7 @@ title: "Claude Code CLI 接入 Token Station：跨平台配置与验证"
 summary: "介绍如何在 Windows、macOS 和 Linux 中配置 Claude Code CLI，通过 Token Station 调用模型，并使用真实请求和控制台记录完成端到端验证。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -18,10 +18,10 @@ Claude Code CLI 可以通过 Anthropic Messages API 连接第三方模型网关�
 请准备：
 
 - 已安装 Claude Code CLI，运行 `claude --version` 可以看到版本信息；
-- 一个可用的 [Token Station](https://models.bytefuture.ai/intro.html) 账户和 API Key；
+- 一个可用的 [Token Station](https://bec.bytefuture.ai/intro.html) 账户和 API Key；
 - 目标模型的调用权限或可用额度。
 
-本文以 `openai/gpt-5.6-sol` 为例。模型 ID 可能随平台更新，请以 [Token Station 模型列表](https://models.bytefuture.ai/models) 显示的完整 ID 为准。
+本文以 `openai/gpt-5.6-sol` 为例。模型 ID 可能随平台更新，请以 [Token Station 模型列表](https://bec.bytefuture.ai/models) 显示的完整 ID 为准。
 
 > 不要把真实 API Key 写入代码仓库、公开文档、截图或聊天消息。
 
@@ -29,17 +29,17 @@ Claude Code CLI 可以通过 Anthropic Messages API 连接第三方模型网关�
 
 | 环境变量 | 作用 | 示例值 |
 | --- | --- | --- |
-| `ANTHROPIC_BASE_URL` | 将 Claude Code 请求指向 Token Station | `https://models.bytefuture.ai` |
+| `ANTHROPIC_BASE_URL` | 将 Claude Code 请求指向 Token Station | `https://bec.bytefuture.ai` |
 | `ANTHROPIC_AUTH_TOKEN` | Token Station API Key | 你的真实密钥 |
 | `ANTHROPIC_MODEL` | 默认模型的完整 ID | `openai/gpt-5.6-sol` |
 
 Claude Code 会在 Base URL 后使用 Anthropic Messages API 路径，因此地址应写为：
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
-不要写成 `https://models.bytefuture.ai/v1`，否则可能出现重复路径并返回 404。
+不要写成 `https://bec.bytefuture.ai/v1`，否则可能出现重复路径并返回 404。
 
 模型 ID 同样要保持完整：
 
@@ -56,7 +56,7 @@ openai/gpt-5.6-sol
 在 PowerShell 中执行：
 
 ```powershell
-$env:ANTHROPIC_BASE_URL = "https://models.bytefuture.ai"
+$env:ANTHROPIC_BASE_URL = "https://bec.bytefuture.ai"
 $env:ANTHROPIC_AUTH_TOKEN = "你的真实密钥"
 $env:ANTHROPIC_MODEL = "openai/gpt-5.6-sol"
 
@@ -72,7 +72,7 @@ claude
 ```powershell
 [Environment]::SetEnvironmentVariable(
   "ANTHROPIC_BASE_URL",
-  "https://models.bytefuture.ai",
+  "https://bec.bytefuture.ai",
   "User"
 )
 
@@ -104,7 +104,7 @@ claude
 在启动 Claude Code 的终端中执行：
 
 ```bash
-export ANTHROPIC_BASE_URL='https://models.bytefuture.ai'
+export ANTHROPIC_BASE_URL='https://bec.bytefuture.ai'
 export ANTHROPIC_AUTH_TOKEN='你的真实密钥'
 export ANTHROPIC_MODEL='openai/gpt-5.6-sol'
 
@@ -147,7 +147,7 @@ PowerShell 可以执行：
 claude -p "请只回复：Token Station 测试成功"
 ```
 
-收到回复后，打开 [Token Station 控制台](https://models.bytefuture.ai/dashboard)，在 `Recent Activity` 中核对请求时间、状态和模型。
+收到回复后，打开 [Token Station 控制台](https://bec.bytefuture.ai/dashboard)，在 `Recent Activity` 中核对请求时间、状态和模型。
 
 只有同时满足以下条件，才表示链路已经跑通：
 
@@ -190,7 +190,7 @@ $env:ANTHROPIC_DEFAULT_HAIKU_MODEL = "openai/gpt-5.6-luna"
 检查 Base URL 是否为：
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
 不要在末尾添加 `/v1` 或 `/v1/messages`。
@@ -205,6 +205,6 @@ https://models.bytefuture.ai
 
 ## 参考资料
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 模型列表](https://models.bytefuture.ai/models)
-- [Token Station 控制台](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 模型列表](https://bec.bytefuture.ai/models)
+- [Token Station 控制台](https://bec.bytefuture.ai/dashboard)

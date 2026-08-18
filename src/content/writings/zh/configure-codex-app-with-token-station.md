@@ -5,7 +5,7 @@ title: "Codex App 接入 Token Station：跨平台配置与验证"
 summary: "介绍如何在 Codex App 中注册 Token Station 模型提供方，分别为 Windows、macOS 和 Linux 配置 API Key，并完成端到端验证。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -18,7 +18,7 @@ Codex App 可以通过 `config.toml` 注册自定义模型提供方。将 provid
 请准备：
 
 - 已安装 Codex App；
-- 一个可用的 [Token Station](https://models.bytefuture.ai/intro.html) 账户和 API Key；
+- 一个可用的 [Token Station](https://bec.bytefuture.ai/intro.html) 账户和 API Key；
 - 目标模型的调用权限或可用额度。
 
 本文以 `openai/gpt-5.6-sol` 为例。请以 Token Station 当前显示的完整模型 ID 为准。
@@ -144,7 +144,7 @@ systemctl --user unset-environment TOKEN_STATION_API_KEY
    ```
 
 4. 确认 Codex App 收到正常回复；
-5. 打开 [Token Station 控制台](https://models.bytefuture.ai/dashboard)；
+5. 打开 [Token Station 控制台](https://bec.bytefuture.ai/dashboard)；
 6. 在 `Recent Activity` 中核对请求时间、状态和模型。
 
 链路应为：
@@ -192,5 +192,5 @@ wire_api = "responses"
 
 ## 参考资料
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 控制台](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 控制台](https://bec.bytefuture.ai/dashboard)

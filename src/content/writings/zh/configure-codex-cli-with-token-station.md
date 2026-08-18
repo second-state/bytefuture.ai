@@ -5,7 +5,7 @@ title: "Codex CLI 接入 Token Station：跨平台配置与验证"
 summary: "介绍如何为 Codex CLI 配置 Token Station 自定义模型提供方，在 Windows、macOS 和 Linux 中安全加载 API Key，并验证 Responses API 请求。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -163,7 +163,7 @@ PowerShell 可使用双引号：
 codex exec "请只回复：Token Station 测试成功"
 ```
 
-收到回复后，打开 [Token Station 控制台](https://models.bytefuture.ai/dashboard)，在 `Recent Activity` 中核对请求时间、状态和模型。
+收到回复后，打开 [Token Station 控制台](https://bec.bytefuture.ai/dashboard)，在 `Recent Activity` 中核对请求时间、状态和模型。
 
 只有同时满足以下条件，才表示接入成功：
 
@@ -218,5 +218,5 @@ wire_api = "responses"
 
 ## 参考资料
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station 控制台](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station 控制台](https://bec.bytefuture.ai/dashboard)

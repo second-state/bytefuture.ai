@@ -5,7 +5,7 @@ title: "Connect Claude Code CLI to Token Station on Windows, macOS, and Linux"
 summary: "Configure Claude Code CLI to call models through Token Station on Windows, macOS, and Linux, then verify the connection with a real request and the Token Station activity log."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -18,10 +18,10 @@ This guide covers Windows, macOS, and Linux. Two details matter most: do not app
 You need:
 
 - Claude Code CLI installed, with `claude --version` returning version information
-- A [Token Station](https://models.bytefuture.ai/intro.html) account and API key
+- A [Token Station](https://bec.bytefuture.ai/intro.html) account and API key
 - Access or available credit for the target model
 
-The examples use `openai/gpt-5.6-sol`. Model IDs can change, so copy the complete ID from the current [Token Station model list](https://models.bytefuture.ai/models).
+The examples use `openai/gpt-5.6-sol`. Model IDs can change, so copy the complete ID from the current [Token Station model list](https://bec.bytefuture.ai/models).
 
 > Never put a real API key in a repository, public document, screenshot, or chat message.
 
@@ -29,17 +29,17 @@ The examples use `openai/gpt-5.6-sol`. Model IDs can change, so copy the complet
 
 | Environment variable | Purpose | Example |
 | --- | --- | --- |
-| `ANTHROPIC_BASE_URL` | Routes Claude Code requests to Token Station | `https://models.bytefuture.ai` |
+| `ANTHROPIC_BASE_URL` | Routes Claude Code requests to Token Station | `https://bec.bytefuture.ai` |
 | `ANTHROPIC_AUTH_TOKEN` | Your Token Station API key | Your real key |
 | `ANTHROPIC_MODEL` | Complete default model ID | `openai/gpt-5.6-sol` |
 
 Claude Code adds the Anthropic Messages API path to the base URL. Use:
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
-Do not use `https://models.bytefuture.ai/v1`. The extra segment can produce a duplicated path and a 404 response.
+Do not use `https://bec.bytefuture.ai/v1`. The extra segment can produce a duplicated path and a 404 response.
 
 Keep the full model ID as well:
 
@@ -56,7 +56,7 @@ Do not shorten it to `gpt-5.6-sol`.
 Run this in PowerShell:
 
 ```powershell
-$env:ANTHROPIC_BASE_URL = "https://models.bytefuture.ai"
+$env:ANTHROPIC_BASE_URL = "https://bec.bytefuture.ai"
 $env:ANTHROPIC_AUTH_TOKEN = "YOUR_REAL_API_KEY"
 $env:ANTHROPIC_MODEL = "openai/gpt-5.6-sol"
 
@@ -72,7 +72,7 @@ To make new terminals load the configuration, run:
 ```powershell
 [Environment]::SetEnvironmentVariable(
   "ANTHROPIC_BASE_URL",
-  "https://models.bytefuture.ai",
+  "https://bec.bytefuture.ai",
   "User"
 )
 
@@ -104,7 +104,7 @@ To remove the variables later:
 Run these commands in the terminal that will start Claude Code:
 
 ```bash
-export ANTHROPIC_BASE_URL='https://models.bytefuture.ai'
+export ANTHROPIC_BASE_URL='https://bec.bytefuture.ai'
 export ANTHROPIC_AUTH_TOKEN='YOUR_REAL_API_KEY'
 export ANTHROPIC_MODEL='openai/gpt-5.6-sol'
 
@@ -147,7 +147,7 @@ In PowerShell:
 claude -p "Reply only: Token Station test succeeded"
 ```
 
-After the response arrives, open the [Token Station dashboard](https://models.bytefuture.ai/dashboard). Check the request time, status, and model under `Recent Activity`.
+After the response arrives, open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard). Check the request time, status, and model under `Recent Activity`.
 
 The connection is complete only when:
 
@@ -190,7 +190,7 @@ The API key may be invalid, contain extra whitespace, lack model access, or have
 The base URL must be:
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
 Do not append `/v1` or `/v1/messages`.
@@ -205,6 +205,6 @@ The current process may not be using Token Station. Check `ANTHROPIC_BASE_URL`, 
 
 ## References
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station model list](https://models.bytefuture.ai/models)
-- [Token Station dashboard](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station model list](https://bec.bytefuture.ai/models)
+- [Token Station dashboard](https://bec.bytefuture.ai/dashboard)

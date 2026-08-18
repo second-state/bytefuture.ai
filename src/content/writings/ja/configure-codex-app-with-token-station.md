@@ -5,7 +5,7 @@ title: "Codex AppをToken Stationに接続する：Windows、macOS、Linux対応
 summary: "Codex AppにToken StationをカスタムモデルProviderとして登録し、各OSでAPI keyを読み込ませ、Responses APIの経路を確認します。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -16,7 +16,7 @@ Codex Appは`config.toml`でカスタムモデルProviderを登録できます�
 ## 事前準備
 
 - Codex App
-- [Token Station](https://models.bytefuture.ai/intro.html)のアカウントとAPI key
+- [Token Station](https://bec.bytefuture.ai/intro.html)のアカウントとAPI key
 - 対象モデルの利用権限または残高
 
 例では`openai/gpt-5.6-sol`を使います。Token Stationに表示される完全なモデルIDを確認してください。
@@ -140,7 +140,7 @@ systemctl --user unset-environment TOKEN_STATION_API_KEY
    ```
 
 4. 正常な応答を確認する
-5. [Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)を開く
+5. [Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)を開く
 6. `Recent Activity`で時刻、状態、モデルを照合する
 
 経路は次のようになります。
@@ -186,5 +186,5 @@ Token Stationが提供する完全なモデルIDを使い、プロバイダー�
 
 ## 参考資料
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)

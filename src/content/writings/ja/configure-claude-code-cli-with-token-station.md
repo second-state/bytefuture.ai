@@ -5,7 +5,7 @@ title: "Claude Code CLIをToken Stationに接続する：Windows、macOS、Linux
 summary: "Windows、macOS、LinuxでClaude Code CLIをToken Stationに接続し、実際のリクエストとToken Stationの履歴でエンドツーエンドの動作を確認します。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -18,10 +18,10 @@ Claude Code CLIは、Anthropic Messages APIを使ってサードパーティー�
 次のものを用意してください。
 
 - Claude Code CLI。`claude --version`でバージョンを確認できること
-- [Token Station](https://models.bytefuture.ai/intro.html)のアカウントとAPI key
+- [Token Station](https://bec.bytefuture.ai/intro.html)のアカウントとAPI key
 - 対象モデルの利用権限または利用可能な残高
 
-例では`openai/gpt-5.6-sol`を使います。モデルIDは更新される場合があるため、[Token Stationのモデル一覧](https://models.bytefuture.ai/models)に表示される完全なIDを使ってください。
+例では`openai/gpt-5.6-sol`を使います。モデルIDは更新される場合があるため、[Token Stationのモデル一覧](https://bec.bytefuture.ai/models)に表示される完全なIDを使ってください。
 
 > 実際のAPI keyをリポジトリ、公開文書、スクリーンショット、チャットに記載しないでください。
 
@@ -29,17 +29,17 @@ Claude Code CLIは、Anthropic Messages APIを使ってサードパーティー�
 
 | 環境変数 | 用途 | 例 |
 | --- | --- | --- |
-| `ANTHROPIC_BASE_URL` | Claude CodeのリクエストをToken Stationへ送る | `https://models.bytefuture.ai` |
+| `ANTHROPIC_BASE_URL` | Claude CodeのリクエストをToken Stationへ送る | `https://bec.bytefuture.ai` |
 | `ANTHROPIC_AUTH_TOKEN` | Token Station API key | 実際のkey |
 | `ANTHROPIC_MODEL` | 完全なデフォルトモデルID | `openai/gpt-5.6-sol` |
 
 Claude CodeはBase URLの後ろにAnthropic Messages APIのパスを追加します。次の値を使います。
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
-`https://models.bytefuture.ai/v1`にはしないでください。パスが重複し、404になる場合があります。
+`https://bec.bytefuture.ai/v1`にはしないでください。パスが重複し、404になる場合があります。
 
 モデルIDも完全な形を保ちます。
 
@@ -56,7 +56,7 @@ openai/gpt-5.6-sol
 PowerShellで実行します。
 
 ```powershell
-$env:ANTHROPIC_BASE_URL = "https://models.bytefuture.ai"
+$env:ANTHROPIC_BASE_URL = "https://bec.bytefuture.ai"
 $env:ANTHROPIC_AUTH_TOKEN = "実際の API Key"
 $env:ANTHROPIC_MODEL = "openai/gpt-5.6-sol"
 
@@ -72,7 +72,7 @@ claude
 ```powershell
 [Environment]::SetEnvironmentVariable(
   "ANTHROPIC_BASE_URL",
-  "https://models.bytefuture.ai",
+  "https://bec.bytefuture.ai",
   "User"
 )
 
@@ -104,7 +104,7 @@ claude
 Claude Codeを起動するターミナルで実行します。
 
 ```bash
-export ANTHROPIC_BASE_URL='https://models.bytefuture.ai'
+export ANTHROPIC_BASE_URL='https://bec.bytefuture.ai'
 export ANTHROPIC_AUTH_TOKEN='実際の API Key'
 export ANTHROPIC_MODEL='openai/gpt-5.6-sol'
 
@@ -147,7 +147,7 @@ PowerShellでは次を使います。
 claude -p "「Token Station テスト成功」とだけ返信してください"
 ```
 
-応答を受け取ったら、[Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)を開き、`Recent Activity`で時刻、状態、モデルを確認します。
+応答を受け取ったら、[Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)を開き、`Recent Activity`で時刻、状態、モデルを確認します。
 
 次の3点がそろえば接続は完了です。
 
@@ -190,7 +190,7 @@ API keyが無効、余分な空白を含む、モデル権限がない、残高�
 Base URLは次の値にします。
 
 ```text
-https://models.bytefuture.ai
+https://bec.bytefuture.ai
 ```
 
 `/v1`や`/v1/messages`を追加しないでください。
@@ -205,6 +205,6 @@ Token Stationに表示される完全なモデルIDを使い、プロバイダ�
 
 ## 参考資料
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Stationモデル一覧](https://models.bytefuture.ai/models)
-- [Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Stationモデル一覧](https://bec.bytefuture.ai/models)
+- [Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)

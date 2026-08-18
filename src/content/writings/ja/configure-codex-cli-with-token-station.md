@@ -5,7 +5,7 @@ title: "Codex CLIをToken Stationに接続する：Windows、macOS、Linux対応
 summary: "Codex CLIにToken StationをカスタムProviderとして設定し、各OSでAPI keyを安全に読み込ませ、Responses APIのリクエストを確認します。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -161,7 +161,7 @@ PowerShellでは二重引用符を使います。
 codex exec "「Token Station テスト成功」とだけ返信してください"
 ```
 
-応答後、[Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)の`Recent Activity`で時刻、状態、モデルを照合します。
+応答後、[Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)の`Recent Activity`で時刻、状態、モデルを照合します。
 
 次の3点がそろえば設定完了です。
 
@@ -211,5 +211,5 @@ Token Stationが現在提供する完全なモデルIDを使い、プロバイ�
 
 ## 参考資料
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Stationダッシュボード](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Stationダッシュボード](https://bec.bytefuture.ai/dashboard)

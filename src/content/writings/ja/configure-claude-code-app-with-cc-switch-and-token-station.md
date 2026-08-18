@@ -5,7 +5,7 @@ title: "CC Switch と Token Station で Claude Code App を設定する"
 summary: "Claude Code App 用の Token Station Provider を作成し、モデルマッピング、CC Switch のローカルルーティング、Claude ルーティングを有効にして、実際のリクエストで経路全体を検証します。"
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -19,7 +19,7 @@ CC Switch を使うと、複数の Claude Code Provider を保存し、設定フ
 - 有効な Token Station API Key
 - 利用するモデルへのアクセス権または利用可能なクレジット
 
-[Token Station ダッシュボード](https://models.bytefuture.ai/dashboard)を開き、完全なモデル ID を確認します。API Key をスクリーンショット、チャット、Git リポジトリに含めないでください。
+[Token Station ダッシュボード](https://bec.bytefuture.ai/dashboard)を開き、完全なモデル ID を確認します。API Key をスクリーンショット、チャット、Git リポジトリに含めないでください。
 
 ## 設定の流れ
 
@@ -53,7 +53,7 @@ Provider の種類や API 形式を求められた場合は、Claude、Anthropic
 
 | 項目 | 設定値 |
 | --- | --- |
-| Request URL / Base URL | `https://models.bytefuture.ai` |
+| Request URL / Base URL | `https://bec.bytefuture.ai` |
 | API Key / Auth Token | Token Station の API Key |
 | API 形式 | Anthropic Messages（native） |
 | Needs model mapping | 有効 |
@@ -68,7 +68,7 @@ Base URL に `/v1/messages` を追加しないでください。クライアン�
 環境変数が表示されるバージョンでは、次の値を使います。
 
 ```text
-ANTHROPIC_BASE_URL=https://models.bytefuture.ai
+ANTHROPIC_BASE_URL=https://bec.bytefuture.ai
 ANTHROPIC_AUTH_TOKEN=<Token Station の API Key>
 ANTHROPIC_MODEL=<完全なモデル ID>
 ```
@@ -147,7 +147,7 @@ Claude Code App で新しい会話を開始し、次を送信します。
 「Token Station テスト成功」とだけ返信してください
 ```
 
-応答後、[Token Station ダッシュボード](https://models.bytefuture.ai/dashboard)の `Recent Activity` またはリクエストログを開き、次を確認します。
+応答後、[Token Station ダッシュボード](https://bec.bytefuture.ai/dashboard)の `Recent Activity` またはリクエストログを開き、次を確認します。
 
 - 送信した時刻に新しいリクエストがある
 - リクエストが正常に完了している
@@ -183,7 +183,7 @@ Provider を編集して **Needs model mapping** を有効にし、Sonnet、Opus
 
 ### 404 が返る
 
-Base URL を `https://models.bytefuture.ai` にし、手作業で追加した `/messages`、`/v1/messages`、その他の重複パスを削除します。
+Base URL を `https://bec.bytefuture.ai` にし、手作業で追加した `/messages`、`/v1/messages`、その他の重複パスを削除します。
 
 ### モデルが見つからない、または権限がない
 
@@ -206,5 +206,5 @@ Token Station から完全なモデル ID をコピーし、対応する Sonnet�
 
 ## 参考資料
 
-- [Token Station ダッシュボード](https://models.bytefuture.ai/dashboard)
+- [Token Station ダッシュボード](https://bec.bytefuture.ai/dashboard)
 - [CC Switch プロジェクト](https://github.com/farion1231/cc-switch)

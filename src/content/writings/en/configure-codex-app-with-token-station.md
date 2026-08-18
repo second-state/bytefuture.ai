@@ -5,7 +5,7 @@ title: "Connect the Codex App to Token Station on Windows, macOS, and Linux"
 summary: "Register Token Station as a custom model provider in the Codex App, load the API key on Windows, macOS, or Linux, and verify the complete Responses API route."
 category: "tutorial"
 date: "2026-08-17"
-cta: "https://models.bytefuture.ai/intro.html"
+cta: "https://bec.bytefuture.ai/intro.html"
 draft: false
 ---
 
@@ -18,7 +18,7 @@ This guide covers Windows, macOS, and Linux. Desktop apps and terminal programs 
 You need:
 
 - The Codex App installed
-- A [Token Station](https://models.bytefuture.ai/intro.html) account and API key
+- A [Token Station](https://bec.bytefuture.ai/intro.html) account and API key
 - Access or available credit for the target model
 
 The examples use `openai/gpt-5.6-sol`. Copy the complete current model ID from Token Station.
@@ -144,7 +144,7 @@ Reply only: Token Station test succeeded
    ```
 
 4. Confirm that the App returns a normal response
-5. Open the [Token Station dashboard](https://models.bytefuture.ai/dashboard)
+5. Open the [Token Station dashboard](https://bec.bytefuture.ai/dashboard)
 6. Match the request time, status, and model under `Recent Activity`
 
 The route should be:
@@ -192,5 +192,5 @@ Check that `model_provider` matches the provider block name and that the App rel
 
 ## References
 
-- [Token Station](https://models.bytefuture.ai/intro.html)
-- [Token Station dashboard](https://models.bytefuture.ai/dashboard)
+- [Token Station](https://bec.bytefuture.ai/intro.html)
+- [Token Station dashboard](https://bec.bytefuture.ai/dashboard)
