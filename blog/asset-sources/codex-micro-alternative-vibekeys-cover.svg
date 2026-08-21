@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#d4d4d8" opacity=".55"/>
+    </pattern>
+    <radialGradient id="washBlue" cx="90%" cy="8%" r="62%">
+      <stop offset="0" stop-color="#2563eb" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#faf9f5" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="washTeal" cx="75%" cy="82%" r="45%">
+      <stop offset="0" stop-color="#0d9488" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#faf9f5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#18181b" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#faf9f5"/>
+  <rect width="1200" height="630" fill="url(#washBlue)"/>
+  <rect width="1200" height="630" fill="url(#washTeal)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <text x="72" y="80" font-family="Consolas, monospace" font-size="17" font-weight="800" fill="#2563eb" letter-spacing="3.4">CODEX · HARDWARE · AI CODING</text>
+  <text x="72" y="166" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#18181b" letter-spacing="-3">Codex Micro</text>
+  <text x="72" y="240" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#18181b" letter-spacing="-3">alternative:</text>
+  <text x="72" y="314" font-family="Arial, sans-serif" font-size="70" font-weight="800" fill="#0d9488" letter-spacing="-3">VibeKeys.</text>
+  <text x="72" y="375" font-family="Georgia, serif" font-size="27" fill="#52525b" font-style="italic">Voice, status, and multi-tool control from $29.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="718" y="78" width="410" height="378" rx="22" fill="#ffffff" stroke="#dedee3"/>
+  </g>
+  <text x="746" y="118" font-family="Consolas, monospace" font-size="14" font-weight="800" fill="#2563eb" letter-spacing="2">CONTROL DECK COMPARISON</text>
+
+  <g transform="translate(746 145)">
+    <rect width="354" height="112" rx="18" fill="#fafafa" stroke="#dedee3"/>
+    <text x="18" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#18181b">Codex Micro</text>
+    <text x="335" y="32" text-anchor="end" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#71717a">$230</text>
+    <g transform="translate(18 48)">
+      <rect width="144" height="48" rx="12" fill="#27272a"/>
+      <circle cx="26" cy="24" r="10" fill="#3f3f46" stroke="#71717a"/>
+      <rect x="48" y="12" width="22" height="22" rx="5" fill="#52525b"/>
+      <rect x="78" y="12" width="22" height="22" rx="5" fill="#52525b"/>
+      <rect x="108" y="12" width="22" height="22" rx="5" fill="#52525b"/>
+    </g>
+    <text x="180" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#52525b">Layered Codex controls</text>
+    <text x="180" y="91" font-family="Consolas, monospace" font-size="12" fill="#71717a">CODEX-CENTERED</text>
+  </g>
+
+  <g transform="translate(746 275)">
+    <rect width="354" height="152" rx="18" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+    <text x="18" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#18181b">VibeKeys Max</text>
+    <text x="335" y="32" text-anchor="end" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#0d9488">$99</text>
+    <g transform="translate(18 48)">
+      <rect width="144" height="78" rx="12" fill="#18181b"/>
+      <rect x="16" y="12" width="54" height="24" rx="5" fill="#2563eb" opacity=".9"/>
+      <circle cx="111" cy="24" r="13" fill="#3f3f46" stroke="#a1a1aa"/>
+      <rect x="16" y="47" width="20" height="18" rx="4" fill="#fafafa"/>
+      <rect x="43" y="47" width="20" height="18" rx="4" fill="#fafafa"/>
+      <rect x="70" y="47" width="20" height="18" rx="4" fill="#fafafa"/>
+      <rect x="97" y="47" width="20" height="18" rx="4" fill="#0d9488"/>
+    </g>
+    <text x="180" y="69" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18181b">Voice + live status</text>
+    <text x="180" y="92" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#18181b">Remote + multi-tool</text>
+    <text x="180" y="119" font-family="Consolas, monospace" font-size="12" fill="#0d9488">FLEXIBLE WORKFLOW</text>
+  </g>
+
+  <rect x="72" y="511" width="112" height="54" rx="27" fill="#ffffff" stroke="#dedee3"/>
+  <text x="128" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#18181b">Codex</text>
+  <rect x="198" y="511" width="142" height="54" rx="27" fill="#ffffff" stroke="#dedee3"/>
+  <text x="269" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#18181b">AI hardware</text>
+  <rect x="354" y="511" width="124" height="54" rx="27" fill="#f0fdfa" stroke="#0d9488"/>
+  <text x="416" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" fill="#0d9488">VibeKeys</text>
+
+  <g transform="translate(950 529)">
+    <rect width="38" height="38" rx="11" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="12" cy="19" r="4" fill="#2563eb"/>
+    <circle cx="27" cy="19" r="4" fill="none" stroke="#0d9488" stroke-width="2"/>
+    <path d="M16 19h7" stroke="#0d9488" stroke-width="2"/>
+    <text x="52" y="28" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#52525b">ByteFuture</text>
+  </g>
+</svg>
