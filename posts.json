@@ -1,5 +1,14 @@
 [
   {
+    "slug": "happyhorse-1-1-native-audio-video-generation-token-station",
+    "title": "HappyHorse-1.1 is now on Token Station: native-audio video generation through one API",
+    "summary": "HappyHorse-1.1 brings native synchronized audio video generation to Token Station, with text-to-video and image-to-video APIs plus 720P/1080P pricing guidance.",
+    "category": "Model Launches",
+    "date": "June 23, 2026",
+    "cover": "",
+    "featured": false
+  },
+  {
     "slug": "use-any-model-in-claude-code-through-token-station",
     "title": "Use any model in Claude Code through Token Station",
     "summary": "Claude Code can run through Token Station with either a persistent ~/.claude/settings.json file or temporary ANTHROPIC_* environment variables. Set the base URL, token, Opus/Sonnet/Haiku model aliases, and subagent model, then verify with a one-line pong check.",

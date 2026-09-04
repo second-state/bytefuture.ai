@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── i18n: remember language choice + auto-redirect; toggle lives in the nav (see CLAUDE.md) ─── -->
+<!-- ▼ EDIT: title, description, og/canonical (use the same slug as the filename) ▼ -->
+  <title>HappyHorse-1.1 is now on Token Station: native-audio video generation through one API - ByteFuture Writings</title>
+  <meta name="description" content="HappyHorse-1.1 brings native synchronized audio video generation to Token Station, with text-to-video and image-to-video APIs plus 720P/1080P pricing guidance."></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#faf9f5',
+            surface: '#ffffff',
+            border: '#e4e4e7',
+            muted: '#71717a',
+            blue: '#2563EB',
+            green: '#0D9488',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            body: ['"Source Serif 4"', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ0EX9QGK6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KQ0EX9QGK6');
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #faf9f5;
+      color: #18181b;
+      font-family: 'Source Serif 4', Georgia, serif;
+      margin: 0;
+    }
+    a { transition: color 0.2s; }
+
+    /* ─── 3-column layout ─── */
+    .page-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      align-items: start;
+    }
+    /* Grid items default to min-width:auto and can't shrink below their
+       content (wide images, code lines, tables) — this caps them at the
+       column width so the page never scrolls sideways on phones. */
+    .page-grid > * { min-width: 0; }
+
+    /* ─── Left sidebar ─── */
+    .sidebar-left {
+      position: sticky;
+      top: 120px;
+      padding-top: 80px;
+    }
+    .sidebar-left a {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: #71717a;
+      text-decoration: none;
+      padding: 4px 0;
+      line-height: 1.5;
+    }
+    .sidebar-left a:hover { color: #18181b; }
+    .sidebar-left a.active { color: #18181b; font-weight: 600; background: #f4f4f5; padding: 4px 8px; margin: 0 -8px; border-radius: 6px; }
+    .sidebar-left h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #18181b;
+      margin: 24px 0 8px;
+      letter-spacing: 0.01em;
+    }
+    .sidebar-left h4:first-child { margin-top: 0; }
+
+    /* ─── Right sidebar (TOC) ─── */
+    .sidebar-right {
+      position: sticky;
+      top: 120px;
+      padding-top: 80px;
+    }
+    .toc a {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      color: #a1a1aa;
+      text-decoration: none;
+      padding: 5px 0 5px 12px;
+      border-left: 2px solid transparent;
+      line-height: 1.5;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .toc a:hover { color: #18181b; }
+    .toc a.active { color: #18181b; border-left-color: #18181b; }
+
+    /* ─── Article header ─── */
+    .article-header {
+      padding: 80px 0 40px;
+    }
+
+    /* ─── Article prose ─── */
+    .prose { font-size: 18px; line-height: 1.8; }
+    .prose h2 { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -0.01em; margin: 56px 0 16px; line-height: 1.3; scroll-margin-top: 120px; }
+    .prose h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; margin: 40px 0 12px; line-height: 1.35; }
+    .prose p { margin: 0 0 24px; color: #27272a; }
+    .prose ul, .prose ol { margin: 0 0 24px; padding-left: 24px; color: #27272a; list-style: revert; }
+    .prose li { margin-bottom: 8px; }
+    .prose blockquote {
+      border-left: 3px solid #2563EB;
+      margin: 32px 0;
+      padding: 0 0 0 24px;
+      color: #52525b;
+      font-style: italic;
+    }
+    .prose figure { margin: 32px 0; }
+    .prose figure figcaption { font-size: 14px; color: #71717a; margin-top: 8px; text-align: center; }
+    .prose img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #e4e4e7;
+    }
+    .prose a { color: #2563EB; text-decoration: underline; text-underline-offset: 3px; }
+    .prose a:hover { color: #1d4ed8; }
+    .prose strong { font-weight: 600; color: #18181b; }
+
+    /* Code blocks */
+    .prose pre {
+      background: #ffffff;
+      border: 1px solid #e4e4e7;
+      border-radius: 12px;
+      padding: 20px 24px;
+      overflow-x: auto;
+      margin: 32px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+    .prose code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88em;
+      background: #f4f4f5;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .prose pre code {
+      background: none;
+      padding: 0;
+      font-size: 14px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    /* Table */
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #e4e4e7;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 32px 0;
+      font-size: 16px;
+    }
+    .prose th, .prose td {
+      border: 1px solid #e4e4e7;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .prose th {
+      background: #f4f4f5;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .prose td { color: #27272a; }
+
+    /* Horizontal rule */
+    .prose hr {
+      border: none;
+      border-top: 1px solid #e4e4e7;
+      margin: 48px 0;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .page-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .sidebar-left, .sidebar-right {
+        position: static;
+        padding-top: 0;
+      }
+      .sidebar-left { display: none; }
+      .sidebar-right { display: none; }
+      .article-header { padding: 80px 0 40px; }
+    }
+    @media (max-width: 640px) {
+      .nav-hide-sm { display: none; }
+      footer > div {
+        flex-direction: column !important;
+        gap: 10px;
+        text-align: center;
+      }
+      .article-header { padding: 48px 0 28px; }
+      .prose { font-size: 17px; }
+      .prose pre { padding: 14px 16px; font-size: 13px; }
+      .prose pre code { font-size: 13px; }
+      .prose table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav style="position:sticky; top:0; z-index:50; border-bottom:1px solid #e4e4e7;">
+  <div style="background:rgba(250,249,245,0.88); backdrop-filter:blur(12px);">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between;">
+    <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-label="ByteFuture logo" role="img">
+        <rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.6"/>
+        <circle cx="12" cy="16" r="3.4" fill="#2563EB"/>
+        <circle cx="21.5" cy="16" r="3.4" fill="none" stroke="#0D9488" stroke-width="1.8"/>
+        <path d="M15.4 16h2.7" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:-0.01em;">ByteFuture</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:18px;">
+      <a href="/blog/" class="nav-hide-sm" style="color:#18181b; font-size:14px; text-decoration:none; font-family:'Space Grotesk',sans-serif; font-weight:600;">Writings</a>
+      <a href="https://models.bytefuture.ai/intro.html" style="background:#2563EB; color:#faf9f5; border-radius:50px; padding:10px 20px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; text-decoration:none;" onclick="gtag('event','cta_click',{label:'post_nav_token_station'});">Token Station</a>
+    </div>
+  </div>
+  </div>
+</nav>
+
+<!-- ─── 3-COLUMN LAYOUT ─── -->
+<div class="page-grid">
+
+  <!-- LEFT SIDEBAR (recent posts + topics, filled by JS from posts.json) -->
+  <aside class="sidebar-left">
+    <a href="/blog/" style="font-weight:500; color:#18181b; margin-bottom:16px;">&larr; All writings</a>
+
+    <h4>Recent</h4>
+    <div id="recent-posts"></div>
+
+    <h4>Topics</h4>
+    <div id="topics-list"></div>
+  </aside>
+
+  <!-- CENTER: ARTICLE -->
+  <main>
+    <header class="article-header">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <!-- ▼ EDIT: category and date ▼ -->
+        <span style="font-size:12px; font-family:'Space Grotesk',sans-serif; font-weight:500; color:#2563EB; background:rgba(37,99,235,0.08); padding:3px 10px; border-radius:50px;">Model Launches</span>
+        <time style="font-size:13px; color:#a1a1aa; font-family:'Space Grotesk',sans-serif;">June 23, 2026</time>
+        <!-- ▲ EDIT ▲ -->
+        <span id="view-count" style="font-size:13px; color:#a1a1aa; font-family:'Space Grotesk',sans-serif;"></span>
+      </div>
+      <!-- ▼ EDIT: post title ▼ -->
+      <h1>HappyHorse-1.1 is now on Token Station: native-audio video generation through one API</h1>
+      <!-- ▲ EDIT ▲ -->
+    </header>
+
+    <!-- ▼ EDIT: write your post content below. Give every <h2> an id so it appears in the right-hand TOC. ▼ -->
+    <article class="prose" style="padding:0 0 96px;"><p>HappyHorse-1.1 is now available through Token Station, giving developers a new video model for both text-to-video and image-to-video generation.</p>
+<p>The important part is not only that there is a new video model. It is that HappyHorse can generate video with native synchronized audio. Instead of producing a silent clip first and then stitching in speech, music, or sound effects later, you can start with a single video generation request that is designed to return motion and sound together.</p>
+<p>That makes HappyHorse-1.1 useful for product demos, social clips, ad concepts, creative agents, and video workflows where iteration speed matters.</p>
+<p>The new model IDs are:</p>
+<ul><li><code>bailian/happyhorse-1.1-t2v</code> — text to video</li><li><code>bailian/happyhorse-1.1-i2v</code> — image to video from a first frame</li></ul>
+<p>HappyHorse-1.0 remains available. Token Station exposes both versions so developers can test 1.1 without breaking existing 1.0 workflows.</p>
+<h2 id="why-happyhorse-1-1-matters">Why HappyHorse-1.1 matters</h2>
+<p>Most AI video tools still split the job into multiple steps.</p>
+<p>A typical workflow looks like this:</p>
+<ol><li>Generate a silent video clip.</li><li>Generate or source audio separately.</li><li>Align the audio with the motion.</li><li>Export or post-process the final asset.</li></ol>
+<p>That workflow can make sense for polished production. But it is heavy for rapid iteration. If you are testing landing page videos, generating ad concepts, building a creative agent, or producing quick social clips, the extra audio step slows everything down.</p>
+<p>HappyHorse is interesting because synchronized audio is part of the video generation workflow. A single model call can produce a more complete clip: motion plus sound.</p>
+<p>That is especially useful for:</p>
+<ul><li>product teaser clips</li><li>social media videos</li><li>ad concept drafts</li><li>agent-generated creative assets</li><li>first-frame animation with sound</li><li>quick demos for landing pages or launches</li><li>prototype video generation inside a larger app</li></ul>
+<p>The model is not a replacement for every professional editing pipeline. But it gives developers a stronger default output from one API call.</p>
+<h2 id="what-changed-in-happyhorse-1-1">HappyHorse-1.1 vs 1.0: pricing</h2>
+<p>The easiest way to understand the 1.1 update is the price comparison:</p>
+<ul><li>HappyHorse-1.1 720P: <code>$0.14/s</code></li><li>HappyHorse-1.0 720P: about <code>$0.124/s</code></li><li>HappyHorse-1.1 1080P: <code>$0.18/s</code></li><li>HappyHorse-1.0 1080P: about <code>$0.221/s</code></li></ul>
+<p>For a 5-second HappyHorse-1.1 clip, that is approximately:</p>
+<ul><li>720P: <code>$0.70</code></li><li>1080P: <code>$0.90</code></li></ul>
+<p>So HappyHorse-1.1 is more expensive at 720P, but cheaper at 1080P.</p>
+<p>That matters if you are building a real product. For low-resolution draft generation, 1.0 may still be attractive. For higher-resolution clips, 1.1's 1080P tier can be a better fit.</p>
+<h2 id="use-happyhorse-1-1-for-text-to-video">Use HappyHorse-1.1 for text-to-video</h2>
+<p>Use <code>bailian/happyhorse-1.1-t2v</code> when you want to generate a video directly from a prompt.</p>
+<pre><code>curl -X POST https://models.bytefuture.ai/v1/video/generations \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer APIKEY&quot; \
+  -d &#x27;{
+    &quot;model&quot;: &quot;bailian/happyhorse-1.1-t2v&quot;,
+    &quot;prompt&quot;: &quot;A horse galloping across a misty meadow at golden hour, cinematic lighting&quot;,
+    &quot;duration&quot;: 5,
+    &quot;resolution&quot;: &quot;720P&quot;
+  }&#x27;</code></pre>
+<p>For 1080P output, change the resolution:</p>
+<pre><code>{
+  &quot;model&quot;: &quot;bailian/happyhorse-1.1-t2v&quot;,
+  &quot;prompt&quot;: &quot;A cinematic product video of a compact AI coding keypad on a desk&quot;,
+  &quot;duration&quot;: 5,
+  &quot;resolution&quot;: &quot;1080P&quot;
+}</code></pre>
+<p>Use text-to-video when the prompt is enough to define the scene. It is the fastest path for ideation: product demo concepts, background scenes, social media clips, and quick visual experiments.</p>
+<h2 id="use-happyhorse-1-1-for-image-to-video">Use HappyHorse-1.1 for image-to-video</h2>
+<p>Use <code>bailian/happyhorse-1.1-i2v</code> when you already have a first frame, product shot, character image, or generated still image that you want to animate.</p>
+<pre><code>curl -X POST https://models.bytefuture.ai/v1/video/generations \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer APIKEY&quot; \
+  -d &#x27;{
+    &quot;model&quot;: &quot;bailian/happyhorse-1.1-i2v&quot;,
+    &quot;prompt&quot;: &quot;The character turns toward the camera and waves, natural motion, warm lighting&quot;,
+    &quot;image&quot;: &quot;https://example.com/photo.jpg&quot;,
+    &quot;duration&quot;: 5,
+    &quot;resolution&quot;: &quot;1080P&quot;
+  }&#x27;</code></pre>
+<p>Image-to-video is useful when visual consistency matters. Instead of asking the model to invent the whole scene from text, you give it a starting frame and ask it to animate that frame.</p>
+<p>Good use cases include:</p>
+<ul><li>animating a product shot</li><li>turning a generated image into a short clip</li><li>making a character move while preserving identity</li><li>creating motion variations from the same visual concept</li><li>testing ad creatives from a static mockup</li></ul>
+<p>Token Station handles the Bailian-specific first-frame request shape behind the scenes. You pass an <code>image</code> URL through the gateway interface; the gateway converts the request into the format HappyHorse expects upstream.</p>
+<h2 id="why-expose-both-1-0-and-1-1">Why expose both 1.0 and 1.1?</h2>
+<p>Versioned model IDs are important for production systems.</p>
+<p>If a provider changes output style, cost, model behavior, or supported features, developers need a way to choose when to move. Replacing 1.0 with 1.1 behind the same name would make existing workflows harder to reproduce and harder to budget.</p>
+<p>That is why Token Station exposes both versions:</p>
+<pre><code>bailian/happyhorse-1.0-t2v
+bailian/happyhorse-1.0-i2v
+bailian/happyhorse-1.1-t2v
+bailian/happyhorse-1.1-i2v</code></pre>
+<p>You can keep stable workloads on 1.0, route new experiments to 1.1, and decide which version should become your default after comparing real outputs and costs.</p>
+<h2 id="why-this-fits-token-station">Why this fits Token Station</h2>
+<p>Token Station is designed for model adoption without integration churn.</p>
+<p>When a new model arrives, developers should not need to rebuild their application around another provider-specific API. They should be able to try it behind the same gateway surface, compare it with other models, and decide whether it belongs in production.</p>
+<p>HappyHorse-1.1 is a good example:</p>
+<pre><code>{
+  &quot;model&quot;: &quot;bailian/happyhorse-1.1-t2v&quot;,
+  &quot;prompt&quot;: &quot;A cinematic launch video for a new AI product&quot;,
+  &quot;duration&quot;: 5,
+  &quot;resolution&quot;: &quot;1080P&quot;
+}</code></pre>
+<p>The gateway handles provider routing, async task creation, polling, result handling, and usage accounting. The developer gets a model ID and a consistent API.</p>
+<p>That is the real benefit: new model launches become something you can test quickly, not a full integration project.</p>
+<h2 id="when-should-you-try-happyhorse-1-1">When should you try HappyHorse-1.1?</h2>
+<p>Try HappyHorse-1.1 if you need short video clips with audio and want to move quickly.</p>
+<p>It is a natural fit for:</p>
+<ul><li>creative agents that generate media assets</li><li>product teams testing demo videos</li><li>marketing teams testing social clips</li><li>ad teams iterating on visual concepts</li><li>apps that turn product images into motion</li><li>workflows where synchronized audio is useful from the first draft</li></ul>
+<p>Start with 720P when you are exploring prompts. Move to 1080P when you have a clip direction worth refining.</p>
+<h2 id="try-happyhorse-1-1">Try HappyHorse-1.1</h2>
+<p>Start with text-to-video:</p>
+<pre><code>bailian/happyhorse-1.1-t2v</code></pre>
+<p>Or animate a first frame with image-to-video:</p>
+<pre><code>bailian/happyhorse-1.1-i2v</code></pre>
+<p>Try it on Token Station:</p>
+<p><a href="https://models.bytefuture.ai/intro.html">https://models.bytefuture.ai/intro.html</a></p>
+</article>
+    <!-- ▲ EDIT ▲ -->
+  </main>
+
+  <!-- RIGHT SIDEBAR (TOC, filled by JS from the article's h2[id] headings) -->
+  <aside class="sidebar-right">
+    <nav class="toc" id="toc"></nav>
+  </aside>
+
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer style="padding:36px 24px; border-top:1px solid #e4e4e7;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
+    <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-label="ByteFuture logo" role="img" style="opacity:0.85;">
+        <rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.6"/>
+        <circle cx="12" cy="16" r="3.4" fill="#2563EB"/>
+        <circle cx="21.5" cy="16" r="3.4" fill="none" stroke="#0D9488" stroke-width="1.8"/>
+        <path d="M15.4 16h2.7" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:13px; color:#71717a;">ByteFuture</span>
+    </a>
+    <p style="color:#a1a1aa; font-size:13px; margin:0; font-family:'Space Grotesk',sans-serif;">&copy; 2026 ByteFuture. <a href="/blog/" style="color:#71717a; text-decoration:none;">Writings</a></p>
+  </div>
+</footer>
+
+<!-- ─── TOC generator (right sidebar) ─── -->
+<script>
+(function() {
+  var toc = document.getElementById('toc');
+  var headings = document.querySelectorAll('.prose h2[id]');
+  headings.forEach(function(h) {
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    toc.appendChild(a);
+  });
+
+  // Scroll spy
+  var tocLinks = toc.querySelectorAll('a');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(function(l) { l.classList.remove('active'); });
+        var active = toc.querySelector('a[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -70% 0px' });
+  headings.forEach(function(h) { observer.observe(h); });
+})();
+</script>
+
+<!-- ─── Left sidebar: recent posts + topics (language-aware: reads posts-<lang>.json, links same-language) ─── -->
+<script>
+(function() {
+  var currentSlug = 'happyhorse-1-1-native-audio-video-generation-token-station';
+  fetch('/posts.json')
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      var sorted = posts.slice().sort(function(a, b) { return b.date.localeCompare(a.date); });
+      var recent = sorted.slice(0, 5);
+      var recentEl = document.getElementById('recent-posts');
+      recent.forEach(function(p) {
+        var a = document.createElement('a');
+        a.href = '/blog/' + p.slug + '.html';
+        a.textContent = p.title.length > 50 ? p.title.slice(0, 47) + '...' : p.title;
+        if (p.slug === currentSlug) a.classList.add('active');
+        recentEl.appendChild(a);
+      });
+
+      var cats = {};
+      posts.forEach(function(p) { cats[p.category] = true; });
+      var topicsEl = document.getElementById('topics-list');
+      Object.keys(cats).sort().forEach(function(cat) {
+        var a = document.createElement('a');
+        a.href = '/blog/?cat=' + cat;
+        a.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        topicsEl.appendChild(a);
+      });
+    });
+})();
+</script>
+
+<!-- ─── VIEW COUNTER (GoatCounter — hosted, no database; see CLAUDE.md) ─── -->
+<script data-goatcounter="https://bytefuture.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<script>
+(function() {
+  var el = document.getElementById('view-count');
+  if (!el) return;
+  // Public per-page count; the page path is the key — no per-article edit needed.
+  fetch('https://bytefuture.goatcounter.com/counter/' + location.pathname + '.json')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(d) {
+      if (d && d.count) {
+        var n = String(d.count).trim();
+        el.textContent = n.replace(/[\u2009\u202F ]/g, ',') + (n === '1' ? ' view' : ' views');
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+
+</body>
+</html>
