@@ -435,6 +435,7 @@ fbq('track', 'PageView');
         </blockquote>
         <form class="email-form" id="hero-form" onsubmit="return submitEmail(event, 'hero')">
           <input type="email" name="email" placeholder="Enter your work email" required />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">
             Start your 30-day free pilot →
           </button>
@@ -731,6 +732,7 @@ fbq('track', 'PageView');
         </ul>
         <form class="email-form pricing-cta-form" id="pricing-form-a" onsubmit="return submitEmail(event, 'pricing', 'on-prem')">
           <input type="email" name="email" placeholder="Enter your work email" required />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your On-Prem pilot →</button>
         </form>
         <p class="form-message"></p>
@@ -757,6 +759,7 @@ fbq('track', 'PageView');
         </ul>
         <form class="email-form pricing-cta-form" id="pricing-form-b" onsubmit="return submitEmail(event, 'pricing', 'cloud')">
           <input type="email" name="email" placeholder="Enter your work email" required />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your Cloud pilot →</button>
         </form>
         <p class="form-message"></p>
@@ -846,6 +849,7 @@ fbq('track', 'PageView');
       </p>
       <form class="email-form" id="final-form" onsubmit="return submitEmail(event, 'final')">
         <input type="email" name="email" placeholder="Enter your work email" required />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
         <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your 30-day free pilot →</button>
       </form>
       <p class="form-message" id="final-msg" style="text-align:center;"></p>
@@ -887,17 +891,56 @@ fbq('track', 'PageView');
 <script>
 window.dataLayer = window.dataLayer || [];
 
-const API_BASE = 'https://minilab-backend-test.up.railway.app';
-const IDEA_ID = '2f25b004-c1df-47cc-9b39-224502cf8f2f';
-const LP_ID = '23442305-5852-4c70-9d1c-dfa53f3d43fb';
+// Pilot signups are stored by a Google Apps Script web app, since the site is
+// static and has no backend of its own. Source + setup: scripts/leads-apps-script.gs.
+// While LEAD_ENDPOINT is empty the forms fall back to a prefilled mail, so a
+// signup is never silently dropped.
+const LEAD_ENDPOINT = '';
+const CONTACT_EMAIL = 'team@bytefuture.ai';
 
-function getUTM() {
+function readCookie(name) {
+  const m = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]*)'));
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+// Everything we know about how this visitor got here. utm_content carries the
+// ad set / angle / format, and li_fat_id is LinkedIn's first-party click id,
+// which enhanced conversion tracking appends to the landing page URL.
+function getContext() {
   const p = new URLSearchParams(window.location.search);
   return {
-    utmSource: p.get('utm_source') || '',
-    utmMedium: p.get('utm_medium') || '',
-    utmCampaign: p.get('utm_campaign') || ''
+    utm_source: p.get('utm_source') || '',
+    utm_medium: p.get('utm_medium') || '',
+    utm_campaign: p.get('utm_campaign') || '',
+    utm_content: p.get('utm_content') || '',
+    li_fat_id: p.get('li_fat_id') || readCookie('li_fat_id'),
+    page: location.pathname,
+    referrer: document.referrer || '',
+    user_agent: navigator.userAgent || ''
   };
+}
+
+function showMessage(el, text, ok) {
+  if (!el) return;
+  el.textContent = text;
+  el.style.color = ok ? '#0D9488' : '#b91c1c';
+  el.style.display = 'block';
+}
+
+// Last resort: hand the signup to the visitor's mail client rather than lose it.
+function mailFallback(email, plan) {
+  const body = [
+    "I'd like to start the 30-day Token Station pilot.",
+    '',
+    'Email: ' + email,
+    'Plan: ' + (plan || 'not sure yet'),
+    'Company size: ',
+    'People who would use it: ',
+    ''
+  ].join('\r\n');
+  window.location.href = 'mailto:' + CONTACT_EMAIL
+    + '?subject=' + encodeURIComponent('Token Station Enterprise pilot')
+    + '&body=' + encodeURIComponent(body);
 }
 
 async function submitEmail(e, formId, plan) {
@@ -909,46 +952,45 @@ async function submitEmail(e, formId, plan) {
               : formId === 'final' ? document.getElementById('final-msg')
               : form.nextElementSibling || null;
 
+  if (!LEAD_ENDPOINT) {
+    gtag('event', 'email_submit_mail');
+    showMessage(msgEl, 'Opening your mail app so you can send this to us directly.', true);
+    mailFallback(email, plan);
+    return;
+  }
+
   const origBtnText = btn.textContent.trim();
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
-  const utm = getUTM();
-  // Record plan choice in utmMedium; preserve URL utm_medium if present
-  if (plan) {
-    utm.utmMedium = utm.utmMedium ? utm.utmMedium + '|' + plan : plan;
-  }
+  const payload = Object.assign({
+    email: email,
+    plan: plan || '',
+    form: formId,
+    _gotcha: form._gotcha ? form._gotcha.value : ''
+  }, getContext());
 
   try {
-    const res = await fetch(API_BASE + '/api/leads', {
+    // text/plain is CORS-safelisted, so the browser sends no preflight. Apps
+    // Script cannot answer one; the body is still JSON.
+    const res = await fetch(LEAD_ENDPOINT, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        email,
-        ideaId: IDEA_ID,
-        landingPageId: LP_ID || undefined,
-        ...utm
-      })
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
     });
-    if (res.ok) {
-      gtag('event', 'email_submit');
-      var _evId = Math.random().toString(36).slice(2) + Date.now().toString(36);
-      fbq('init', '1263865485900196', { em: email });
-      fbq('track', 'Lead', {}, {eventID: _evId});
-      if (msgEl) {
-        msgEl.textContent = '✓ You\'re on the pilot list! We\'ll be in touch within 48 hours.';
-        msgEl.style.display = 'block';
-      }
-      form.email.value = '';
-    } else {
-      throw new Error('Failed');
-    }
-  } catch {
-    if (msgEl) {
-      msgEl.textContent = 'Something went wrong. Please try again or email us directly.';
-      msgEl.style.color = '#b91c1c';
-      msgEl.style.display = 'block';
-    }
+    const data = await res.json().catch(function () { return null; });
+    if (!res.ok || !data || data.ok !== true) throw new Error('rejected');
+
+    gtag('event', 'email_submit');
+    var _evId = Math.random().toString(36).slice(2) + Date.now().toString(36);
+    fbq('init', '1263865485900196', { em: email });
+    fbq('track', 'Lead', {}, {eventID: _evId});
+    showMessage(msgEl, '\u2713 You\'re on the pilot list! We\'ll be in touch within 48 hours.', true);
+    form.reset();
+  } catch (err) {
+    gtag('event', 'email_submit_mail');
+    showMessage(msgEl, 'That did not go through. Opening your mail app so you can send it to us directly.', false);
+    mailFallback(email, plan);
   } finally {
     btn.disabled = false;
     btn.textContent = origBtnText;
