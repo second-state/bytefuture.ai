@@ -96,6 +96,7 @@ fbq('track', 'PageView');
     }
     .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,0.16); }
     .btn-primary:disabled { opacity: 0.6; cursor: default; transform: none; box-shadow: none; }
+    .nav-cta { padding: 10px 20px; font-size: 13px; }
 
     /* Card */
     .card {
@@ -365,7 +366,21 @@ fbq('track', 'PageView');
     }
     @media (max-width: 640px) {
       section { padding: 60px 18px; }
-      .hero { padding: 44px 18px 64px; }
+      /* 首屏图下面已经没有内容，两个 section 的 padding 叠起来会留 148px 死空白 */
+      .hero { padding: 44px 18px 32px; }
+
+      /* 硬换行是按桌面栏宽调的，窄屏下会断出孤字，交给浏览器自己排 */
+      .hero-h1 br, .section-h2 br, .final-cta-h2 br { display: none; }
+      .hero-h1, .section-h2, .final-cta-h2, .feature-h3 { text-wrap: balance; }
+
+      /* 正文在手机上不低于 16px */
+      .step-desc, .pricing-desc, .faq-answer-inner, .research-text,
+      .feature-list li, .pricing-features li { font-size: 16px; }
+      .hero-trust, .final-trust { font-size: 15px; }
+      .pricing-best-for { font-size: 14px; }
+
+      /* 点击区域够大 */
+      .nav-cta { padding: 13px 22px; font-size: 14px; }
       .metrics-row { grid-template-columns: 1fr 1fr; }
       .pricing-card { padding: 24px; }
       .faq-question { padding: 18px; font-size: 15px; }
@@ -395,7 +410,7 @@ fbq('track', 'PageView');
         <a class="nav-link" href="#how" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">How it works</a>
         <a class="nav-link" href="#pilot-cta" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">Pricing</a>
         <a class="nav-link" href="#faq" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">FAQ</a>
-        <a href="#pilot-cta" class="btn-primary" style="padding:10px 20px; font-size:13px;" onclick="gtag('event','cta_click',{label:'nav_pilot'});">Start free pilot</a>
+        <a href="#pilot-cta" class="btn-primary nav-cta" onclick="gtag('event','cta_click',{label:'nav_pilot'});">Start free pilot</a>
       </div>
     </div>
   </div>
@@ -414,7 +429,7 @@ fbq('track', 'PageView');
         <h1 class="hero-h1">
           One AI Account for<br/>
           <span class="gradient-text">Your Whole Team.</span><br/>
-          Token Reports for<br/>Every Manager.
+          Token Reports for<br/> Every Manager.
         </h1>
         <p class="hero-sub">
           Token Station pools your team's AI access into one gateway. Stop paying for 20 individual subscriptions. Start seeing exactly who used what, and when.
@@ -464,7 +479,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll">
       <p class="section-label">The Problem</p>
-      <h2 class="section-h2">Your Team Is Already<br/>Spending on AI. You're Just<br/>Not Seeing Where.</h2>
+      <h2 class="section-h2">Your Team Is Already<br/> Spending on AI. You're Just<br/> Not Seeing Where.</h2>
       <p class="section-lead" style="margin-top:16px;">
         Three realities hitting IT teams and finance leaders right now.
       </p>
@@ -494,7 +509,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll">
       <p class="section-label">How It Works</p>
-      <h2 class="section-h2">From Chaos to Control<br/>in Three Steps</h2>
+      <h2 class="section-h2">From Chaos to Control<br/> in Three Steps</h2>
       <p class="section-lead" style="margin-top:16px;">
         Token Station runs on your own hardware. Your keys, your data, your rules.
       </p>
@@ -530,7 +545,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll" style="margin-bottom:56px;">
       <p class="section-label">Core Capabilities</p>
-      <h2 class="section-h2">Everything Enterprise AI<br/>Governance Requires</h2>
+      <h2 class="section-h2">Everything Enterprise AI<br/> Governance Requires</h2>
     </div>
 
     <!-- Feature 1: Pooled Accounts -->
@@ -644,7 +659,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll">
       <p class="section-label">By The Numbers</p>
-      <h2 class="section-h2">The AI Spend Problem<br/>Is Already Here</h2>
+      <h2 class="section-h2">The AI Spend Problem<br/> Is Already Here</h2>
     </div>
 
     <div class="metrics-row animate-on-scroll">
@@ -692,7 +707,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px;">
       <p class="section-label">Pricing</p>
-      <h2 class="section-h2">Self-Hosted, Your Infrastructure,<br/>Your Control</h2>
+      <h2 class="section-h2">Self-Hosted, Your Infrastructure,<br/> Your Control</h2>
       <p class="section-lead" style="margin:16px auto 0; text-align:center;">
         $10 per employee per month. Two ways to handle AI vendor keys.
       </p>
@@ -847,7 +862,7 @@ fbq('track', 'PageView');
   <div class="final-cta-inner">
     <div class="animate-on-scroll">
       <p class="section-label" style="text-align:center;">Ready When You Are</p>
-      <h2 class="final-cta-h2">Your team is already spending on AI.<br/>You're just not seeing where.</h2>
+      <h2 class="final-cta-h2">Your team is already spending on AI.<br/> You're just not seeing where.</h2>
       <p class="final-cta-sub">
         Join the pilot. Get full visibility, one consolidated bill, and up to 73% lower token costs, all on your own infrastructure.
       </p>

@@ -152,6 +152,17 @@ fbq('track', 'PageView');
       .shell { padding: 40px 18px 64px; }
       .checks { grid-template-columns: 1fr; }
       .actions .btn-primary { width: 100%; justify-content: center; }
+      .ask, .done h2 { text-wrap: balance; }
+
+      /* 正文与标签在手机上不低于 16px / 15px */
+      .confirm p, .done p { font-size: 16px; }
+      .field > label, .field > .legend { font-size: 15px; }
+
+      /* 勾选行和跳过链接要够大才点得到 */
+      .checks label { min-height: 44px; font-size: 16px; }
+      .checks input { width: 20px; height: 20px; }
+      #skip-link { display: inline-flex; align-items: center; min-height: 44px; }
+      .actions { gap: 4px 18px; }
       nav a.nav-link { display: none; }
       footer > div { flex-direction: column; gap: 12px; text-align: center; }
     }
