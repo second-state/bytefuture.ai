@@ -98,13 +98,6 @@ fbq('track', 'PageView');
     .btn-primary:disabled { opacity: 0.6; cursor: default; transform: none; box-shadow: none; }
     .nav-cta { padding: 10px 20px; font-size: 13px; }
 
-    /* Card */
-    .card {
-      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 14px;
-      padding: 32px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover { border-color: #2563EB; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(24,24,27,0.06); }
-
     /* Nav */
     nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #e4e4e7; }
 
@@ -205,15 +198,6 @@ fbq('track', 'PageView');
     }
     .hero-img-wrap img { display: block; width: 100%; height: auto; }
 
-    /* ─── PAIN ─── */
-    .pain-card { position: relative; }
-    .pain-quote-mark {
-      font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700;
-      line-height: 0.7; color: #2563EB; opacity: 0.28; margin-bottom: 10px;
-    }
-    .pain-quote-text { font-size: 17px; line-height: 1.5; font-weight: 500; margin: 0 0 14px; }
-    .pain-source { color: #71717a; font-size: 13px; margin: 0; font-family: 'JetBrains Mono', monospace; }
-
     /* ─── STEPS ─── */
     .step-number {
       font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500;
@@ -224,6 +208,13 @@ fbq('track', 'PageView');
       letter-spacing: -0.01em; margin-bottom: 10px;
     }
     .step-desc { color: #52525b; font-size: 15px; line-height: 1.6; margin: 0; }
+    .step-optional { margin-top: 44px; padding-top: 36px; border-top: 1px dashed #d4d4d8; }
+    .step-optional .step-desc { max-width: 720px; }
+    .step-tag {
+      display: inline-block; margin-left: 10px; padding: 3px 10px; border-radius: 50px;
+      background: rgba(13,148,136,0.10); color: #0D9488;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; vertical-align: 1px;
+    }
 
     /* ─── FEATURES ─── */
     .feature-row {
@@ -256,6 +247,11 @@ fbq('track', 'PageView');
       box-shadow: 0 14px 40px rgba(24,24,27,0.08);
     }
     .feature-img-card img { display: block; width: 100%; object-fit: cover; }
+    .brain-step {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #2563EB; margin: 0 0 8px;
+    }
+    .brain-text { font-size: 15px; line-height: 1.6; color: #18181b; margin: 0; }
 
     /* ─── RESEARCH / METRICS ─── */
     .metrics-row {
@@ -374,7 +370,7 @@ fbq('track', 'PageView');
       .hero-h1, .section-h2, .final-cta-h2, .feature-h3 { text-wrap: balance; }
 
       /* 正文在手机上不低于 16px */
-      .step-desc, .pricing-desc, .faq-answer-inner, .research-text,
+      .step-desc, .pricing-desc, .faq-answer-inner, .research-text, .brain-text,
       .feature-list li, .pricing-features li { font-size: 16px; }
       .hero-trust, .final-trust { font-size: 15px; }
       .pricing-best-for { font-size: 14px; }
@@ -474,42 +470,12 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<!-- ─── PAIN ─── -->
-<section>
-  <div class="section-inner">
-    <div class="animate-on-scroll">
-      <p class="section-label">The Problem</p>
-      <h2 class="section-h2">Your Team Is Already<br/> Spending on AI. You're Just<br/> Not Seeing Where.</h2>
-      <p class="section-lead" style="margin-top:16px;">
-        Three realities hitting IT teams and finance leaders right now.
-      </p>
-    </div>
-    <div class="grid-3" style="margin-top:48px;">
-      <div class="card pain-card animate-on-scroll anim-delay-1">
-        <div class="pain-quote-mark">"</div>
-        <p class="pain-quote-text">90% of employees use AI at work. 46% use tools you didn't buy. 1 in 3 keep it secret.</p>
-        <p class="pain-source">Shadow AI Report 2026</p>
-      </div>
-      <div class="card pain-card animate-on-scroll anim-delay-2">
-        <div class="pain-quote-mark">"</div>
-        <p class="pain-quote-text">Your OpenAI bill doubled. You don't know who did it.</p>
-        <p class="pain-source">Every IT Director, Q1 2026</p>
-      </div>
-      <div class="card pain-card animate-on-scroll anim-delay-3">
-        <div class="pain-quote-mark">"</div>
-        <p class="pain-quote-text">We're flooded with vibe-coded app requests, we can't keep up with them and real work at the same time.</p>
-        <p class="pain-source">r/sysadmin · 1,884 upvotes</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── HOW IT WORKS ─── -->
 <section id="how" style="background:#ffffff; border-top:1px solid #e4e4e7; border-bottom:1px solid #e4e4e7;">
   <div class="section-inner">
     <div class="animate-on-scroll">
       <p class="section-label">How It Works</p>
-      <h2 class="section-h2">From Chaos to Control<br/> in Three Steps</h2>
+      <h2 class="section-h2">From Chaos to Control in Three Steps</h2>
       <p class="section-lead" style="margin-top:16px;">
         Token Station runs on your own hardware. Your keys, your data, your rules.
       </p>
@@ -537,6 +503,13 @@ fbq('track', 'PageView');
         </p>
       </div>
     </div>
+    <div class="step-optional animate-on-scroll">
+      <div class="step-number">04<span class="step-tag">Optional</span></div>
+      <div class="step-title">Build Your Company Brain</div>
+      <p class="step-desc">
+        Token Station analyzes how AI solves problems for your team and extracts that knowledge into a searchable "company brain". Anyone can look up how a problem was already solved, and future AI interactions build on what the team has learned instead of starting from zero.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -545,7 +518,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll" style="margin-bottom:56px;">
       <p class="section-label">Core Capabilities</p>
-      <h2 class="section-h2">Everything Enterprise AI<br/> Governance Requires</h2>
+      <h2 class="section-h2">Everything Enterprise AI Governance Requires</h2>
     </div>
 
     <!-- Feature 1: Pooled Accounts -->
@@ -652,6 +625,37 @@ fbq('track', 'PageView');
         </div>
       </div>
     </div>
+
+    <!-- Feature 4: Company Brain -->
+    <div class="feature-row reverse animate-on-scroll" style="margin-top:80px;">
+      <div>
+        <p class="section-label">Company Brain</p>
+        <h3 class="feature-h3">Every Problem AI Solves Becomes Team Knowledge</h3>
+        <p class="feature-desc">
+          When AI helps someone crack a hard problem, the answer usually stays buried in one person's chat history. Token Station can analyze how AI solves problems for your team and extract that knowledge into a searchable company brain, so the whole team and every future AI interaction can use it.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-icon">✓</span><span>Knowledge drawn from real AI sessions, with nothing to write up by hand</span></li>
+          <li><span class="check-icon">✓</span><span>One searchable knowledge base for the whole team</span></li>
+          <li><span class="check-icon">✓</span><span>Future AI interactions start with your team's context</span></li>
+          <li><span class="check-icon">✓</span><span>Optional: turn it on when your team is ready</span></li>
+        </ul>
+      </div>
+      <div class="feature-visual" style="display:flex; flex-direction:column; gap:16px;">
+        <div class="research-card">
+          <p class="brain-step">01 · Analyze</p>
+          <p class="brain-text">Token Station looks at how AI worked through your team's problems: the question, the approach, and the answer that worked.</p>
+        </div>
+        <div class="research-card">
+          <p class="brain-step">02 · Extract</p>
+          <p class="brain-text">The reusable knowledge goes into your company brain instead of disappearing with the chat.</p>
+        </div>
+        <div class="research-card">
+          <p class="brain-step">03 · Reuse</p>
+          <p class="brain-text">Anyone on the team can search it, and future AI interactions draw on it.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -660,7 +664,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll">
       <p class="section-label">By The Numbers</p>
-      <h2 class="section-h2">The AI Spend Problem<br/> Is Already Here</h2>
+      <h2 class="section-h2">The AI Spend Problem Is Already Here</h2>
     </div>
 
     <div class="metrics-row animate-on-scroll">
@@ -708,7 +712,7 @@ fbq('track', 'PageView');
   <div class="section-inner">
     <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px;">
       <p class="section-label">Pricing</p>
-      <h2 class="section-h2">Self-Hosted, Your Infrastructure,<br/> Your Control</h2>
+      <h2 class="section-h2">Self-Hosted, Your Infrastructure, Your Control</h2>
       <p class="section-lead" style="margin:16px auto 0; text-align:center;">
         $10 per employee per month. Two ways to handle AI vendor keys.
       </p>
