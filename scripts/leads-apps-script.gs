@@ -46,7 +46,7 @@
 const SHEET_NAME = 'leads';
 
 /** Where to send the "new pilot signup" notice. Set to '' to stop the emails. */
-const NOTIFY_EMAIL = 'team@bytefuture.ai';
+const NOTIFY_EMAIL = 'vivian@secondstate.io';
 
 /** Reject bodies larger than this many characters before doing any work. */
 const PAYLOAD_LIMIT = 8000;
