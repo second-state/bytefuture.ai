@@ -2,7 +2,7 @@
 slug: "route-cursor-through-token-station-openai"
 lang: "ko"
 title: "Cursor를 Token Station에 연결하기: GPT-6 Astra와 GPT-5.6"
-summary: "Cursor는 Settings의 Models 패널에서 커스텀 OpenAI 호환 프로바이더를 지원한다. Token Station을 지정하면 OpenAI의 GPT-6 Astra와 GPT-5.6 계열이 선택 가능한 모델로 나타나며, 이제 네 가지 라우트 모두에서 Agent 모드 파일 편집이 확인됐다. Token Station API 키에 연결한 어댑터가 그동안 OpenAI 모델이 Cursor에서 파일을 편집하지 못하게 막았던 도구 호출 형식 문제를 해결한다."
+summary: "OpenAI가 Cursor 내장 지원을 단계적으로 종료하고 있어서, 앞으로 Cursor에서 OpenAI 모델을 쓰려면 BYOK가 필요하다. Cursor를 Token Station에 연결하면 GPT-6 Astra와 GPT-5.6 계열이 선택 가능한 모델로 나타나고, API 키에 연결한 WASM 어댑터가 Cursor가 BYOK 경로에서 제대로 다루지 못하는 도구 호출 형식을 메워 Agent 모드 파일 편집이 실제로 적용된다."
 category: "tutorial"
 date: "2026-09-08"
 cta: "https://models.bytefuture.ai/intro.html"
@@ -12,9 +12,7 @@ draft: false
 
 Cursor는 Settings → Models에서 커스텀 OpenAI 호환 프로바이더를 지원한다. Token Station의 엔드포인트를 지정하면 OpenAI의 GPT-6 Astra와 GPT-5.6 계열(Sol, Terra, Luna)을 선택 가능한 모델로 추가할 수 있고, 모두 자신의 Token Station 키로 과금된다.
 
-이것은 최근까지는 실제로 불가능했다. 초기 테스트(우리의 [Claude Sonnet 5와 Haiku 설정](/blog/route-cursor-through-token-station-ko.html)과 같은 시기에 진행한)에서, Token Station의 GPT-5.6 라우트는 Cursor의 Agent 모드에서 코드를 읽고 논의할 수는 있었지만 실제 파일 편집을 적용하는 데는 계속 실패한다는 것이 드러났다. 이는 Token Station 쪽의 도구 호출 응답 형식 문제였다. 구체적인 격차는 이렇다. OpenAI의 모델은 파일 편집을 `ApplyPatch` 도구 호출로 표현하는데, 이는 Cursor의 Agent 모드가 그전까지 올바르게 읽고 있던 것과는 다른 응답 형태다. Token Station 키는 이제 그 응답을 Cursor가 기대하는 형태로 다시 써주는 작은 어댑터를 붙일 수 있다. 이는 Cursor가 OpenAI 및 OpenAI-Codex 모델과 대화하는 경우로만 한정되어, 같은 키로 라우팅되는 다른 도구나 다른 프로바이더에는 영향이 없다. 여기서는 그 어댑터를 붙이는 과정까지 포함해 설정을 처음부터 끝까지 다루고, 실제로 작동하는지 확인한다.
-
-설정에 들어가기 전에, Cursor에 직접 돈을 내는 대신 왜 굳이 Token Station을 거쳐 Cursor를 라우팅하는지 분명히 짚어볼 필요가 있다. 구체적인 이유는 세 가지다. Cursor의 Pro 플랜은 일부 모델(Grok 4.6, Grok 4.5, Composer 2.5)을 공유 월간 사용량 풀에 묶어 두고, 나머지 모델은 각 모델 자체의 API 가격으로 별도의 풀에서 과금한다. 하지만 어느 풀도 실제로 무엇에 얼마를 썼는지 모델별, 요청별로 나눠 보여주지는 않는다. Token Station 키는 이 두 풀을 모두 건너뛴다. BYOK 요청은 Token Station의 엔드포인트로 곧장 전달되어 Cursor 자체의 과금을 전혀 거치지 않고, 프로바이더의 실제 요율로 마진 없이 자신의 대시보드에 그대로 나타난다. 둘째, Cursor가 여러 코딩 도구 중 하나일 뿐이라면(예를 들어 Claude Code나 Codex, OpenClaw도 함께 쓴다면), 같은 Token Station 키와 같은 모델 ID가 그 모든 도구에서 똑같이 작동한다. 도구마다 별도의 키를 발급받고, 따로 충전하고, 따로 정산을 맞추는 대신 추적해야 할 계정과 잔액이 하나로 줄어든다. 셋째, Token Station의 카탈로그는 300개 이상의 모델, 30개가 넘는 프로바이더를 아우르며, Cursor가 자체 풀에 담아 놓은 범위를 훨씬 뛰어넘는다.
+OpenAI가 Cursor 내장 지원을 단계적으로 종료하고 있어서, 앞으로 Cursor에서 OpenAI 모델을 쓰려면 BYOK를 써야 한다. 먼저 알아둘 점이 하나 있다. Cursor의 내장 통합은 OpenAI의 `/responses` API를 호출하는 반면 BYOK 경로는 `/chat/completions`를 호출하는데, Cursor는 `/chat/completions` 응답에서 도구 호출을 제대로 파싱하지 못한다. 이는 OpenAI나 Token Station이 아니라 Cursor 쪽 버그이며, 1단계에서 연결하는 WASM 어댑터는 OpenAI의 응답을 Cursor가 받아들이는 형식으로 변환해 주는 임시 대응책이다.
 
 ## 시작하기 전에 필요한 것
 
@@ -40,7 +38,7 @@ Token Station 대시보드에서 **API Keys**를 열고 **Create new key**를 �
   <figcaption>어댑터를 연결한 후의 Token Station API Keys 페이지: 확인 배너와, WASM 열에 표시된 키의 행.</figcaption>
 </figure>
 
-실제로 새로운 부분은 이 단계다. 이것을 연결하지 않으면 이 글의 나머지는 모두 이전과 똑같이 작동하지만, OpenAI 모델에 대한 Agent 모드 파일 편집은 초기 테스트에서 드러난 것과 똑같이 계속 실패한다. Agent 모드는 코드를 읽고 논의할 수는 있어도, 실제로 파일을 바꾸는 일은 결코 없다.
+이 단계는 건너뛰지 말자. 어댑터를 연결하지 않으면 이 글의 나머지는 모두 그대로 작동하지만, Agent 모드는 코드를 읽고 논의하기만 할 뿐 실제로 파일을 바꾸지는 않는다.
 
 ## 2단계: Token Station을 커스텀 프로바이더로 등록하기
 
@@ -82,7 +80,7 @@ openai/gpt-5.6-luna
 
 ## 4단계: Agent 모드 파일 편집이 실제로 적용되는지 확인하기
 
-이전에는 작동하지 않던 단계가 바로 이것이다. 네 가지 라우트를 모두 추가한 다음 `openai/gpt-5.6-luna`를 선택하고, 실제 저장소([httpie](https://github.com/httpie/httpie))에 대해 진짜 편집을 하도록 요청한다.
+어댑터를 연결하면 편집이 실제로 적용된다. 네 가지 라우트를 모두 추가한 다음 `openai/gpt-5.6-luna`를 선택하고, 실제 저장소([httpie](https://github.com/httpie/httpie))에 대해 진짜 편집을 하도록 요청한다.
 
 <figure>
   <video controls preload="metadata" playsinline>
@@ -146,9 +144,9 @@ tests passed or failed and why. Do not modify source files.
 
 ## 직접 시도해보기: 같은 httpie 작업
 
-우리의 Claude Sonnet 5 설정에서는 httpie의 실제 기능에 대해 완전한 코딩 세션을 실행했다. 리다이렉트를 따라간 뒤 실제로 도달한 URL(effective URL)을 기존 경과 시간 옆에 httpie의 `--meta` 출력에 추가하는 작업이었고, 조사와 검증은 위의 두 서브에이전트에 위임했다.
+우리의 [Claude Sonnet 5 설정](/blog/route-cursor-through-token-station-ko.html)에서는 httpie의 실제 기능에 대해 완전한 코딩 세션을 실행했다. 리다이렉트를 따라간 뒤 실제로 도달한 URL(effective URL)을 기존 경과 시간 옆에 httpie의 `--meta` 출력에 추가하는 작업이었고, 조사와 검증은 위의 두 서브에이전트에 위임했다.
 
-GPT-6 Astra나 GPT-5.6 계열을 대상으로 이 구체적인 다단계, 다중 에이전트 세션은 아직 실행해보지 않았으므로, 이 절은 "직접 시도해보기"이며 실제로 무슨 일이 있었는지에 대한 보고는 아니다. 4단계에서 확인된 것은 네 가지 라우트 모두 Token Station을 통해 실제 Agent 모드 파일 편집을 적용할 수 있다는 점이며, 따라서 전체 작업이 실패할 것이라고 볼 근본적인 이유는 더 이상 없다. 같은 세 메시지 순서를 시도해볼 가치가 있다.
+GPT-6 Astra나 GPT-5.6 계열을 대상으로 이 구체적인 다단계, 다중 에이전트 세션은 아직 실행해보지 않았으므로, 이 절은 "직접 시도해보기"이며 실제로 무슨 일이 있었는지에 대한 보고는 아니다. 4단계에서 네 가지 라우트 모두 Token Station을 통해 실제 Agent 모드 파일 편집을 적용할 수 있음이 확인됐으니, 같은 세 메시지 순서를 시도해볼 가치가 있다.
 
 **메시지 1**, 조사를 위임한다.
 ```
@@ -167,7 +165,7 @@ Using what bill-the-explorer found, add the effective URL next to the existing e
 
 ## 지금 되는 것
 
-네 가지 OpenAI 라우트 `openai/gpt-6-astra`, `openai/gpt-5.6-sol`, `openai/gpt-5.6-terra`, `openai/gpt-5.6-luna` 모두에서, Token Station을 통한 Cursor의 Agent 모드 파일 편집이 확인됐다. 실제 파일에 반영된 편집이 있고, Token Station 키에 정확히 과금되며, 대시보드에서도 확인된다. 이는 새로운 부분이다. 같은 라우트들이 이전에는 Agent 모드에서 코드를 논의할 수는 있었지만 편집하지는 못했는데, 그 해결책이 1단계에서 Token Station 키에 연결한 어댑터다.
+네 가지 OpenAI 라우트 `openai/gpt-6-astra`, `openai/gpt-5.6-sol`, `openai/gpt-5.6-terra`, `openai/gpt-5.6-luna` 모두에서, Token Station을 통한 Cursor의 Agent 모드 파일 편집이 확인됐다. 실제 파일에 반영된 편집이 있고, Token Station 키에 정확히 과금되며, 대시보드에서도 확인된다. 1단계의 어댑터가 없으면 같은 라우트들은 Agent 모드에서 코드를 읽고 논의하기만 할 뿐 파일을 편집하지 않는다.
 
 서브에이전트는 범위와 권한 지정 면에서는 작동한다. `name`, `description`, `readonly`는 모두 반영되고, 자동 호출과 명시적 호출(`/name`) 모두 실제 위임을 일으킨다. 서브에이전트 단위의 모델 라우팅은 프로바이더와 무관하게 커스텀 모델에 대해 현재 작동하지 않는다. Cursor의 Task 도구는 `inherit`나 자체 `composer-2.5-fast`만 받아들이기 때문에, 모든 서브에이전트는 부모 대화의 모델로 동작한다. 이는 Claude와 Grok 설정에서 기록한 것과 같은 Cursor 플랫폼 자체의 제약이며, OpenAI 모델에 국한된 문제가 아니다.
 
