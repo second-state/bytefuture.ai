@@ -10,6 +10,12 @@ cover: "blog/route-cursor-through-token-station-openai-cover.png"
 draft: false
 ---
 
+<div class="note">
+
+이 튜토리얼의 단계와 설명은 [models.bytefuture.ai](https://models.bytefuture.ai/)의 공개 Token Station을 기준으로 한다. 공동 구독, 할인된 API 키, 스마트 라우팅으로 비용을 아끼기 위해 전용 Token Station 인스턴스를 직접 구축하고 싶다면 [문의해 주세요](/enterprise.html).
+
+</div>
+
 Cursor는 Settings → Models에서 커스텀 OpenAI 호환 프로바이더를 지원한다. Token Station의 엔드포인트를 지정하면 OpenAI의 GPT-6 Astra와 GPT-5.6 계열(Sol, Terra, Luna)을 선택 가능한 모델로 추가할 수 있고, 모두 자신의 Token Station 키로 과금된다.
 
 OpenAI가 Cursor 내장 지원을 단계적으로 종료하고 있어서, 앞으로 Cursor에서 OpenAI 모델을 쓰려면 BYOK를 써야 한다. 먼저 알아둘 점이 하나 있다. Cursor의 내장 통합은 OpenAI의 `/responses` API를 호출하는 반면 BYOK 경로는 `/chat/completions`를 호출하는데, Cursor는 `/chat/completions` 응답에서 도구 호출을 제대로 파싱하지 못한다. 이는 OpenAI나 Token Station이 아니라 Cursor 쪽 버그이며, 1단계에서 연결하는 WASM 어댑터는 OpenAI의 응답을 Cursor가 받아들이는 형식으로 변환해 주는 임시 대응책이다.

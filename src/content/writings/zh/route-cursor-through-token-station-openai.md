@@ -10,6 +10,12 @@ cover: "blog/route-cursor-through-token-station-openai-cover.png"
 draft: false
 ---
 
+<div class="note">
+
+本教程中的步骤和说明，基于 [models.bytefuture.ai](https://models.bytefuture.ai/) 上的公共 Token Station。如果你想搭建自己的私有 Token Station 实例，通过共享订阅、折扣 API 密钥和智能路由来节省成本，欢迎[联系我们](/enterprise.html)。
+
+</div>
+
 Cursor 在 Settings → Models 里支持自定义 OpenAI 兼容 provider。把它指向 Token Station 的端点，就能把 OpenAI 的 GPT-6 Astra 和 GPT-5.6 系列（Sol、Terra、Luna）添加为可选模型，全部通过你自己的 Token Station key 计费。
 
 OpenAI 正在逐步取消它在 Cursor 里的内置支持，所以往后要在 Cursor 里用 OpenAI 的模型，就得走 BYOK。有一点需要先说清楚：Cursor 的内置集成调用的是 OpenAI 的 `/responses` API，而 BYOK 这条路径调用的是 `/chat/completions`，但 Cursor 并没有正确解析 `/chat/completions` 响应里的工具调用。这是 Cursor 的 bug，不是 OpenAI 或 Token Station 的问题；你在步骤 1 里接入的那个 WASM adapter 是一个过渡方案，把 OpenAI 的响应转换成 Cursor 能接受的格式。

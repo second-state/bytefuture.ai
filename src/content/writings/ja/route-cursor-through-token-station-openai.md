@@ -10,6 +10,12 @@ cover: "blog/route-cursor-through-token-station-openai-cover.png"
 draft: false
 ---
 
+<div class="note">
+
+このチュートリアルの手順と説明は、[models.bytefuture.ai](https://models.bytefuture.ai/) の公開 Token Station を前提にしている。プール型のサブスクリプション、割引 API キー、スマートルーティングでコストを抑えるために、自社専用の Token Station インスタンスを構築したい場合は、[お問い合わせください](/enterprise.html)。
+
+</div>
+
 Cursor は Settings → Models からカスタム OpenAI 互換プロバイダーに対応している。Token Station のエンドポイントを指定すれば、OpenAI の GPT-6 Astra と GPT-5.6 ファミリー（Sol、Terra、Luna）を選択可能なモデルとして追加でき、すべて自分の Token Station キーで課金される。
 
 OpenAI は Cursor での組み込みサポートを終了しつつあるため、今後 Cursor で OpenAI のモデルを使うには BYOK が前提になる。先に一つ知っておくべきことがある。Cursor の組み込み統合は OpenAI の `/responses` API を呼ぶのに対し、BYOK の経路は `/chat/completions` を呼ぶが、Cursor は `/chat/completions` のレスポンスからツール呼び出しを正しく解析できていない。これは OpenAI や Token Station ではなく Cursor 側の不具合であり、ステップ 1 で接続する WASM アダプターは、OpenAI のレスポンスを Cursor が受け取れる形式に変換する暫定的な回避策だ。

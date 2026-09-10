@@ -10,6 +10,12 @@ cover: "blog/route-cursor-through-token-station-openai-cover.png"
 draft: false
 ---
 
+<div class="note">
+
+The steps in this tutorial are based on the public Token Station at [models.bytefuture.ai](https://models.bytefuture.ai/). If you would like to set up your own private Token Station instance and save costs through pooled subscriptions, discounted API keys, and smart routing, [get in touch](/enterprise.html).
+
+</div>
+
 Cursor supports custom OpenAI-compatible providers through Settings → Models. Point it at Token Station's endpoint and you can add OpenAI's GPT-6 Astra and the GPT-5.6 family (Sol, Terra, Luna) as selectable models, each billed through your own Token Station key.
 
 OpenAI is sunsetting its built-in support in Cursor, so BYOK is how you run its models there going forward. One thing to know up front: Cursor's built-in integration calls OpenAI's `/responses` API while its BYOK path calls `/chat/completions`, and Cursor does not parse the tool calls out of a `/chat/completions` response correctly. That is a Cursor bug, not an OpenAI or Token Station one, and the WASM adapter you attach in Step 1 is a stop-gap that converts OpenAI's responses into a format Cursor accepts.
