@@ -10,6 +10,7 @@ const copyNames = [
   'index-ja.html',
   'index-ko.html',
   'enterprise.html',
+  'enterprise-thanks.html',
   'marketing',
   'CNAME',
   '.nojekyll',

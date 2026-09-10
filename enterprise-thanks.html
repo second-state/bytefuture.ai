@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>You're on the pilot list | ByteFuture</title>
+  <meta name="description" content="Your Token Station Enterprise pilot request is in. A few more answers let us size the deployment before we reply." />
+  <!-- Post-conversion page: keep it out of search results and the sitemap. -->
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://bytefuture.ai/enterprise-thanks.html" />
+
+<!-- GA4 Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XKZPCX8G2J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XKZPCX8G2J');
+</script>
+<!-- End GA4 Tracking -->
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1263865485900196');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel -->
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='2.5' y='2.5' width='27' height='27' rx='8' fill='%232563EB' fill-opacity='0.10' stroke='%232563EB' stroke-width='1.6'/><circle cx='12' cy='16' r='3.4' fill='%232563EB'/><circle cx='21.5' cy='16' r='3.4' fill='none' stroke='%230D9488' stroke-width='1.8'/><path d='M15.4 16h2.7' stroke='%230D9488' stroke-width='1.8' stroke-linecap='round'/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #faf9f5;
+      color: #18181b;
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+    }
+    a { transition: color 0.2s; }
+
+    nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #e4e4e7; }
+
+    .btn-primary {
+      background: #2563EB; color: #faf9f5; border-radius: 50px;
+      padding: 14px 28px; font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 15px; border: none; cursor: pointer;
+      transition: all 0.2s ease; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,0.16); }
+    .btn-primary:disabled { opacity: 0.6; cursor: default; transform: none; box-shadow: none; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase; color: #2563EB;
+      margin: 0 0 14px;
+    }
+
+    /* ─── LAYOUT ─── */
+    .shell { position: relative; padding: 64px 24px 88px; overflow: hidden; }
+    .shell-bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(37,99,235,0.09) 0%, transparent 62%),
+        radial-gradient(ellipse 45% 45% at 85% 80%, rgba(13,148,136,0.08) 0%, transparent 55%);
+    }
+    .inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+
+    .confirm {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: #ffffff; border: 1px solid #e4e4e7; border-left: 4px solid #0D9488;
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 34px;
+    }
+    .confirm .tick {
+      color: #0D9488; font-size: 20px; font-weight: 700; line-height: 1.2; flex: none;
+    }
+    .confirm h1 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 21px;
+      letter-spacing: -0.02em; margin: 0 0 6px; line-height: 1.25;
+    }
+    .confirm p { margin: 0; color: #52525b; font-size: 15px; line-height: 1.55; }
+    .confirm .addr { font-weight: 600; color: #18181b; overflow-wrap: anywhere; }
+
+    h2.ask {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(24px, 4vw, 32px); letter-spacing: -0.03em; line-height: 1.15;
+      margin: 0 0 12px; text-wrap: balance;
+    }
+    .ask-lead { color: #52525b; font-size: 16px; line-height: 1.6; margin: 0 0 28px; }
+
+    .field { margin-bottom: 20px; }
+    .field > label, .field > .legend {
+      display: block; font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+      font-size: 14px; margin-bottom: 8px;
+    }
+    .field .hint { display: block; font-family: 'DM Sans', sans-serif; font-weight: 400; color: #71717a; font-size: 13px; margin-top: 3px; }
+    .field input[type="email"],
+    .field input[type="text"],
+    .field input[type="number"],
+    .field select,
+    .field textarea {
+      width: 100%; background: #ffffff; border: 1px solid #e4e4e7; border-radius: 10px;
+      padding: 12px 14px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: #18181b;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 38px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%2371717a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+    }
+    .field select:invalid { color: #a1a1aa; }
+    .field textarea { min-height: 84px; resize: vertical; }
+    .field :focus-visible {
+      outline: none; border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: #a1a1aa; }
+
+    fieldset { border: none; margin: 0; padding: 0; }
+    .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+    .checks label {
+      display: flex; align-items: center; gap: 9px; font-size: 14.5px; cursor: pointer;
+      color: #3f3f46;
+    }
+    .checks input { width: 16px; height: 16px; accent-color: #2563EB; flex: none; cursor: pointer; }
+
+    .actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 28px; }
+    .skip { color: #71717a; font-size: 14px; text-decoration: none; }
+    .skip:hover { color: #18181b; text-decoration: underline; }
+
+    .form-message { display: none; margin: 16px 0 0; font-size: 14.5px; font-weight: 500; }
+
+    .done { display: none; }
+    .done h2 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px;
+      letter-spacing: -0.02em; margin: 0 0 10px;
+    }
+    .done p { color: #52525b; font-size: 15.5px; line-height: 1.6; margin: 0 0 24px; }
+    .done .links { display: flex; gap: 20px; flex-wrap: wrap; font-size: 14.5px; }
+
+    @media (max-width: 640px) {
+      .shell { padding: 40px 18px 64px; }
+      .checks { grid-template-columns: 1fr; }
+      .actions .btn-primary { width: 100%; justify-content: center; }
+      nav a.nav-link { display: none; }
+      footer > div { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div style="background:rgba(250,249,245,0.88); backdrop-filter:blur(12px);">
+    <div style="max-width:1160px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-label="ByteFuture logo" role="img">
+          <rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.6"/>
+          <circle cx="12" cy="16" r="3.4" fill="#2563EB"/>
+          <circle cx="21.5" cy="16" r="3.4" fill="none" stroke="#0D9488" stroke-width="1.8"/>
+          <path d="M15.4 16h2.7" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:-0.01em;">ByteFuture</span>
+      </a>
+      <a class="nav-link" href="/enterprise.html" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">← Back to Token Station Enterprise</a>
+    </div>
+  </div>
+</nav>
+
+<div class="shell">
+  <div class="shell-bg"></div>
+  <div class="inner">
+
+    <div class="confirm">
+      <span class="tick" aria-hidden="true">✓</span>
+      <div>
+        <h1>You're on the pilot list.</h1>
+        <p>We'll reply to <span class="addr" id="lead-email">your work email</span> within 48 hours with deployment steps and a time to talk.</p>
+      </div>
+    </div>
+
+    <div id="step2">
+      <p class="section-label">Step 2 of 2 · optional</p>
+      <h2 class="ask">Twenty seconds more and we can size your pilot before we reply.</h2>
+      <p class="ask-lead">Every answer here is one we would otherwise have to ask over email first. Skip any of them.</p>
+
+      <form id="qualify-form" novalidate>
+        <div class="field" id="email-field" hidden>
+          <label for="q-email">Work email</label>
+          <input type="email" id="q-email" name="email" placeholder="you@company.com" />
+        </div>
+
+        <div class="field">
+          <label for="q-role">Your role</label>
+          <select id="q-role" name="role">
+            <option value="" selected>Select one</option>
+            <option value="it-infrastructure">IT / infrastructure</option>
+            <option value="engineering">Engineering</option>
+            <option value="finance-finops">Finance / FinOps</option>
+            <option value="security">Security</option>
+            <option value="founder-exec">Founder / exec</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="q-plan">Which plan fits you</label>
+          <select id="q-plan" name="plan">
+            <option value="" selected>Select one</option>
+            <option value="on-prem">On-Prem, we bring our own vendor keys</option>
+            <option value="cloud">Cloud, use your pooled keys</option>
+            <option value="undecided">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <fieldset>
+            <span class="legend">Which AI vendors does your team use today?
+              <span class="hint">Tells us how much of the migration is already done.</span>
+            </span>
+            <div class="checks">
+              <label><input type="checkbox" name="vendors" value="OpenAI" /> OpenAI</label>
+              <label><input type="checkbox" name="vendors" value="Anthropic" /> Anthropic</label>
+              <label><input type="checkbox" name="vendors" value="Google" /> Google</label>
+              <label><input type="checkbox" name="vendors" value="Azure OpenAI" /> Azure OpenAI</label>
+              <label><input type="checkbox" name="vendors" value="Local / open models" /> Local / open models</label>
+              <label><input type="checkbox" name="vendors" value="Not sure" /> Not sure</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label for="q-seats">How many people would use it</label>
+          <input type="number" id="q-seats" name="seats" min="1" max="100000" inputmode="numeric" placeholder="e.g. 60" />
+        </div>
+
+        <div class="field">
+          <label for="q-company">Company</label>
+          <input type="text" id="q-company" name="company" placeholder="Optional, but it helps us prepare" autocomplete="organization" />
+        </div>
+
+        <div class="field">
+          <label for="q-notes">Anything specific you want the pilot to prove?</label>
+          <textarea id="q-notes" name="notes" placeholder="Optional"></textarea>
+        </div>
+
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
+
+        <div class="actions">
+          <button type="submit" class="btn-primary">Send this to the pilot team</button>
+          <a href="#" class="skip" id="skip-link">Skip, we'll talk over email</a>
+        </div>
+        <p class="form-message" id="q-msg"></p>
+      </form>
+    </div>
+
+    <div id="done" class="done">
+      <h2>Thanks, that's everything.</h2>
+      <p>Your pilot notes are with the team. Expect a reply within 48 hours.</p>
+      <div class="links">
+        <a href="/enterprise.html" style="color:#2563EB; text-decoration:none;">← Back to the overview</a>
+        <a href="/blog/" style="color:#2563EB; text-decoration:none;">Read the ByteFuture Writings</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer style="padding:36px 24px; border-top:1px solid #e4e4e7;">
+  <div style="max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-label="ByteFuture logo" role="img" style="opacity:0.85;">
+        <rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.6"/>
+        <circle cx="12" cy="16" r="3.4" fill="#2563EB"/>
+        <circle cx="21.5" cy="16" r="3.4" fill="none" stroke="#0D9488" stroke-width="1.8"/>
+        <path d="M15.4 16h2.7" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:13px; color:#71717a;">ByteFuture</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://models.bytefuture.ai/intro.html" style="color:#71717a; font-size:13px; text-decoration:none;">Token Station</a>
+      <a href="https://github.com/beclab/olares" style="color:#71717a; font-size:13px; text-decoration:none;">Olares</a>
+      <a href="/blog/" style="color:#71717a; font-size:13px; text-decoration:none;">Writings</a>
+      <a href="mailto:team@bytefuture.ai" style="color:#71717a; font-size:13px; text-decoration:none;">Contact</a>
+      <span style="color:#a1a1aa; font-size:13px;">© 2026 ByteFuture</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JS ─── -->
+<script>
+window.dataLayer = window.dataLayer || [];
+
+// Same Apps Script web app the landing page posts to (scripts/leads-apps-script.gs).
+const LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwOYsANJ2jIiOJ5mr_7Taa1N98d1BkXhc1HkI9kK65sUrP7x1k2iLhczdIdN-rnEiKyCw/exec';
+const CONTACT_EMAIL = 'team@bytefuture.ai';
+
+// What the landing page handed over: the address it already stored, plus the
+// visitor's campaign context, so this step neither asks twice nor loses
+// attribution. Absent when someone opens this URL directly.
+var lead = {};
+try {
+  lead = JSON.parse(sessionStorage.getItem('bf_lead') || '{}') || {};
+} catch (err) {
+  lead = {};
+}
+
+(function prefill() {
+  if (lead.email) {
+    document.getElementById('lead-email').textContent = lead.email;
+  } else {
+    // No handoff: ask for the address here, otherwise there is no row to fill in.
+    var field = document.getElementById('email-field');
+    field.hidden = false;
+    document.getElementById('q-email').required = true;
+    document.getElementById('lead-email').textContent = 'your work email';
+  }
+  if (lead.plan) {
+    var planEl = document.getElementById('q-plan');
+    if ([].some.call(planEl.options, function (o) { return o.value === lead.plan; })) {
+      planEl.value = lead.plan;
+    }
+  }
+})();
+
+function showMessage(text, ok) {
+  var el = document.getElementById('q-msg');
+  el.textContent = text;
+  el.style.color = ok ? '#0D9488' : '#b91c1c';
+  el.style.display = 'block';
+}
+
+function finish() {
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('done').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+document.getElementById('skip-link').addEventListener('click', function (e) {
+  e.preventDefault();
+  gtag('event', 'qualify_skip');
+  finish();
+});
+
+document.getElementById('qualify-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('button[type="submit"]');
+  var email = (lead.email || form.email.value || '').trim();
+
+  if (!email) {
+    showMessage('We need your work email to attach these answers to your pilot request.', false);
+    form.email.focus();
+    return;
+  }
+
+  var vendors = [].map.call(
+    form.querySelectorAll('input[name="vendors"]:checked'),
+    function (el) { return el.value; }
+  );
+
+  var payload = {
+    mode: 'update',
+    email: email,
+    form: 'thanks',
+    role: form.role.value,
+    plan: form.plan.value || lead.plan || '',
+    vendors: vendors,
+    seats: form.seats.value,
+    company: form.company.value.trim(),
+    notes: form.notes.value.trim(),
+    company_size: lead.company_size || '',
+    utm_source: lead.utm_source || '',
+    utm_medium: lead.utm_medium || '',
+    utm_campaign: lead.utm_campaign || '',
+    utm_content: lead.utm_content || '',
+    li_fat_id: lead.li_fat_id || '',
+    page: location.pathname,
+    referrer: lead.referrer || document.referrer || '',
+    user_agent: navigator.userAgent || '',
+    _gotcha: form._gotcha.value
+  };
+
+  var origText = btn.textContent.trim();
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    var res = await fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+    var data = await res.json().catch(function () { return null; });
+    if (!res.ok || !data || data.ok !== true) throw new Error('rejected');
+    gtag('event', 'qualify_submit');
+    finish();
+  } catch (err) {
+    // The email itself is already stored, so this is not a lost lead: say so,
+    // and offer the mail route for anyone who wants the details on record now.
+    gtag('event', 'qualify_failed');
+    showMessage('That did not save. Your pilot request is safe, so we will just ask over email, or send the details to ' + CONTACT_EMAIL + '.', false);
+    btn.disabled = false;
+    btn.textContent = origText;
+  }
+});
+</script>
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+_linkedin_partner_id = "10014852";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=10014852&fmt=gif" />
+</noscript>
+<!-- End LinkedIn Insight Tag -->
+
+</body>
+</html>

@@ -30,9 +30,11 @@
  *  - The page posts as text/plain on purpose. It is a CORS-safelisted content
  *    type, so the browser sends no preflight, which Apps Script cannot answer.
  *    The body is still JSON; doPost parses it out of e.postData.contents.
- *  - COLUMNS already carries the qualification fields (company size, role,
- *    vendors, seats). They stay blank until the second-step form is added, and
- *    adding it then needs no change here.
+ *  - Two posts make up one lead: the email form appends a row, then the
+ *    second-step form on /enterprise-thanks.html posts mode:'update', which
+ *    fills the blank qualification cells on that same row. Running an older
+ *    copy of this file is harmless, just untidy: it ignores mode and the
+ *    second step lands as its own row.
  *  - Every row is appended, including repeat submissions from the same address.
  *    A resubmit is signal, not noise; dedupe when you read the sheet.
  *  - The endpoint URL is public in the page source, so treat this as an
@@ -69,6 +71,7 @@ const COLUMNS = [
   'page',
   'referrer',
   'user_agent',
+  'updated_at',
 ];
 
 function doPost(e) {
@@ -118,12 +121,16 @@ function doPost(e) {
       page: str(body.page),
       referrer: str(body.referrer),
       user_agent: str(body.user_agent),
+      updated_at: '',
     };
 
-    sheet.appendRow(COLUMNS.map(function (key) { return record[key]; }));
-    notify(record);
+    // The landing page posts twice per lead: the email form appends a row, then
+    // the second-step form on the thank-you page sends mode:'update' to fill in
+    // the qualification fields on that same row.
+    const result = body.mode === 'update' ? upsert(sheet, record) : append(sheet, record);
+    notify(record, result);
 
-    return json({ ok: true });
+    return json({ ok: true, updated: result.updated });
   } catch (err) {
     // Log to the Apps Script execution log; never leak internals to the page.
     console.error(err);
@@ -131,6 +138,42 @@ function doPost(e) {
   } finally {
     try { lock.releaseLock(); } catch (err) {}
   }
+}
+
+function append(sheet, record) {
+  sheet.appendRow(COLUMNS.map(function (key) { return record[key]; }));
+  return { row: sheet.getLastRow(), updated: false };
+}
+
+/**
+ * Fill blanks on this address's most recent row instead of adding a second one,
+ * so one lead stays one row. Falls back to appending when the address has no
+ * row yet, which is what happens if someone opens the thank-you page directly.
+ * Only blank cells are written, so a second step can never erase step one.
+ */
+function upsert(sheet, record) {
+  const lastRow = sheet.getLastRow();
+  const emailCol = COLUMNS.indexOf('email') + 1;
+  if (lastRow > 1) {
+    const emails = sheet.getRange(2, emailCol, lastRow - 1, 1).getValues();
+    const target = record.email.toLowerCase();
+    for (let i = emails.length - 1; i >= 0; i--) {
+      if (String(emails[i][0]).trim().toLowerCase() !== target) continue;
+      const rowIndex = i + 2;
+      const range = sheet.getRange(rowIndex, 1, 1, COLUMNS.length);
+      const existing = range.getValues()[0];
+      const merged = COLUMNS.map(function (key, c) {
+        if (key === 'timestamp') return existing[c];
+        if (key === 'updated_at') return new Date();
+        const incoming = record[key];
+        if (incoming === '' || incoming === null || incoming === undefined) return existing[c];
+        return incoming;
+      });
+      range.setValues([merged]);
+      return { row: rowIndex, updated: true };
+    }
+  }
+  return append(sheet, record);
 }
 
 /** Liveness check, so the deployment can be verified without writing a row. */
@@ -148,11 +191,22 @@ function getSheet() {
     sheet.appendRow(COLUMNS);
     sheet.setFrozenRows(1);
     sheet.getRange(1, 1, 1, COLUMNS.length).setFontWeight('bold');
+    return sheet;
+  }
+  // A sheet created by an older version of this script is missing any columns
+  // added since. Extend the header rather than rewrite it, so existing data
+  // stays put.
+  const width = sheet.getLastColumn();
+  if (width < COLUMNS.length) {
+    const missing = COLUMNS.slice(width);
+    sheet.getRange(1, width + 1, 1, missing.length)
+      .setValues([missing])
+      .setFontWeight('bold');
   }
   return sheet;
 }
 
-function notify(record) {
+function notify(record, result) {
   if (!NOTIFY_EMAIL) return;
   try {
     const lines = COLUMNS.map(function (key) {
@@ -160,8 +214,10 @@ function notify(record) {
     });
     MailApp.sendEmail({
       to: NOTIFY_EMAIL,
-      subject: 'Pilot signup: ' + record.email,
-      body: lines.join('\n') + '\n\nSheet: ' + SpreadsheetApp.getActive().getUrl(),
+      subject: (result && result.updated ? 'Pilot signup details: ' : 'Pilot signup: ') + record.email,
+      body: lines.join('\n')
+        + '\n\nRow ' + (result ? result.row : '?')
+        + ' in ' + SpreadsheetApp.getActive().getUrl(),
     });
   } catch (err) {
     // A blocked or over-quota notification must never fail the signup itself.

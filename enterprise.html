@@ -166,18 +166,26 @@ fbq('track', 'PageView');
     .hero-quote strong { font-weight: 600; }
     .quote-source { display: block; margin-top: 8px; color: #71717a; font-size: 13px; font-weight: 500; }
 
-    /* Email capture */
-    .email-form { display: flex; gap: 10px; flex-wrap: wrap; }
-    .email-form input[type="email"] {
-      flex: 1 1 220px; min-width: 0;
+    /* Email capture: address + company size, then the button across both */
+    .email-form { display: grid; grid-template-columns: 1fr 172px; gap: 10px; }
+    .email-form input[type="email"], .email-form select {
+      min-width: 0; width: 100%;
       background: #ffffff; border: 1px solid #e4e4e7; border-radius: 50px;
       padding: 14px 20px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: #18181b;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .email-form input[type="email"]:focus {
+    .email-form select {
+      appearance: none; -webkit-appearance: none; cursor: pointer;
+      padding-right: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%2371717a' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 18px center;
+    }
+    .email-form select:invalid { color: #a1a1aa; }
+    .email-form input[type="email"]:focus, .email-form select:focus {
       outline: none; border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
     }
     .email-form input[type="email"]::placeholder { color: #a1a1aa; }
+    .email-form button { grid-column: 1 / -1; }
     .form-message {
       display: none; margin: 12px 0 0; font-size: 14px; color: #0D9488; font-weight: 500;
     }
@@ -379,9 +387,7 @@ fbq('track', 'PageView');
       .faq-answer-inner { padding: 0 18px 20px; }
       .hero-stat-cards { grid-template-columns: 1fr; }
       footer > div { flex-direction: column; gap: 12px; text-align: center; }
-      .email-form { flex-direction: column; }
-      .email-form input[type="email"] { flex: 0 0 auto; width: 100%; }
-      .email-form button { width: 100%; }
+      .email-form { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -435,6 +441,14 @@ fbq('track', 'PageView');
         </blockquote>
         <form class="email-form" id="hero-form" onsubmit="return submitEmail(event, 'hero')">
           <input type="email" name="email" placeholder="Enter your work email" required />
+          <select name="company_size" aria-label="Company size" required>
+            <option value="" selected disabled>Company size</option>
+            <option value="1-50">1-50 people</option>
+            <option value="51-200">51-200</option>
+            <option value="201-500">201-500</option>
+            <option value="501-1000">501-1000</option>
+            <option value="1000+">1000+</option>
+          </select>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">
             Start your 30-day free pilot →
@@ -732,6 +746,14 @@ fbq('track', 'PageView');
         </ul>
         <form class="email-form pricing-cta-form" id="pricing-form-a" onsubmit="return submitEmail(event, 'pricing', 'on-prem')">
           <input type="email" name="email" placeholder="Enter your work email" required />
+          <select name="company_size" aria-label="Company size" required>
+            <option value="" selected disabled>Company size</option>
+            <option value="1-50">1-50 people</option>
+            <option value="51-200">51-200</option>
+            <option value="201-500">201-500</option>
+            <option value="501-1000">501-1000</option>
+            <option value="1000+">1000+</option>
+          </select>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your On-Prem pilot →</button>
         </form>
@@ -759,6 +781,14 @@ fbq('track', 'PageView');
         </ul>
         <form class="email-form pricing-cta-form" id="pricing-form-b" onsubmit="return submitEmail(event, 'pricing', 'cloud')">
           <input type="email" name="email" placeholder="Enter your work email" required />
+          <select name="company_size" aria-label="Company size" required>
+            <option value="" selected disabled>Company size</option>
+            <option value="1-50">1-50 people</option>
+            <option value="51-200">51-200</option>
+            <option value="201-500">201-500</option>
+            <option value="501-1000">501-1000</option>
+            <option value="1000+">1000+</option>
+          </select>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your Cloud pilot →</button>
         </form>
@@ -849,6 +879,14 @@ fbq('track', 'PageView');
       </p>
       <form class="email-form" id="final-form" onsubmit="return submitEmail(event, 'final')">
         <input type="email" name="email" placeholder="Enter your work email" required />
+          <select name="company_size" aria-label="Company size" required>
+            <option value="" selected disabled>Company size</option>
+            <option value="1-50">1-50 people</option>
+            <option value="51-200">51-200</option>
+            <option value="201-500">201-500</option>
+            <option value="501-1000">501-1000</option>
+            <option value="1000+">1000+</option>
+          </select>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
         <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your 30-day free pilot →</button>
       </form>
@@ -967,6 +1005,7 @@ async function submitEmail(e, formId, plan) {
     email: email,
     plan: plan || '',
     form: formId,
+    company_size: form.company_size ? form.company_size.value : '',
     _gotcha: form._gotcha ? form._gotcha.value : ''
   }, getContext());
 
@@ -985,8 +1024,15 @@ async function submitEmail(e, formId, plan) {
     var _evId = Math.random().toString(36).slice(2) + Date.now().toString(36);
     fbq('init', '1263865485900196', { em: email });
     fbq('track', 'Lead', {}, {eventID: _evId});
-    showMessage(msgEl, '\u2713 You\'re on the pilot list! We\'ll be in touch within 48 hours.', true);
-    form.reset();
+
+    // The thank-you page confirms the signup, asks the remaining questions, and
+    // is the URL a LinkedIn conversion rule can match. Hand it what we know so
+    // it does not ask twice; sessionStorage keeps the address out of the URL.
+    try {
+      sessionStorage.setItem('bf_lead', JSON.stringify(payload));
+    } catch (err) {}
+    showMessage(msgEl, '\u2713 Got it. One moment...', true);
+    window.location.href = '/enterprise-thanks.html';
   } catch (err) {
     gtag('event', 'email_submit_mail');
     showMessage(msgEl, 'That did not go through. Opening your mail app so you can send it to us directly.', false);
