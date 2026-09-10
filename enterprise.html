@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="idea-slug" content="token-station-enterprise-ai-governance" />
+
+  <title>Token Station Enterprise: One AI Account for Your Whole Team | ByteFuture</title>
+  <meta name="description" content="Token Station pools your team's AI access into one self-hosted gateway. Stop paying for 20 individual subscriptions. Start seeing exactly who used what, and when." />
+  <link rel="canonical" href="https://bytefuture.ai/enterprise.html" />
+
+  <!-- Open Graph / social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bytefuture.ai/enterprise.html" />
+  <meta property="og:title" content="One AI Account for Your Whole Team. Token Reports for Every Manager." />
+  <meta property="og:description" content="Token Station pools your team's AI access into one self-hosted gateway. One bill instead of 20 subscriptions, per-user token reports, and up to 73% lower token costs." />
+  <meta property="og:image" content="https://bytefuture.ai/marketing/hero.jpg" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Enterprise AI token usage analytics dashboard" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="One AI Account for Your Whole Team. Token Reports for Every Manager." />
+  <meta name="twitter:description" content="Pool your team's AI access into one self-hosted gateway. One bill, per-user token reports, up to 73% lower token costs." />
+  <meta name="twitter:image" content="https://bytefuture.ai/marketing/hero.jpg" />
+
+<!-- GA4 Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XKZPCX8G2J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XKZPCX8G2J');
+</script>
+<!-- End GA4 Tracking -->
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1263865485900196');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel -->
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='2.5' y='2.5' width='27' height='27' rx='8' fill='%232563EB' fill-opacity='0.10' stroke='%232563EB' stroke-width='1.6'/><circle cx='12' cy='16' r='3.4' fill='%232563EB'/><circle cx='21.5' cy='16' r='3.4' fill='none' stroke='%230D9488' stroke-width='1.8'/><path d='M15.4 16h2.7' stroke='%230D9488' stroke-width='1.8' stroke-linecap='round'/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #faf9f5;
+      color: #18181b;
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+    }
+    a { transition: color 0.2s; }
+    img { max-width: 100%; height: auto; }
+
+    /* Animate on scroll */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    .anim-delay-1 { transition-delay: 0.06s; }
+    .anim-delay-2 { transition-delay: 0.12s; }
+    .anim-delay-3 { transition-delay: 0.18s; }
+    .anim-delay-4 { transition-delay: 0.24s; }
+    .anim-delay-5 { transition-delay: 0.30s; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #2563EB 0%, #0D9488 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: #2563EB; color: #faf9f5; border-radius: 50px;
+      padding: 14px 28px; font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 15px; border: none; cursor: pointer;
+      transition: all 0.2s ease; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,99,235,0.16); }
+    .btn-primary:disabled { opacity: 0.6; cursor: default; transform: none; box-shadow: none; }
+
+    /* Card */
+    .card {
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 14px;
+      padding: 32px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { border-color: #2563EB; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(24,24,27,0.06); }
+
+    /* Nav */
+    nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #e4e4e7; }
+
+    /* Section label */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase; color: #2563EB;
+      margin: 0 0 14px;
+    }
+    .section-h2 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.03em;
+      line-height: 1.1; margin: 0;
+    }
+    .section-lead { color: #52525b; font-size: 17px; line-height: 1.6; margin: 0; max-width: 620px; }
+    section { padding: 88px 24px; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 > *, .grid-3 > *, .hero-grid > *, .feature-row > * { min-width: 0; }
+
+    /* ─── HERO ─── */
+    .hero { position: relative; padding: 72px 24px 88px; overflow: hidden; }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 0%, rgba(37,99,235,0.09) 0%, transparent 62%),
+        radial-gradient(ellipse 45% 45% at 88% 78%, rgba(13,148,136,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 40% at 5% 60%, rgba(124,58,237,0.05) 0%, transparent 55%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 1160px; margin: 0 auto; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 56px; align-items: center; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 50px;
+      padding: 7px 16px 7px 13px; margin-bottom: 22px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.13em; text-transform: uppercase; color: #52525b;
+    }
+    .pulse-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #0D9488;
+      box-shadow: 0 0 0 0 rgba(13,148,136,0.5); animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(13,148,136,0.45); }
+      70% { box-shadow: 0 0 0 8px rgba(13,148,136,0); }
+      100% { box-shadow: 0 0 0 0 rgba(13,148,136,0); }
+    }
+    .hero-h1 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(34px, 4.6vw, 58px); letter-spacing: -0.03em;
+      line-height: 1.06; margin: 0 0 22px;
+    }
+    .hero-sub { color: #52525b; font-size: 18px; line-height: 1.6; margin: 0 0 24px; max-width: 560px; }
+    .hero-quote {
+      border-left: 3px solid #0D9488; padding: 2px 0 2px 18px; margin: 0 0 28px;
+      color: #18181b; font-size: 15px; line-height: 1.55;
+    }
+    .hero-quote strong { font-weight: 600; }
+    .quote-source { display: block; margin-top: 8px; color: #71717a; font-size: 13px; font-weight: 500; }
+
+    /* Email capture */
+    .email-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    .email-form input[type="email"] {
+      flex: 1 1 220px; min-width: 0;
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 50px;
+      padding: 14px 20px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: #18181b;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .email-form input[type="email"]:focus {
+      outline: none; border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+    }
+    .email-form input[type="email"]::placeholder { color: #a1a1aa; }
+    .form-message {
+      display: none; margin: 12px 0 0; font-size: 14px; color: #0D9488; font-weight: 500;
+    }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px;
+      color: #52525b; font-size: 14px;
+    }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 7px; }
+    .check { color: #0D9488; font-weight: 700; }
+
+    /* Hero visual */
+    .hero-visual { position: relative; }
+    .hero-img-wrap {
+      border-radius: 16px; overflow: hidden; border: 1px solid #e4e4e7;
+      box-shadow: 0 18px 50px rgba(24,24,27,0.10);
+    }
+    .hero-img-wrap img { display: block; width: 100%; object-fit: cover; max-height: 440px; }
+    .hero-stat-card {
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px;
+      padding: 14px 18px; box-shadow: 0 10px 30px rgba(24,24,27,0.08);
+      position: absolute; max-width: 200px;
+    }
+    .card-top-right { top: -22px; right: -18px; }
+    .card-bottom-left { bottom: -26px; left: -18px; }
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px;
+      letter-spacing: -0.02em; line-height: 1.1;
+    }
+    .stat-label { color: #71717a; font-size: 12px; line-height: 1.35; margin-top: 4px; }
+
+    /* ─── PAIN ─── */
+    .pain-card { position: relative; }
+    .pain-quote-mark {
+      font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700;
+      line-height: 0.7; color: #2563EB; opacity: 0.28; margin-bottom: 10px;
+    }
+    .pain-quote-text { font-size: 17px; line-height: 1.5; font-weight: 500; margin: 0 0 14px; }
+    .pain-source { color: #71717a; font-size: 13px; margin: 0; font-family: 'JetBrains Mono', monospace; }
+
+    /* ─── STEPS ─── */
+    .step-number {
+      font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500;
+      color: #2563EB; letter-spacing: 0.1em; margin-bottom: 14px;
+    }
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px;
+      letter-spacing: -0.01em; margin-bottom: 10px;
+    }
+    .step-desc { color: #52525b; font-size: 15px; line-height: 1.6; margin: 0; }
+
+    /* ─── FEATURES ─── */
+    .feature-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .feature-row.reverse .feature-visual { order: -1; }
+    .feature-h3 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(23px, 2.6vw, 31px);
+      letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 14px;
+    }
+    .feature-desc { color: #52525b; font-size: 16px; line-height: 1.65; margin: 0 0 20px; }
+    .feature-list { list-style: none; padding: 0; margin: 0 0 24px; }
+    .feature-list li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 15px; line-height: 1.5; color: #18181b; margin-bottom: 11px;
+    }
+    .check-icon { color: #0D9488; font-weight: 700; flex: none; }
+    .stat-badges { display: flex; gap: 14px; flex-wrap: wrap; }
+    .stat-badge {
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px;
+      padding: 14px 18px; min-width: 148px;
+    }
+    .badge-num {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+    .badge-label { color: #71717a; font-size: 12px; line-height: 1.35; margin-top: 3px; }
+    .feature-img-card {
+      border-radius: 16px; overflow: hidden; border: 1px solid #e4e4e7;
+      box-shadow: 0 14px 40px rgba(24,24,27,0.08);
+    }
+    .feature-img-card img { display: block; width: 100%; object-fit: cover; }
+
+    /* ─── RESEARCH / METRICS ─── */
+    .metrics-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      margin: 48px 0 40px; padding: 32px 0; border-top: 1px solid #e4e4e7; border-bottom: 1px solid #e4e4e7;
+    }
+    .metric-number {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .metric-label { color: #71717a; font-size: 13px; line-height: 1.45; margin-top: 10px; }
+    .research-card {
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px; padding: 24px;
+    }
+    .research-text { font-size: 15px; line-height: 1.6; color: #18181b; margin: 0 0 12px; }
+    .research-source {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #0D9488; margin: 0;
+    }
+
+    /* ─── PRICING ─── */
+    .pricing-section { background: #ffffff; border-top: 1px solid #e4e4e7; border-bottom: 1px solid #e4e4e7; }
+    .pricing-card {
+      background: #faf9f5; border: 1px solid #e4e4e7; border-radius: 16px; padding: 32px;
+      display: flex; flex-direction: column; position: relative; overflow: hidden;
+    }
+    .pricing-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #2563EB, #0D9488);
+    }
+    .pricing-badge {
+      display: inline-block; align-self: flex-start;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #2563EB;
+      background: rgba(37,99,235,0.08); border-radius: 50px; padding: 5px 12px; margin-bottom: 16px;
+    }
+    .pricing-title {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px;
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .pricing-price { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .pricing-price-amount {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 46px;
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .pricing-price-unit { color: #71717a; font-size: 14px; }
+    .pricing-billing-note { color: #52525b; font-size: 14px; line-height: 1.5; margin: 14px 0 0; }
+    .pricing-desc { color: #52525b; font-size: 15px; line-height: 1.6; margin: 16px 0 0; }
+    .pricing-best-for {
+      font-size: 13px; font-weight: 600; color: #0D9488; margin: 18px 0 0;
+    }
+    .pricing-features { list-style: none; padding: 0; margin: 20px 0 26px; }
+    .pricing-features li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 14px; line-height: 1.5; margin-bottom: 10px;
+    }
+    .pf-check { color: #0D9488; font-weight: 700; flex: none; }
+    .pricing-note { color: #a1a1aa; font-size: 12px; margin: 12px 0 0; }
+    .pricing-cta-form { margin-top: auto; }
+
+    /* ─── FAQ ─── */
+    .faq-item {
+      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px;
+      margin-bottom: 12px; overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 20px 24px; text-align: left;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px;
+      color: #18181b; letter-spacing: -0.01em;
+    }
+    .faq-arrow { color: #71717a; font-size: 11px; transition: transform 0.25s ease; flex: none; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 420px; }
+    .faq-answer-inner {
+      padding: 0 24px 22px; color: #52525b; font-size: 15px; line-height: 1.65;
+    }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta { position: relative; overflow: hidden; text-align: center; }
+    .final-cta-bg {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 0%, rgba(37,99,235,0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 82% 90%, rgba(13,148,136,0.08) 0%, transparent 60%);
+    }
+    .final-cta-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    .final-cta-h2 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(27px, 3.8vw, 42px);
+      letter-spacing: -0.03em; line-height: 1.12; margin: 14px 0 18px;
+    }
+    .final-cta-sub { color: #52525b; font-size: 17px; line-height: 1.6; margin: 0 auto 30px; max-width: 600px; }
+    .final-cta .email-form { max-width: 520px; margin: 0 auto; }
+    .final-trust {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px;
+      margin-top: 26px; color: #52525b; font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+      .feature-row { grid-template-columns: 1fr; gap: 32px; }
+      .feature-row.reverse .feature-visual { order: 0; }
+      .metrics-row { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+      nav a.nav-link { display: none; }
+      .hero-stat-card { position: static; max-width: none; margin-top: 14px; box-shadow: none; }
+      .hero-visual { display: flex; flex-direction: column; }
+      .hero-stat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 60px 18px; }
+      .hero { padding: 44px 18px 64px; }
+      .metrics-row { grid-template-columns: 1fr 1fr; }
+      .pricing-card { padding: 24px; }
+      .faq-question { padding: 18px; font-size: 15px; }
+      .faq-answer-inner { padding: 0 18px 20px; }
+      .hero-stat-cards { grid-template-columns: 1fr; }
+      footer > div { flex-direction: column; gap: 12px; text-align: center; }
+      .email-form { flex-direction: column; }
+      .email-form input[type="email"] { flex: 0 0 auto; width: 100%; }
+      .email-form button { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div style="background:rgba(250,249,245,0.88); backdrop-filter:blur(12px);">
+    <div style="max-width:1160px; margin:0 auto; padding:0 24px; height:64px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-label="ByteFuture logo" role="img">
+          <rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.6"/>
+          <circle cx="12" cy="16" r="3.4" fill="#2563EB"/>
+          <circle cx="21.5" cy="16" r="3.4" fill="none" stroke="#0D9488" stroke-width="1.8"/>
+          <path d="M15.4 16h2.7" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; letter-spacing:-0.01em;">ByteFuture</span>
+      </a>
+      <div style="display:flex; align-items:center; gap:26px;">
+        <a class="nav-link" href="#how" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">How it works</a>
+        <a class="nav-link" href="#pilot-cta" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">Pricing</a>
+        <a class="nav-link" href="#faq" style="color:#52525b; font-size:14px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#52525b'">FAQ</a>
+        <a href="#pilot-cta" class="btn-primary" style="padding:10px 20px; font-size:13px;" onclick="gtag('event','cta_click',{label:'nav_pilot'});">Start free pilot</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span>
+          <span>Enterprise AI Governance</span>
+        </div>
+        <h1 class="hero-h1">
+          One AI Account for<br/>
+          <span class="gradient-text">Your Whole Team.</span><br/>
+          Token Reports for<br/>Every Manager.
+        </h1>
+        <p class="hero-sub">
+          Token Station pools your team's AI access into one gateway. Stop paying for 20 individual subscriptions. Start seeing exactly who used what, and when.
+        </p>
+        <blockquote class="hero-quote">
+          <strong>"In 2026, the biggest budgeting risk isn't overspending. It's spending invisibly."</strong>
+          <span class="quote-source">FinOps Weekly</span>
+        </blockquote>
+        <form class="email-form" id="hero-form" onsubmit="return submitEmail(event, 'hero')">
+          <input type="email" name="email" placeholder="Enter your work email" required />
+          <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">
+            Start your 30-day free pilot →
+          </button>
+        </form>
+        <p class="form-message" id="hero-msg"></p>
+        <div class="hero-trust">
+          <span><span class="check">✓</span> Self-hosted on your infrastructure</span>
+          <span><span class="check">✓</span> No data leaves your network</span>
+          <span><span class="check">✓</span> Deploy in 30 minutes</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img
+            src="/marketing/hero.jpg"
+            alt="Enterprise AI token usage analytics dashboard"
+            width="1600" height="900"
+            loading="eager"
+          />
+        </div>
+        <div class="hero-stat-cards">
+          <div class="hero-stat-card card-top-right">
+            <div class="stat-number gradient-text">73%</div>
+            <div class="stat-label">Cost reduction via smart routing</div>
+          </div>
+          <div class="hero-stat-card card-bottom-left">
+            <div class="stat-number gradient-text">1 bill</div>
+            <div class="stat-label">Instead of 20 subscriptions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PAIN ─── -->
+<section>
+  <div class="section-inner">
+    <div class="animate-on-scroll">
+      <p class="section-label">The Problem</p>
+      <h2 class="section-h2">Your Team Is Already<br/>Spending on AI. You're Just<br/>Not Seeing Where.</h2>
+      <p class="section-lead" style="margin-top:16px;">
+        Three realities hitting IT teams and finance leaders right now.
+      </p>
+    </div>
+    <div class="grid-3" style="margin-top:48px;">
+      <div class="card pain-card animate-on-scroll anim-delay-1">
+        <div class="pain-quote-mark">"</div>
+        <p class="pain-quote-text">90% of employees use AI at work. 46% use tools you didn't buy. 1 in 3 keep it secret.</p>
+        <p class="pain-source">Shadow AI Report 2026</p>
+      </div>
+      <div class="card pain-card animate-on-scroll anim-delay-2">
+        <div class="pain-quote-mark">"</div>
+        <p class="pain-quote-text">Your OpenAI bill doubled. You don't know who did it.</p>
+        <p class="pain-source">Every IT Director, Q1 2026</p>
+      </div>
+      <div class="card pain-card animate-on-scroll anim-delay-3">
+        <div class="pain-quote-mark">"</div>
+        <p class="pain-quote-text">We're flooded with vibe-coded app requests, we can't keep up with them and real work at the same time.</p>
+        <p class="pain-source">r/sysadmin · 1,884 upvotes</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ─── -->
+<section id="how" style="background:#ffffff; border-top:1px solid #e4e4e7; border-bottom:1px solid #e4e4e7;">
+  <div class="section-inner">
+    <div class="animate-on-scroll">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-h2">From Chaos to Control<br/>in Three Steps</h2>
+      <p class="section-lead" style="margin-top:16px;">
+        Token Station runs on your own hardware. Your keys, your data, your rules.
+      </p>
+    </div>
+    <div class="grid-3 animate-on-scroll" style="margin-top:48px;">
+      <div>
+        <div class="step-number">01</div>
+        <div class="step-title">Deploy in 30 Minutes</div>
+        <p class="step-desc">
+          Install Token Station on your Olares Mini or any Linux server. One command deploys the entire gateway stack. No cloud dependency, no vendor lock-in.
+        </p>
+      </div>
+      <div>
+        <div class="step-number">02</div>
+        <div class="step-title">Invite Your Team</div>
+        <p class="step-desc">
+          Replace 20 individual API keys with one pooled gateway. Your team uses the same AI tools, routed through your single account. No workflow disruption.
+        </p>
+      </div>
+      <div>
+        <div class="step-number">03</div>
+        <div class="step-title">Route, Report, Optimize</div>
+        <p class="step-desc">
+          Smart routing selects the right model for each task automatically. Management gets per-user, per-department token reports. Finance can finally forecast AI spend.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ─── -->
+<section>
+  <div class="section-inner">
+    <div class="animate-on-scroll" style="margin-bottom:56px;">
+      <p class="section-label">Core Capabilities</p>
+      <h2 class="section-h2">Everything Enterprise AI<br/>Governance Requires</h2>
+    </div>
+
+    <!-- Feature 1: Pooled Accounts -->
+    <div class="feature-row animate-on-scroll">
+      <div>
+        <p class="section-label">Pooled Accounts</p>
+        <h3 class="feature-h3">One Deployment, One Bill</h3>
+        <p class="feature-desc">
+          Consolidate every employee's AI subscription into a single managed gateway. Finance gets one invoice. IT gets one control plane. Employees get the same access, or better.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-icon">✓</span><span>Single API key pool shared across all users</span></li>
+          <li><span class="check-icon">✓</span><span>Per-user and per-team spending limits</span></li>
+          <li><span class="check-icon">✓</span><span>Rate limiting and access control built in</span></li>
+          <li><span class="check-icon">✓</span><span>Supports OpenAI, Anthropic, Gemini, Mistral, and local models</span></li>
+        </ul>
+        <div class="stat-badges">
+          <div class="stat-badge">
+            <div class="badge-num gradient-text">20x</div>
+            <div class="badge-label">Subscriptions → 1 account</div>
+          </div>
+          <div class="stat-badge">
+            <div class="badge-num gradient-text">100%</div>
+            <div class="badge-label">Data stays on-prem</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-visual">
+        <div class="feature-img-card">
+          <img
+            src="/marketing/section.jpg"
+            alt="IT team managing a consolidated AI gateway dashboard"
+            width="1200" height="800"
+            loading="lazy"
+            style="aspect-ratio:3/2;"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Token Reports -->
+    <div class="feature-row reverse animate-on-scroll" style="margin-top:80px;">
+      <div>
+        <p class="section-label">Token Usage Reports</p>
+        <h3 class="feature-h3">Management Can Finally See Where the Money Goes</h3>
+        <p class="feature-desc">
+          Who used what model, when, and how many tokens. Department-level rollups. Daily, weekly, monthly trends. The reports your CFO has been asking for since ChatGPT launched.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-icon">✓</span><span>Per-employee token consumption breakdown</span></li>
+          <li><span class="check-icon">✓</span><span>Model-level usage attribution (GPT-4o vs Claude vs Gemini)</span></li>
+          <li><span class="check-icon">✓</span><span>Department and team rollup views</span></li>
+          <li><span class="check-icon">✓</span><span>Exportable CSV reports for finance review</span></li>
+          <li><span class="check-icon">✓</span><span>Anomaly alerts when usage spikes unexpectedly</span></li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="feature-img-card">
+          <img
+            src="/marketing/feature.jpg"
+            alt="AI routing and data flow visualization"
+            width="800" height="800"
+            loading="lazy"
+            style="aspect-ratio:1/1;"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 3: Smart Routing -->
+    <div class="feature-row animate-on-scroll" style="margin-top:80px;">
+      <div>
+        <p class="section-label">Smart Routing</p>
+        <h3 class="feature-h3">Cut Token Costs Up to 73%</h3>
+        <p class="feature-desc">
+          Not every task needs a frontier model. Token Station's adaptive router directs simple queries to cost-efficient models and complex tasks to powerful ones, with no change to your team's workflow.
+        </p>
+        <ul class="feature-list">
+          <li><span class="check-icon">✓</span><span>Automatic model selection based on task complexity</span></li>
+          <li><span class="check-icon">✓</span><span>Cost/quality tradeoff tunable per department</span></li>
+          <li><span class="check-icon">✓</span><span>Fallback routing when primary models are unavailable</span></li>
+          <li><span class="check-icon">✓</span><span>Based on RouteLLM (ICLR 2025) and UniRoute (ICLR 2026) research</span></li>
+        </ul>
+        <div class="stat-badges">
+          <div class="stat-badge">
+            <div class="badge-num gradient-text">73%</div>
+            <div class="badge-label">Avg cost reduction reported</div>
+          </div>
+          <div class="stat-badge">
+            <div class="badge-num gradient-text">40%</div>
+            <div class="badge-label">Fewer large-model calls</div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-visual" style="display:flex; flex-direction:column; gap:16px;">
+        <div class="research-card">
+          <p class="research-text">RouteLLM (ICLR 2025): 2x+ cost savings with no drop in response quality by routing queries intelligently between large and small models.</p>
+          <p class="research-source">ICLR 2025 Research</p>
+        </div>
+        <div class="research-card">
+          <p class="research-text">Hybrid LLM (ICLR 2024): 40% reduction in large-model calls. UniRoute (ICLR 2026): further improvements on adaptive routing.</p>
+          <p class="research-source">ICLR 2024 / 2026 Research</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BY THE NUMBERS ─── -->
+<section id="social-proof" style="background:#ffffff; border-top:1px solid #e4e4e7; border-bottom:1px solid #e4e4e7;">
+  <div class="section-inner">
+    <div class="animate-on-scroll">
+      <p class="section-label">By The Numbers</p>
+      <h2 class="section-h2">The AI Spend Problem<br/>Is Already Here</h2>
+    </div>
+
+    <div class="metrics-row animate-on-scroll">
+      <div>
+        <div class="metric-number gradient-text">90%</div>
+        <div class="metric-label">of employees use AI at work in 2026</div>
+      </div>
+      <div>
+        <div class="metric-number gradient-text">46%</div>
+        <div class="metric-label">use tools their company didn't purchase</div>
+      </div>
+      <div>
+        <div class="metric-number gradient-text">73%</div>
+        <div class="metric-label">max cost reduction via smart routing</div>
+      </div>
+      <div>
+        <div class="metric-number gradient-text">2x+</div>
+        <div class="metric-label">cost savings from routing optimization (ICLR 2025)</div>
+      </div>
+    </div>
+
+    <div class="grid-2 animate-on-scroll">
+      <div class="research-card">
+        <p class="research-text">"In 2026, the biggest budgeting risk isn't overspending. It's spending invisibly."</p>
+        <p class="research-source">FinOps Weekly · 2026</p>
+      </div>
+      <div class="research-card">
+        <p class="research-text">"Your OpenAI bill doubled. You don't know who did it." The invisible AI spend problem hits every company past 50 employees.</p>
+        <p class="research-source">Enterprise AI Benchmark Report · 2026</p>
+      </div>
+      <div class="research-card">
+        <p class="research-text">"We're flooded with vibe-coded app requests, we can't keep up with them and real work at the same time."</p>
+        <p class="research-source">r/sysadmin · 1,884 upvotes</p>
+      </div>
+      <div class="research-card">
+        <p class="research-text">LiteLLM is a dev tool with no pooled accounts and no management reports. Portkey went open-source March 2026. OpenRouter adds a 5% markup with no data control. Token Station is built for enterprise governance.</p>
+        <p class="research-source">Competitive Analysis · April 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section class="pricing-section" id="pilot-cta">
+  <div class="section-inner">
+    <div class="animate-on-scroll" style="text-align:center; margin-bottom:48px;">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-h2">Self-Hosted, Your Infrastructure,<br/>Your Control</h2>
+      <p class="section-lead" style="margin:16px auto 0; text-align:center;">
+        $10 per employee per month. Two ways to handle AI vendor keys.
+      </p>
+    </div>
+
+    <div class="grid-2 animate-on-scroll">
+
+      <!-- On-Prem plan -->
+      <div class="pricing-card">
+        <div class="pricing-badge">On-Prem</div>
+        <div class="pricing-title">Bring Your Own Keys</div>
+        <div class="pricing-price"><span class="pricing-price-amount">$10</span><span class="pricing-price-unit">per employee / month</span></div>
+        <p class="pricing-billing-note">AI token costs bill directly to your existing vendor accounts.</p>
+        <p class="pricing-desc">
+          You supply your own API keys (OpenAI, Anthropic, Google, or any supported vendor). Token Station adds the gateway, smart routing, per-user limits, and token usage reports on top. We never touch your vendor billing.
+        </p>
+        <p class="pricing-best-for">Best for teams already using AI vendors</p>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span><span>Gateway + smart routing</span></li>
+          <li><span class="pf-check">✓</span><span>Per-user token limits &amp; reports</span></li>
+          <li><span class="pf-check">✓</span><span>Management usage dashboards</span></li>
+          <li><span class="pf-check">✓</span><span>Centralized key management</span></li>
+          <li><span class="pf-check">✓</span><span>Works with your existing vendor accounts</span></li>
+          <li><span class="pf-check">✓</span><span>AI tokens billed direct to your vendor</span></li>
+        </ul>
+        <form class="email-form pricing-cta-form" id="pricing-form-a" onsubmit="return submitEmail(event, 'pricing', 'on-prem')">
+          <input type="email" name="email" placeholder="Enter your work email" required />
+          <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your On-Prem pilot →</button>
+        </form>
+        <p class="form-message"></p>
+        <p class="pricing-note">No credit card required · Cancel anytime</p>
+      </div>
+
+      <!-- Cloud plan -->
+      <div class="pricing-card">
+        <div class="pricing-badge">Cloud</div>
+        <div class="pricing-title">Use Our Keys</div>
+        <div class="pricing-price"><span class="pricing-price-amount">$10</span><span class="pricing-price-unit">per employee / month</span></div>
+        <p class="pricing-billing-note" style="font-weight:600; color:#18181b;">Plus token usage billed in $50 increments at published provider rates, zero markup.</p>
+        <p class="pricing-desc">
+          Token Station provides pooled vendor accounts, so you don't need your own API subscriptions. Token usage is metered and charged in $50 increments as consumed, at published provider rates. Zero markup.
+        </p>
+        <p class="pricing-best-for">Best for new deployments and fully consolidated billing</p>
+        <ul class="pricing-features">
+          <li><span class="pf-check">✓</span><span>Everything in On-Prem</span></li>
+          <li><span class="pf-check">✓</span><span>No vendor accounts needed</span></li>
+          <li><span class="pf-check">✓</span><span>Token usage billed in $50 increments</span></li>
+          <li><span class="pf-check">✓</span><span>Published provider rates, zero markup</span></li>
+          <li><span class="pf-check">✓</span><span>Fully consolidated billing</span></li>
+          <li><span class="pf-check">✓</span><span>Instant setup, no key management</span></li>
+        </ul>
+        <form class="email-form pricing-cta-form" id="pricing-form-b" onsubmit="return submitEmail(event, 'pricing', 'cloud')">
+          <input type="email" name="email" placeholder="Enter your work email" required />
+          <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your Cloud pilot →</button>
+        </form>
+        <p class="form-message"></p>
+        <p class="pricing-note">No credit card required · Cancel anytime</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="section-inner" style="max-width:860px;">
+    <div class="animate-on-scroll" style="margin-bottom:40px;">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-h2">Common Questions</h2>
+    </div>
+    <div>
+      <div class="faq-item animate-on-scroll anim-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Does our data ever leave our network?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. Token Station is fully self-hosted on your own infrastructure: Olares Mini, your on-prem servers, or your private cloud. The gateway sits inside your network. Your prompts and responses never touch our servers. Token usage metadata (who used what, when) is also stored locally.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll anim-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Does my team have to change how they work?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Minimal disruption. Employees point their AI tools at the Token Station gateway endpoint instead of directly at OpenAI or Anthropic. Most tools support custom base URLs. Setup per user takes under 5 minutes. The smart routing happens transparently, so they get the same responses, often faster and cheaper.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll anim-delay-3">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What hardware do I need?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Token Station runs on Olares Mini (our recommended hardware: a compact personal server built for self-hosted apps) or any Linux machine with 2GB+ RAM. For teams up to 100 users, a basic server handles the load comfortably. We'll help you size during the pilot.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll anim-delay-4">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How does smart routing work? Will it affect response quality?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Token Station analyzes query complexity and routes simple tasks (summarization, basic Q&amp;A, formatting) to smaller, cheaper models, and complex reasoning or code tasks to your preferred premium model. Based on RouteLLM (ICLR 2025) research, this achieves 2x+ cost savings with no measurable quality loss. You can tune the cost/quality balance per department or disable routing entirely.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll anim-delay-5">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Is the $10 per seat price locked in?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Pilot partners keep $10 per employee per month as founder pricing for as long as the deployment stays active. Token costs sit outside that seat fee: on On-Prem they bill straight to your own vendor accounts, and on Cloud they are metered in $50 increments at published provider rates with zero markup. The 30-day pilot needs no credit card.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta" style="background:#ffffff; border-top:1px solid #e4e4e7;">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-inner">
+    <div class="animate-on-scroll">
+      <p class="section-label" style="text-align:center;">Ready When You Are</p>
+      <h2 class="final-cta-h2">Your team is already spending on AI.<br/>You're just not seeing where.</h2>
+      <p class="final-cta-sub">
+        Join the pilot. Get full visibility, one consolidated bill, and up to 73% lower token costs, all on your own infrastructure.
+      </p>
+      <form class="email-form" id="final-form" onsubmit="return submitEmail(event, 'final')">
+        <input type="email" name="email" placeholder="Enter your work email" required />
+        <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your 30-day free pilot →</button>
+      </form>
+      <p class="form-message" id="final-msg" style="text-align:center;"></p>
+      <div class="final-trust">
+        <span>✓ No credit card</span>
+        <span>✓ Deploy in 30 min</span>
+        <span>✓ Data stays on-prem</span>
+        <span>✓ Founder pricing locked</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer style="padding:36px 24px; border-top:1px solid #e4e4e7;">
+  <div style="max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-label="ByteFuture logo" role="img" style="opacity:0.85;">
+        <rect x="2.5" y="2.5" width="27" height="27" rx="8" fill="#2563EB" fill-opacity="0.10" stroke="#2563EB" stroke-width="1.6"/>
+        <circle cx="12" cy="16" r="3.4" fill="#2563EB"/>
+        <circle cx="21.5" cy="16" r="3.4" fill="none" stroke="#0D9488" stroke-width="1.8"/>
+        <path d="M15.4 16h2.7" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:13px; color:#71717a;">ByteFuture</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <a href="https://models.bytefuture.ai/intro.html" style="color:#71717a; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#71717a'">Token Station</a>
+      <a href="https://github.com/beclab/olares" style="color:#71717a; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#71717a'">Olares</a>
+      <a href="/blog/" style="color:#71717a; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#71717a'">Writings</a>
+      <a href="https://models.bytefuture.ai/privacy.html" style="color:#71717a; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#71717a'">Privacy</a>
+      <a href="https://models.bytefuture.ai/terms.html" style="color:#71717a; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#71717a'">Terms</a>
+      <a href="mailto:team@bytefuture.ai" style="color:#71717a; font-size:13px; text-decoration:none;" onmouseover="this.style.color='#18181b'" onmouseout="this.style.color='#71717a'">Contact</a>
+      <span style="color:#a1a1aa; font-size:13px;">© 2026 ByteFuture</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JS ─── -->
+<script>
+window.dataLayer = window.dataLayer || [];
+
+const API_BASE = 'https://minilab-backend-test.up.railway.app';
+const IDEA_ID = '2f25b004-c1df-47cc-9b39-224502cf8f2f';
+const LP_ID = '23442305-5852-4c70-9d1c-dfa53f3d43fb';
+
+function getUTM() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utmSource: p.get('utm_source') || '',
+    utmMedium: p.get('utm_medium') || '',
+    utmCampaign: p.get('utm_campaign') || ''
+  };
+}
+
+async function submitEmail(e, formId, plan) {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value;
+  const btn = form.querySelector('button');
+  const msgEl = formId === 'hero' ? document.getElementById('hero-msg')
+              : formId === 'final' ? document.getElementById('final-msg')
+              : form.nextElementSibling || null;
+
+  const origBtnText = btn.textContent.trim();
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const utm = getUTM();
+  // Record plan choice in utmMedium; preserve URL utm_medium if present
+  if (plan) {
+    utm.utmMedium = utm.utmMedium ? utm.utmMedium + '|' + plan : plan;
+  }
+
+  try {
+    const res = await fetch(API_BASE + '/api/leads', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email,
+        ideaId: IDEA_ID,
+        landingPageId: LP_ID || undefined,
+        ...utm
+      })
+    });
+    if (res.ok) {
+      gtag('event', 'email_submit');
+      var _evId = Math.random().toString(36).slice(2) + Date.now().toString(36);
+      fbq('init', '1263865485900196', { em: email });
+      fbq('track', 'Lead', {}, {eventID: _evId});
+      if (msgEl) {
+        msgEl.textContent = '✓ You\'re on the pilot list! We\'ll be in touch within 48 hours.';
+        msgEl.style.display = 'block';
+      }
+      form.email.value = '';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch {
+    if (msgEl) {
+      msgEl.textContent = 'Something went wrong. Please try again or email us directly.';
+      msgEl.style.color = '#b91c1c';
+      msgEl.style.display = 'block';
+    }
+  } finally {
+    btn.disabled = false;
+    btn.textContent = origBtnText;
+  }
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// Scroll 50% milestone
+(function() {
+  var fired = false;
+  window.addEventListener('scroll', function() {
+    if (fired) return;
+    var scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+    if (scrollPercent >= 0.5) {
+      fired = true;
+      gtag('event', 'scroll_50');
+    }
+  });
+})();
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
