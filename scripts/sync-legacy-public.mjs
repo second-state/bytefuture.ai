@@ -3,7 +3,9 @@ import path from 'node:path';
 
 const root = process.cwd();
 const publicDir = path.join(root, 'public');
-const skip = new Set(['.git', 'node_modules', 'dist', 'public', '.astro']);
+// asset-sources holds the SVG an image was authored from. The reader only ever
+// gets the committed raster, so the sources stay out of the build.
+const skip = new Set(['.git', 'node_modules', 'dist', 'public', '.astro', 'asset-sources']);
 const copyNames = [
   'index.html',
   'index-zh.html',

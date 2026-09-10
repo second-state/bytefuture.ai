@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8FAFF"/><stop offset="1" stop-color="#EDF8F5"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#2D67EA"/><stop offset="1" stop-color="#159B91"/></linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2D67EA" stop-opacity=".27"/><stop offset="1" stop-color="#2D67EA" stop-opacity="0"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#1E3A68" flood-opacity=".15"/></filter>
+    <filter id="smallShadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1E3A68" flood-opacity=".13"/></filter>
+  </defs>
+  <rect width="800" height="800" rx="34" fill="url(#bg)"/>
+  <circle cx="690" cy="94" r="170" fill="#DDE9FF" opacity=".65"/>
+  <circle cx="90" cy="726" r="150" fill="#DDF4EE" opacity=".75"/>
+
+  <g>
+    <rect x="48" y="66" width="704" height="664" rx="26" fill="#fff"/>
+    <rect x="48" y="66" width="704" height="66" rx="26" fill="#fff"/>
+    <rect x="48" y="104" width="704" height="28" fill="#fff"/>
+    <line x1="48" y1="132" x2="752" y2="132" stroke="#E6EAF0"/>
+    <rect x="72" y="84" width="28" height="28" rx="8" fill="#2D67EA"/>
+    <circle cx="83" cy="98" r="4" fill="#fff"/><circle cx="91" cy="98" r="4" fill="#98F0E3"/><line x1="86" y1="98" x2="88" y2="98" stroke="#152036" stroke-width="2"/>
+    <text x="112" y="105" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="750" fill="#172033">Token Station</text>
+    <rect x="640" y="84" width="88" height="28" rx="14" fill="#E8F7F4"/><circle cx="656" cy="98" r="5" fill="#159B91"/><text x="670" y="103" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="650" fill="#137B73">Healthy</text>
+
+    <text x="78" y="178" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="760" fill="#101828">Token usage</text>
+    <text x="78" y="202" font-family="Inter,Arial,sans-serif" font-size="13" fill="#748197">Organization activity · Last 30 days</text>
+    <rect x="614" y="164" width="112" height="36" rx="9" fill="#fff" stroke="#DDE3EB"/><text x="670" y="187" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#344054">Past 30 days</text>
+
+    <g font-family="Inter,Arial,sans-serif">
+      <rect x="78" y="232" width="197" height="100" rx="15" fill="#FAFBFD" stroke="#E3E7ED"/><text x="96" y="260" font-size="12" fill="#6F7E93">TOTAL TOKENS</text><text x="96" y="301" font-size="29" font-weight="760" fill="#101828">84.2M</text>
+      <rect x="292" y="232" width="197" height="100" rx="15" fill="#FAFBFD" stroke="#E3E7ED"/><text x="310" y="260" font-size="12" fill="#6F7E93">SPEND</text><text x="310" y="301" font-size="29" font-weight="760" fill="#101828">$8,460</text>
+      <rect x="506" y="232" width="220" height="100" rx="15" fill="#F4FAF8" stroke="#CEE8E2"/><text x="524" y="260" font-size="12" fill="#5C7E78">SMART ROUTING SAVED</text><text x="524" y="301" font-size="29" font-weight="760" fill="#159B91">$3,120</text>
+    </g>
+
+    <rect x="78" y="354" width="648" height="232" rx="16" fill="#fff" stroke="#E3E7ED"/>
+    <text x="98" y="386" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#172033">Spend by model</text>
+    <circle cx="536" cy="381" r="5" fill="#2D67EA"/><text x="548" y="386" font-family="Inter,Arial,sans-serif" font-size="11" fill="#6D7A8C">Premium</text>
+    <circle cx="613" cy="381" r="5" fill="#159B91"/><text x="625" y="386" font-family="Inter,Arial,sans-serif" font-size="11" fill="#6D7A8C">Efficient</text>
+    <line x1="98" y1="431" x2="706" y2="431" stroke="#EDF0F4"/><line x1="98" y1="486" x2="706" y2="486" stroke="#EDF0F4"/><line x1="98" y1="541" x2="706" y2="541" stroke="#EDF0F4"/>
+    <path d="M98 533 C143 520 165 527 202 495 S260 508 300 475 S366 482 405 452 S467 470 510 425 S579 448 616 412 S671 421 706 396 L706 555 L98 555Z" fill="url(#area)"/>
+    <path d="M98 533 C143 520 165 527 202 495 S260 508 300 475 S366 482 405 452 S467 470 510 425 S579 448 616 412 S671 421 706 396" fill="none" stroke="#2D67EA" stroke-width="4" stroke-linecap="round"/>
+    <path d="M98 545 C155 540 184 518 229 526 S315 505 361 514 S433 487 480 500 S558 472 605 487 S664 458 706 469" fill="none" stroke="#159B91" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="706" cy="396" r="6" fill="#2D67EA" stroke="#fff" stroke-width="3"/>
+    <text x="98" y="575" font-family="Inter,Arial,sans-serif" font-size="10" fill="#98A2B3">AUG 12</text><text x="402" y="575" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="10" fill="#98A2B3">AUG 27</text><text x="706" y="575" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="10" fill="#98A2B3">SEP 10</text>
+
+    <text x="78" y="627" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#172033">Top teams</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="12">
+      <text x="78" y="661" fill="#344054">Engineering</text><rect x="184" y="651" width="220" height="9" rx="4.5" fill="#EEF1F5"/><rect x="184" y="651" width="188" height="9" rx="4.5" fill="#2D67EA"/><text x="430" y="661" fill="#667085">$4,180</text>
+      <text x="78" y="694" fill="#344054">Product</text><rect x="184" y="684" width="220" height="9" rx="4.5" fill="#EEF1F5"/><rect x="184" y="684" width="127" height="9" rx="4.5" fill="#159B91"/><text x="430" y="694" fill="#667085">$2,820</text>
+      <text x="520" y="661" fill="#344054">Operations</text><rect x="608" y="651" width="118" height="9" rx="4.5" fill="#EEF1F5"/><rect x="608" y="651" width="72" height="9" rx="4.5" fill="#6C7BF0"/><text x="520" y="694" fill="#344054">Marketing</text><rect x="608" y="684" width="118" height="9" rx="4.5" fill="#EEF1F5"/><rect x="608" y="684" width="42" height="9" rx="4.5" fill="#51B9CE"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="520" y="34" width="236" height="92" rx="18" fill="#fff" stroke="#DDE4ED"/>
+    <rect x="540" y="56" width="44" height="44" rx="13" fill="#FFF3E5"/><path d="M562 66l13 23h-26Z" fill="#F59E0B"/><rect x="560" y="73" width="4" height="9" rx="2" fill="#fff"/><circle cx="562" cy="86" r="2" fill="#fff"/>
+    <text x="598" y="69" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="750" fill="#A25B00">ANOMALY FOUND</text>
+    <text x="598" y="94" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="650" fill="#172033">Spend spike contained</text>
+  </g>
+</svg>

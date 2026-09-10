@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F9FBFF"/><stop offset="1" stop-color="#F0F8F6"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2D67EA"/><stop offset="1" stop-color="#159B91"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#193A70" flood-opacity=".12"/></filter>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5 0 9Z" fill="#8AA4CC"/></marker>
+  </defs>
+  <rect width="1200" height="800" rx="34" fill="url(#bg)"/>
+  <circle cx="600" cy="398" r="250" fill="#E9F0FF" opacity=".55"/>
+  <text x="76" y="76" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="750" letter-spacing="2.5" fill="#7A8799">BEFORE</text>
+  <text x="430" y="76" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="750" letter-spacing="2.5" fill="#2D67EA">WITH TOKEN STATION</text>
+  <text x="934" y="76" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="750" letter-spacing="2.5" fill="#159B91">ONE CONTROL PLANE</text>
+
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="64" y="122" width="250" height="86" rx="17" fill="#fff" stroke="#DDE4ED"/>
+    <circle cx="104" cy="165" r="22" fill="#111827"/><text x="104" y="171" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">O</text><text x="142" y="158" font-size="17" font-weight="700" fill="#172033">OpenAI</text><text x="142" y="182" font-size="13" fill="#7A8799">8 individual keys</text>
+    <rect x="64" y="228" width="250" height="86" rx="17" fill="#fff" stroke="#DDE4ED"/>
+    <circle cx="104" cy="271" r="22" fill="#F2E7DE"/><text x="104" y="277" text-anchor="middle" font-size="16" font-weight="700" fill="#8A4E2E">A</text><text x="142" y="264" font-size="17" font-weight="700" fill="#172033">Anthropic</text><text x="142" y="288" font-size="13" fill="#7A8799">5 individual keys</text>
+    <rect x="64" y="334" width="250" height="86" rx="17" fill="#fff" stroke="#DDE4ED"/>
+    <circle cx="104" cy="377" r="22" fill="#E8F0FF"/><text x="104" y="383" text-anchor="middle" font-size="16" font-weight="700" fill="#2D67EA">G</text><text x="142" y="370" font-size="17" font-weight="700" fill="#172033">Google AI</text><text x="142" y="394" font-size="13" fill="#7A8799">4 individual keys</text>
+    <rect x="64" y="440" width="250" height="86" rx="17" fill="#fff" stroke="#DDE4ED"/>
+    <circle cx="104" cy="483" r="22" fill="#FFF2D9"/><text x="104" y="489" text-anchor="middle" font-size="16" font-weight="700" fill="#B96812">M</text><text x="142" y="476" font-size="17" font-weight="700" fill="#172033">Mistral</text><text x="142" y="500" font-size="13" fill="#7A8799">2 individual keys</text>
+    <rect x="64" y="546" width="250" height="86" rx="17" fill="#fff" stroke="#DDE4ED"/>
+    <circle cx="104" cy="589" r="22" fill="#E8F7F4"/><text x="104" y="595" text-anchor="middle" font-size="16" font-weight="700" fill="#159B91">L</text><text x="142" y="582" font-size="17" font-weight="700" fill="#172033">Local models</text><text x="142" y="606" font-size="13" fill="#7A8799">On-prem compute</text>
+  </g>
+
+  <g stroke="#8AA4CC" stroke-width="3" fill="none" marker-end="url(#arrow)" opacity=".8">
+    <path d="M314 165 C380 165 390 292 454 345"/>
+    <path d="M314 271 C382 271 404 323 454 360"/>
+    <path d="M314 377 C380 377 406 377 454 377"/>
+    <path d="M314 483 C382 483 404 430 454 395"/>
+    <path d="M314 589 C380 589 390 462 454 410"/>
+  </g>
+
+  <g>
+    <rect x="452" y="244" width="310" height="310" rx="38" fill="#fff" stroke="#D9E2EE"/>
+    <rect x="486" y="278" width="242" height="242" rx="34" fill="url(#brand)"/>
+    <rect x="520" y="312" width="174" height="174" rx="28" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".28"/>
+    <circle cx="607" cy="378" r="28" fill="#fff" fill-opacity=".96"/>
+    <circle cx="594" cy="378" r="8" fill="#2D67EA"/><circle cx="620" cy="378" r="8" fill="#159B91"/><line x1="602" y1="378" x2="612" y2="378" stroke="#27364C" stroke-width="5" stroke-linecap="round"/>
+    <text x="607" y="441" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="760" fill="#fff">TOKEN STATION</text>
+    <text x="607" y="470" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" fill="#fff" opacity=".88">POLICY · ROUTING · REPORTS</text>
+  </g>
+
+  <path d="M762 399H876" stroke="#2D67EA" stroke-width="5" marker-end="url(#arrow)"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="894" y="134" width="242" height="132" rx="20" fill="#fff" stroke="#DDE4ED"/>
+    <rect x="919" y="160" width="46" height="46" rx="13" fill="#E8F0FF"/><path d="M932 187h20M942 177v20" stroke="#2D67EA" stroke-width="3" stroke-linecap="round"/>
+    <text x="983" y="179" font-size="17" font-weight="720" fill="#172033">One account</text><text x="983" y="205" font-size="14" fill="#69778C">Centralized vendor keys</text><text x="919" y="240" font-size="13" font-weight="700" fill="#2D67EA">20 SUBSCRIPTIONS → 1</text>
+    <rect x="894" y="285" width="242" height="132" rx="20" fill="#fff" stroke="#DDE4ED"/>
+    <rect x="919" y="311" width="46" height="46" rx="13" fill="#E8F7F4"/><path d="M931 343h22M932 333l7-8 7 6 8-12" fill="none" stroke="#159B91" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="983" y="330" font-size="17" font-weight="720" fill="#172033">Live controls</text><text x="983" y="356" font-size="14" fill="#69778C">Limits by user</text><text x="919" y="391" font-size="13" font-weight="700" fill="#159B91">POLICY ENFORCED</text>
+    <rect x="894" y="436" width="242" height="132" rx="20" fill="#fff" stroke="#DDE4ED"/>
+    <rect x="919" y="462" width="46" height="46" rx="13" fill="#EEF0FF"/><path d="M932 495v-11M942 495v-22M952 495v-16" stroke="#6875E8" stroke-width="4" stroke-linecap="round"/>
+    <text x="983" y="481" font-size="17" font-weight="720" fill="#172033">One report</text><text x="983" y="507" font-size="14" fill="#69778C">Spend by team &amp; model</text><text x="919" y="542" font-size="13" font-weight="700" fill="#6875E8">FINANCE READY</text>
+  </g>
+
+  <rect x="388" y="682" width="424" height="62" rx="31" fill="#fff" stroke="#DDE4ED"/>
+  <circle cx="424" cy="713" r="11" fill="#159B91"/><text x="450" y="720" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="650" fill="#263449">Your keys · Your data · Your infrastructure</text>
+</svg>

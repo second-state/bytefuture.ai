@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8FAFF"/><stop offset="1" stop-color="#EEF8F6"/></linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#2866E8"/><stop offset="1" stop-color="#159B91"/></linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2F6FEA" stop-opacity=".28"/><stop offset="1" stop-color="#2F6FEA" stop-opacity="0"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#173468" flood-opacity=".16"/></filter>
+    <filter id="smallShadow" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#173468" flood-opacity=".14"/></filter>
+    <clipPath id="screen"><rect x="120" y="105" width="1360" height="700" rx="28"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" rx="42" fill="url(#bg)"/>
+  <circle cx="1430" cy="120" r="250" fill="#DDE9FF" opacity=".55"/>
+  <circle cx="120" cy="800" r="230" fill="#DDF4EE" opacity=".8"/>
+
+  <g>
+    <rect x="120" y="105" width="1360" height="700" rx="28" fill="#fff"/>
+    <rect x="120" y="105" width="1360" height="72" rx="28" fill="#FFFFFF"/>
+    <rect x="120" y="149" width="1360" height="28" fill="#FFFFFF"/>
+    <line x1="120" y1="177" x2="1480" y2="177" stroke="#E6EAF0"/>
+    <circle cx="157" cy="141" r="7" fill="#F86B6B"/><circle cx="181" cy="141" r="7" fill="#F6C344"/><circle cx="205" cy="141" r="7" fill="#3ACB87"/>
+    <rect x="252" y="125" width="515" height="32" rx="16" fill="#F4F6F9"/>
+    <circle cx="278" cy="141" r="7" fill="#1C9B90"/><rect x="295" y="137" width="180" height="8" rx="4" fill="#C6CEDA"/>
+    <text x="1428" y="149" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="18" fill="#697386">Admin Console</text>
+  </g>
+
+  <g clip-path="url(#screen)">
+    <rect x="120" y="177" width="230" height="628" fill="#F8FAFC"/>
+    <line x1="350" y1="177" x2="350" y2="805" stroke="#E5E9EF"/>
+    <rect x="148" y="208" width="38" height="38" rx="11" fill="#2D67EA"/>
+    <path d="M158 227h18M167 218v18" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="202" y="232" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700" fill="#121826">Token Station</text>
+    <text x="150" y="294" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#99A5B5">WORKSPACE</text>
+    <rect x="140" y="315" width="190" height="48" rx="12" fill="#E8F0FF"/>
+    <circle cx="165" cy="339" r="8" fill="#2D67EA"/><text x="187" y="346" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="650" fill="#1C2A43">Overview</text>
+    <circle cx="165" cy="397" r="8" fill="none" stroke="#8090A8" stroke-width="2"/><text x="187" y="404" font-family="Inter,Arial,sans-serif" font-size="18" fill="#5C6B81">Request logs</text>
+    <text x="150" y="465" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#99A5B5">PEOPLE</text>
+    <circle cx="165" cy="508" r="8" fill="none" stroke="#8090A8" stroke-width="2"/><text x="187" y="515" font-family="Inter,Arial,sans-serif" font-size="18" fill="#5C6B81">Users</text>
+    <circle cx="165" cy="556" r="8" fill="none" stroke="#8090A8" stroke-width="2"/><text x="187" y="563" font-family="Inter,Arial,sans-serif" font-size="18" fill="#5C6B81">Teams</text>
+    <text x="150" y="626" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#99A5B5">ROUTING</text>
+    <circle cx="165" cy="670" r="8" fill="none" stroke="#8090A8" stroke-width="2"/><text x="187" y="677" font-family="Inter,Arial,sans-serif" font-size="18" fill="#5C6B81">Models</text>
+
+    <rect x="350" y="177" width="1130" height="628" fill="#FCFDFE"/>
+    <text x="397" y="235" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="750" fill="#101828">Overview</text>
+    <text x="397" y="263" font-family="Inter,Arial,sans-serif" font-size="15" fill="#718096">Organization activity · Past 30 days</text>
+    <rect x="1286" y="214" width="145" height="42" rx="10" fill="#fff" stroke="#DDE3EB"/>
+    <text x="1358" y="240" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="15" fill="#344054">Past 30 days</text>
+
+    <g font-family="Inter,Arial,sans-serif">
+      <rect x="397" y="294" width="230" height="128" rx="16" fill="#fff" stroke="#E1E6ED"/>
+      <text x="419" y="329" font-size="14" fill="#6C7B91">Spend</text><text x="419" y="377" font-size="34" font-weight="750" fill="#101828">$18,420</text><text x="419" y="404" font-size="13" fill="#159B91">↓ 32% vs last period</text>
+      <rect x="647" y="294" width="230" height="128" rx="16" fill="#fff" stroke="#E1E6ED"/>
+      <text x="669" y="329" font-size="14" fill="#6C7B91">Active users</text><text x="669" y="377" font-size="34" font-weight="750" fill="#101828">48</text><text x="669" y="404" font-size="13" fill="#2D67EA">Across 6 teams</text>
+      <rect x="897" y="294" width="230" height="128" rx="16" fill="#fff" stroke="#E1E6ED"/>
+      <text x="919" y="329" font-size="14" fill="#6C7B91">Requests</text><text x="919" y="377" font-size="34" font-weight="750" fill="#101828">1.24M</text><text x="919" y="404" font-size="13" fill="#159B91">↑ 18.6% this month</text>
+      <rect x="1147" y="294" width="284" height="128" rx="16" fill="#fff" stroke="#E1E6ED"/>
+      <text x="1169" y="329" font-size="14" fill="#6C7B91">Smart routing savings</text><text x="1169" y="377" font-size="34" font-weight="750" fill="#2866E8">73%</text><text x="1169" y="404" font-size="13" fill="#6C7B91">Quality policy: balanced</text>
+    </g>
+
+    <rect x="397" y="446" width="696" height="302" rx="18" fill="#fff" stroke="#E1E6ED"/>
+    <text x="423" y="485" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#172033">AI spend trend</text>
+    <text x="1064" y="485" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" fill="#159B91">On track</text>
+    <line x1="423" y1="548" x2="1065" y2="548" stroke="#EEF1F5"/><line x1="423" y1="611" x2="1065" y2="611" stroke="#EEF1F5"/><line x1="423" y1="674" x2="1065" y2="674" stroke="#EEF1F5"/>
+    <path d="M423 685 C470 650 510 665 550 625 S640 585 690 610 S780 550 830 575 S925 500 1065 520 L1065 712 L423 712Z" fill="url(#area)"/>
+    <path d="M423 685 C470 650 510 665 550 625 S640 585 690 610 S780 550 830 575 S925 500 1065 520" fill="none" stroke="url(#brand)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="1065" cy="520" r="7" fill="#159B91" stroke="#fff" stroke-width="4"/>
+    <text x="423" y="730" font-family="Inter,Arial,sans-serif" font-size="12" fill="#98A2B3">Aug 12</text><text x="744" y="730" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12" fill="#98A2B3">Aug 27</text><text x="1065" y="730" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="12" fill="#98A2B3">Sep 10</text>
+
+    <rect x="1115" y="446" width="316" height="302" rx="18" fill="#fff" stroke="#E1E6ED"/>
+    <text x="1141" y="485" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#172033">Spend by team</text>
+    <g font-family="Inter,Arial,sans-serif" font-size="14">
+      <text x="1141" y="533" fill="#344054">Engineering</text><text x="1405" y="533" text-anchor="end" fill="#344054">$8,240</text><rect x="1141" y="545" width="264" height="8" rx="4" fill="#EEF1F5"/><rect x="1141" y="545" width="208" height="8" rx="4" fill="#2D67EA"/>
+      <text x="1141" y="592" fill="#344054">Product</text><text x="1405" y="592" text-anchor="end" fill="#344054">$5,610</text><rect x="1141" y="604" width="264" height="8" rx="4" fill="#EEF1F5"/><rect x="1141" y="604" width="142" height="8" rx="4" fill="#159B91"/>
+      <text x="1141" y="651" fill="#344054">Operations</text><text x="1405" y="651" text-anchor="end" fill="#344054">$3,180</text><rect x="1141" y="663" width="264" height="8" rx="4" fill="#EEF1F5"/><rect x="1141" y="663" width="82" height="8" rx="4" fill="#6C7BF0"/>
+      <text x="1141" y="710" fill="#344054">Marketing</text><text x="1405" y="710" text-anchor="end" fill="#344054">$1,390</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="74" y="680" width="260" height="116" rx="20" fill="#fff" stroke="#DDE4ED"/>
+    <circle cx="114" cy="720" r="18" fill="#E8F0FF"/><path d="M105 720l6 6 12-14" fill="none" stroke="#2D67EA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="145" y="716" font-family="Inter,Arial,sans-serif" font-size="15" fill="#667085">Centralized access</text>
+    <text x="145" y="750" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="760" fill="#101828">1 gateway</text>
+  </g>
+  <g>
+    <rect x="1290" y="70" width="246" height="118" rx="20" fill="#fff" stroke="#DDE4ED"/>
+    <text x="1318" y="111" font-family="Inter,Arial,sans-serif" font-size="33" font-weight="780" fill="#2866E8">73%</text>
+    <text x="1318" y="141" font-family="Inter,Arial,sans-serif" font-size="15" fill="#667085">lower model cost</text>
+    <rect x="1452" y="93" width="56" height="56" rx="16" fill="#E8F7F4"/><path d="M1467 126l10-10 8 8 12-17" fill="none" stroke="#159B91" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
