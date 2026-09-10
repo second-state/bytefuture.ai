@@ -139,7 +139,7 @@ Using what bill-the-explorer found, add the effective URL next to the existing e
 
 Chat 모드와 Agent 모드 모두에서 Grok 4.6은 Token Station을 통해 Cursor 안에서 사용할 수 있다. 실제 응답, 실제 파일 편집이 이루어지고, Token Station 키에 정확히 과금되며, 대시보드에서도 확인된다. 프로바이더 등록과 서브에이전트 정의는 Claude 설정과 완전히 동일한데, 둘 다 어떤 모델을 추가하는지와 무관하기 때문이다.
 
-이로써 Grok 4.6은 Claude Sonnet 5와 나란히, Token Station을 통해 Agent 모드 편집을 안정적으로 구동하는 라우트가 됐다. 이는 모든 모델 계열에 당연히 적용되는 이야기가 아니다. 이전 테스트에서는 Token Station의 GPT-5.6 라우트(Sol, Terra, Luna)가 Agent 모드에서 코드를 읽고 논의할 수는 있었지만 실제 파일 편집을 적용하는 데는 계속 실패했다. 이는 Cursor 쪽의 고정된 제약이 아니라 Token Station 쪽의 도구 호출 응답 형식 문제였고, 지원은 현재 진행 중이다. 도구 호출 호환성은 결국 모델과 프로바이더에 따라 실제로 달라진다는 것이 드러났으므로, Grok은 Claude와의 유추가 아니라 그 자체의 실측 증거로 여기서 확인된 것이다.
+이로써 Grok 4.6은 Claude Sonnet 5, 그리고 OpenAI의 GPT-6 Astra와 GPT-5.6 계열과 나란히, Token Station을 통해 Agent 모드 편집을 안정적으로 구동하는 라우트가 됐다. 도구 호출 호환성은 결국 모델과 프로바이더에 따라 실제로 달라진다는 것이 드러났으므로, Grok은 Claude와의 유추가 아니라 그 자체의 실측 증거로 여기서 확인된 것이다. OpenAI 모델이 어떻게 거기에 도달했는지는 Token Station API 키에 연결한 어댑터 덕분이며, 자세한 내용은 [GPT-6 Astra와 GPT-5.6 설정 가이드](/blog/route-cursor-through-token-station-openai-ko.html)를 참고하자.
 
 아직 테스트하지 않은 구체적인 부분은, Grok 4.6을 메인 모델로 해서 조사 위임, 구현, 검증 위임까지 포함하는 실제 작업에 대한 완전한 다단계 세션이다. 그 바탕이 되는 단발 편집 능력은 이미 확인됐고, 엔드투엔드 워크플로는 위의 "직접 시도해보기"에 해당한다.
 

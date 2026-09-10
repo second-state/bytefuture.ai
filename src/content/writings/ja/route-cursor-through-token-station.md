@@ -145,7 +145,7 @@ Chat モードと Agent モードのどちらでも、Sonnet 5 と Haiku は Tok
 
 サブエージェントは役割分担と権限管理の面では機能する。`name`、`description`、`readonly` はいずれもきちんと反映され、自動委任も明示的な呼び出し(`/name`)も実際の委任をトリガーする。一方、サブエージェント側でのモデルルーティングは、カスタムモデルに対しては今のところ機能しない。Cursor の Task ツールは `inherit` か自身の `composer-2.5-fast` しか受け付けないため、フロントマターの `model:` に何を指定していても、すべてのサブエージェントはメインの会話が使っているモデルで動作する。これは Cursor プラットフォーム自体の制限であり、エージェント自身によって直接確認され、他の場所での独立した報告とも一致している。Token Station や Haiku に固有の問題ではない。
 
-以前 Token Station の GPT-5.6 ルート(Sol、Terra、Luna)をテストしたところ、Agent モードでコードを読み議論することはできたが、実際のファイル編集を適用することには一貫して失敗した。これは Cursor 側の硬い制限ではなく、Token Station 側のツール呼び出しレスポンス形式の問題だった。これらのルートへの対応は現在進行中だ。今すぐ Cursor で確実にファイルを編集できるコーディングエージェントが必要なら、GPT-5.6 系ではなく `anthropic/claude-sonnet-5` と `anthropic/claude-haiku-4-5` を使ってほしい。
+OpenAI の GPT-6 Astra と GPT-5.6 ファミリー(Sol、Terra、Luna)も今では確認済みで、実際の Agent モードのファイル編集を含めて動作する。Token Station の API キーに取り付けたアダプターがそれを可能にしている。具体的な手順は[GPT-6 Astra と GPT-5.6 のセットアップ](/blog/route-cursor-through-token-station-openai-ja.html)を参照してほしい。
 
 Token Station の xAI ルート `xai/grok-4.6` も、同じカスタムプロバイダーの設定で Cursor から使える。メインのコーディング役に Grok を試したい場合はこちらだ。その設定については姉妹編の記事、[Cursor で Grok 4.6 を動かす](/blog/route-cursor-through-token-station-grok-4-6-ja.html)を参照してほしい。
 

@@ -139,7 +139,7 @@ Using what bill-the-explorer found, add the effective URL next to the existing e
 
 Chat 模式和 Agent 模式下，Grok 4.6 通过 Token Station 在 Cursor 里都能用：真实的回复、真实的文件编辑，正确计入你的 Token Station 密钥，并显示在控制台里。注册 provider 和定义 subagent 的过程和 Claude 配置完全一样，因为这些都和你添加的是哪个模型无关。
 
-这让 Grok 4.6 和 Claude Sonnet 5 一样，成为能通过 Token Station 可靠驱动 Agent 模式编辑的路由，而这对每个模型家族来说并不是理所当然的：早些时候的测试发现，Token Station 的 GPT-5.6 路由（Sol、Terra、Luna）在 Agent 模式下能读取和讨论代码，但始终无法真正应用文件编辑，这是 Token Station 一侧的工具调用响应格式问题，而不是 Cursor 的硬性限制，目前支持工作正在推进中。工具调用的兼容性最终被证明确实是因模型和 provider 而异的，所以 Grok 在这里是凭自己的实测证据被确认的，而不是简单地类比 Claude 就假定成立。
+这让 Grok 4.6 和 Claude Sonnet 5、OpenAI 的 GPT-6 Astra 与 GPT-5.6 系列一样，成为能通过 Token Station 可靠驱动 Agent 模式编辑的路由。工具调用的兼容性最终被证明确实是因模型和 provider 而异的，所以 Grok 在这里是凭自己的实测证据被确认的，而不是简单地类比 Claude 就假定成立。OpenAI 的模型是怎么做到这一点的，参见我们的[GPT-6 Astra 和 GPT-5.6 配置指南](/blog/route-cursor-through-token-station-openai-zh.html)：靠的是绑定在你 Token Station API 密钥上的一个 adapter。
 
 目前还没测试过的，具体来说，是把研究委派、实现和验证委派都串起来、针对一个真实任务、以 Grok 4.6 作为主模型的完整多步骤会话。支撑它的单步编辑能力已经确认；端到端的完整流程就是上面那个"自己试试看"。
 

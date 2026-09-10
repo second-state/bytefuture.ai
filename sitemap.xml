@@ -505,5 +505,24 @@
     <lastmod>2026-09-05</lastmod>
     <priority>0.6</priority>
   </url>
-  
+  <url>
+    <loc>https://bytefuture.ai/blog/route-cursor-through-token-station-openai.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bytefuture.ai/blog/route-cursor-through-token-station-openai-zh.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bytefuture.ai/blog/route-cursor-through-token-station-openai-ja.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bytefuture.ai/blog/route-cursor-through-token-station-openai-ko.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>

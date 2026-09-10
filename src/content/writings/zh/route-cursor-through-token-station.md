@@ -145,7 +145,7 @@ Chat 模式和 Agent 模式下，Sonnet 5 和 Haiku 通过 Token Station 在 Cur
 
 subagent 在角色划分和权限控制上是能用的，`name`、`description` 和 `readonly` 都会被正确识别，自动委派和显式调用（`/name`）也都能触发真正的委派。但目前 subagent 层面的模型路由对自定义模型不起作用：Cursor 的 Task 工具只接受 `inherit` 或它自己的 `composer-2.5-fast`，所以不管 frontmatter 里的 `model:` 写的是什么，每个 subagent 都运行在主对话所用的模型上。这是 Cursor 平台本身的限制，由 agent 本身直接证实，也和其他地方的独立反馈一致，并不是 Token Station 或 Haiku 特有的问题。
 
-早些时候对 Token Station 的 GPT-5.6 路由（Sol、Terra、Luna）的测试发现，Agent 模式下它们能读取和讨论代码，但始终无法真正应用文件编辑，这是 Token Station 一侧的工具调用响应格式问题，而不是 Cursor 的硬性限制。对这几个路由的支持正在推进中。如果你现在就需要一个能在 Cursor 里可靠编辑文件的编码 agent，请使用 `anthropic/claude-sonnet-5` 和 `anthropic/claude-haiku-4-5`，而不是 GPT-5.6 系列。
+OpenAI 的 GPT-6 Astra 和 GPT-5.6 系列（Sol、Terra、Luna）现在也已确认可用，包括真正的 Agent 模式文件编辑，通过绑定在你的 Token Station API 密钥上的一个 adapter 实现。具体配置请参见我们的[GPT-6 Astra 和 GPT-5.6 配置指南](/blog/route-cursor-through-token-station-openai-zh.html)。
 
 Token Station 的 xAI 路由 `xai/grok-4.6`，也可以通过同样的自定义 provider 设置在 Cursor 里使用，如果你想让 Grok 来担任主力编码模型的话。具体配置见姐妹篇文章：[在 Cursor 中运行 Grok 4.6](/blog/route-cursor-through-token-station-grok-4-6-zh.html)。
 

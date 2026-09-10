@@ -139,7 +139,7 @@ Using what bill-the-explorer found, add the effective URL next to the existing e
 
 Chat モードと Agent モードのどちらでも、Grok 4.6 は Token Station 経由で Cursor の中で使える。実際の返信、実際のファイル編集があり、正しく Token Station のキーに課金され、ダッシュボードにも表示される。プロバイダーの登録とサブエージェントの定義は Claude のセットアップとまったく同じ手順であり、どちらもどのモデルを追加するかには依存しない。
 
-これにより Grok 4.6 は、Claude Sonnet 5 と並んで、Token Station 経由で Agent モードの編集を確実に動かせるルートとなった。これはどのモデルファミリーにも当てはまるわけではない。以前のテストでは、Token Station の GPT-5.6 ルート(Sol、Terra、Luna)は Agent モードでコードを読み議論することはできたが、実際のファイル編集を適用することには一貫して失敗した。これは Cursor 側の硬い制限ではなく、Token Station 側のツール呼び出しレスポンス形式の問題であり、対応は現在進行中だ。ツール呼び出しの互換性は結局のところモデルとプロバイダーに強く依存することが分かったため、Grok については Claude からの類推ではなく、それ自体の実測結果に基づいて確認されている。
+これにより Grok 4.6 は、Claude Sonnet 5、そして OpenAI の GPT-6 Astra と GPT-5.6 ファミリーと並んで、Token Station 経由で Agent モードの編集を確実に動かせるルートとなった。ツール呼び出しの互換性は結局のところモデルとプロバイダーに強く依存することが分かったため、Grok については Claude からの類推ではなく、それ自体の実測結果に基づいて確認されている。OpenAI のモデルがどうやってそこに到達したかは、Token Station の API キーに取り付けたアダプターによるもので、詳しくは[GPT-6 Astra と GPT-5.6 のセットアップ](/blog/route-cursor-through-token-station-openai-ja.html)を参照してほしい。
 
 まだテストしていない具体的な部分は、Grok 4.6 をメインモデルとした、調査の委任、実装、検証の委任までを含む実際のタスクに対する完全な複数ステップのセッションだ。その土台となる単発編集の能力はすでに確認済みで、エンドツーエンドのワークフローは上の「自分で試してみる」に当たる。
 

@@ -145,7 +145,7 @@ Chat 모드와 Agent 모드 모두에서 Sonnet 5와 Haiku는 Token Station을 �
 
 서브에이전트는 역할 구분과 권한 관리 면에서는 작동한다. `name`, `description`, `readonly`는 모두 제대로 반영되고, 자동 위임과 명시적 호출(`/name`) 모두 실제 위임을 트리거한다. 다만 서브에이전트 단위의 모델 라우팅은 커스텀 모델에 대해서는 아직 작동하지 않는다. Cursor의 Task 도구는 `inherit`나 자체 `composer-2.5-fast`만 받아들이기 때문에, 프론트매터의 `model:`에 무엇을 지정하든 모든 서브에이전트는 부모 대화가 사용 중인 모델로 동작한다. 이는 Cursor 플랫폼 자체의 제약이며, 에이전트 스스로 직접 확인해준 내용이고 다른 곳의 독립적인 보고와도 일치한다. Token Station이나 Haiku에 국한된 문제가 아니다.
 
-이전에 Token Station의 GPT-5.6 라우트(Sol, Terra, Luna)를 테스트했을 때는, Agent 모드에서 코드를 읽고 논의할 수는 있었지만 실제 파일 편집을 적용하는 데는 계속 실패했다. 이는 Cursor 쪽의 고정된 제약이 아니라 Token Station 쪽의 도구 호출 응답 형식 문제였다. 이 라우트들에 대한 지원은 현재 진행 중이다. 지금 당장 Cursor에서 안정적으로 파일을 편집하는 코딩 에이전트가 필요하다면, GPT-5.6 계열 대신 `anthropic/claude-sonnet-5`와 `anthropic/claude-haiku-4-5`를 사용하자.
+OpenAI의 GPT-6 Astra와 GPT-5.6 계열(Sol, Terra, Luna)도 이제 실제 Agent 모드 파일 편집을 포함해 작동하는 것이 확인됐다. Token Station API 키에 연결한 어댑터가 이를 가능하게 한다. 구체적인 설정은 [GPT-6 Astra와 GPT-5.6 설정 가이드](/blog/route-cursor-through-token-station-openai-ko.html)를 참고하자.
 
 Token Station의 xAI 라우트인 `xai/grok-4.6`도 같은 커스텀 프로바이더 설정으로 Cursor에서 사용할 수 있다. 메인 코딩 역할에 Grok을 써보고 싶다면 이 라우트를 쓰면 된다. 구체적인 설정은 자매편 글인 [Cursor에서 Grok 4.6 실행하기](/blog/route-cursor-through-token-station-grok-4-6-ko.html)를 참고하자.
 
