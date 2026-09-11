@@ -232,16 +232,6 @@ fbq('track', 'PageView');
       font-size: 15px; line-height: 1.5; color: #18181b; margin-bottom: 11px;
     }
     .check-icon { color: #0D9488; font-weight: 700; flex: none; }
-    .stat-badges { display: flex; gap: 14px; flex-wrap: wrap; }
-    .stat-badge {
-      background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px;
-      padding: 14px 18px; min-width: 148px;
-    }
-    .badge-num {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px;
-      letter-spacing: -0.02em;
-    }
-    .badge-label { color: #71717a; font-size: 12px; line-height: 1.35; margin-top: 3px; }
     .feature-img-card {
       border-radius: 16px; overflow: hidden; border: 1px solid #e4e4e7;
       box-shadow: 0 14px 40px rgba(24,24,27,0.08);
@@ -436,7 +426,6 @@ fbq('track', 'PageView');
         <p class="form-message" id="hero-msg"></p>
         <div class="hero-trust">
           <span><span class="check">✓</span> Self-hosted on your infrastructure</span>
-          <span><span class="check">✓</span> Never routed through our servers</span>
           <span><span class="check">✓</span> We set it up with you</span>
         </div>
       </div>
@@ -461,15 +450,15 @@ fbq('track', 'PageView');
       <p class="section-label">How It Works</p>
       <h2 class="section-h2">From Chaos to Control in Three Steps</h2>
       <p class="section-lead" style="margin-top:16px;">
-        Token Station runs on your own hardware. Your keys, your data, your rules.
+        Token Station runs on your own servers. Your keys, your data, your rules.
       </p>
     </div>
     <div class="grid-3 animate-on-scroll" style="margin-top:48px;">
       <div>
         <div class="step-number">01</div>
-        <div class="step-title">Deploy on Hardware You Own</div>
+        <div class="step-title">Deploy on Your Own Server</div>
         <p class="step-desc">
-          Install Token Station on your Olares Mini or any Linux server. We walk your team through the install during the pilot. No cloud dependency, no vendor lock-in.
+          Install Token Station on any Linux server you control, from an Olares Mini to a cloud VPS. We walk your team through the install during the pilot. No vendor lock-in.
         </p>
       </div>
       <div>
@@ -577,16 +566,6 @@ fbq('track', 'PageView');
           <li><span class="check-icon">✓</span><span>Fallback routing when primary models are unavailable</span></li>
           <li><span class="check-icon">✓</span><span>Based on RouteLLM (ICLR 2025) and UniRoute (ICLR 2026) research</span></li>
         </ul>
-        <div class="stat-badges">
-          <div class="stat-badge">
-            <div class="badge-num gradient-text">73%</div>
-            <div class="badge-label">Avg cost reduction reported</div>
-          </div>
-          <div class="stat-badge">
-            <div class="badge-num gradient-text">40%</div>
-            <div class="badge-label">Fewer large-model calls</div>
-          </div>
-        </div>
       </div>
       <div class="feature-visual" style="display:flex; flex-direction:column; gap:16px;">
         <div class="research-card">
@@ -734,7 +713,7 @@ fbq('track', 'PageView');
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Requests to cloud models go from your own Token Station straight to the AI providers, just as they would if your team used those tools directly. They never pass through ByteFuture's servers, on either plan. When your pool and routing span several labs, no single upstream AI sees your team's complete data. For sensitive work, route requests to local models that stay inside your network, or turn on the optional PII filter to mask or reject personal data before it reaches a cloud AI.
+            Requests to cloud models go from your own Token Station to the AI providers, just as they would if your team used those tools directly. When your pool and routing span several labs, no single upstream AI sees your team's complete data. For sensitive work, route requests to local models that stay inside your network, or turn on the optional PII filter to mask or reject personal data before it reaches a cloud AI.
           </div>
         </div>
       </div>
@@ -761,17 +740,6 @@ fbq('track', 'PageView');
         </div>
       </div>
       <div class="faq-item animate-on-scroll anim-delay-4">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>What hardware do I need?</span>
-          <span class="faq-arrow">▼</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Token Station runs on Olares Mini (our recommended hardware: a compact personal server built for self-hosted apps) or any Linux machine with 2GB+ RAM. For teams up to 100 users, a basic server handles the load comfortably. We'll help you size during the pilot.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item animate-on-scroll anim-delay-5">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>How does smart routing work? Will it affect response quality?</span>
           <span class="faq-arrow">▼</span>
