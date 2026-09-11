@@ -253,16 +253,7 @@ fbq('track', 'PageView');
     }
     .brain-text { font-size: 15px; line-height: 1.6; color: #18181b; margin: 0; }
 
-    /* ─── RESEARCH / METRICS ─── */
-    .metrics-row {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-      margin: 48px 0 40px; padding: 32px 0; border-top: 1px solid #e4e4e7; border-bottom: 1px solid #e4e4e7;
-    }
-    .metric-number {
-      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(32px, 4vw, 46px);
-      letter-spacing: -0.03em; line-height: 1;
-    }
-    .metric-label { color: #71717a; font-size: 13px; line-height: 1.45; margin-top: 10px; }
+    /* ─── RESEARCH ─── */
     .research-card {
       background: #ffffff; border: 1px solid #e4e4e7; border-radius: 12px; padding: 24px;
     }
@@ -357,7 +348,6 @@ fbq('track', 'PageView');
       .hero-grid { grid-template-columns: 1fr; gap: 44px; }
       .feature-row { grid-template-columns: 1fr; gap: 32px; }
       .feature-row.reverse .feature-visual { order: 0; }
-      .metrics-row { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
       nav a.nav-link { display: none; }
     }
     @media (max-width: 640px) {
@@ -377,7 +367,6 @@ fbq('track', 'PageView');
 
       /* 点击区域够大 */
       .nav-cta { padding: 13px 22px; font-size: 14px; }
-      .metrics-row { grid-template-columns: 1fr 1fr; }
       .pricing-card { padding: 24px; }
       .faq-question { padding: 18px; font-size: 15px; }
       .faq-answer-inner { padding: 0 18px 20px; }
@@ -654,54 +643,6 @@ fbq('track', 'PageView');
           <p class="brain-step">03 · Reuse</p>
           <p class="brain-text">Anyone on the team can search it, and future AI interactions draw on it.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── BY THE NUMBERS ─── -->
-<section id="social-proof" style="background:#ffffff; border-top:1px solid #e4e4e7; border-bottom:1px solid #e4e4e7;">
-  <div class="section-inner">
-    <div class="animate-on-scroll">
-      <p class="section-label">By The Numbers</p>
-      <h2 class="section-h2">The AI Spend Problem Is Already Here</h2>
-    </div>
-
-    <div class="metrics-row animate-on-scroll">
-      <div>
-        <div class="metric-number gradient-text">90%</div>
-        <div class="metric-label">of employees use AI at work in 2026</div>
-      </div>
-      <div>
-        <div class="metric-number gradient-text">46%</div>
-        <div class="metric-label">use tools their company didn't purchase</div>
-      </div>
-      <div>
-        <div class="metric-number gradient-text">73%</div>
-        <div class="metric-label">max cost reduction via smart routing</div>
-      </div>
-      <div>
-        <div class="metric-number gradient-text">2x+</div>
-        <div class="metric-label">cost savings from routing optimization (ICLR 2025)</div>
-      </div>
-    </div>
-
-    <div class="grid-2 animate-on-scroll">
-      <div class="research-card">
-        <p class="research-text">"In 2026, the biggest budgeting risk isn't overspending. It's spending invisibly."</p>
-        <p class="research-source">FinOps Weekly · 2026</p>
-      </div>
-      <div class="research-card">
-        <p class="research-text">"Your OpenAI bill doubled. You don't know who did it." The invisible AI spend problem hits every company past 50 employees.</p>
-        <p class="research-source">Enterprise AI Benchmark Report · 2026</p>
-      </div>
-      <div class="research-card">
-        <p class="research-text">"We're flooded with vibe-coded app requests, we can't keep up with them and real work at the same time."</p>
-        <p class="research-source">r/sysadmin · 1,884 upvotes</p>
-      </div>
-      <div class="research-card">
-        <p class="research-text">LiteLLM is a dev tool with no pooled accounts and no management reports. Portkey went open-source March 2026. OpenRouter adds a 5% markup with no data control. Token Station is built for enterprise governance.</p>
-        <p class="research-source">Competitive Analysis · April 2026</p>
       </div>
     </div>
   </div>
