@@ -300,7 +300,6 @@ fbq('track', 'PageView');
       font-size: 14px; line-height: 1.5; margin-bottom: 10px;
     }
     .pf-check { color: #0D9488; font-weight: 700; flex: none; }
-    .pricing-note { color: #a1a1aa; font-size: 12px; margin: 12px 0 0; }
     .pricing-cta-form { margin-top: auto; }
 
     /* ─── FAQ ─── */
@@ -338,10 +337,6 @@ fbq('track', 'PageView');
     }
     .final-cta-sub { color: #52525b; font-size: 17px; line-height: 1.6; margin: 0 auto 30px; max-width: 600px; }
     .final-cta .email-form { max-width: 520px; margin: 0 auto; }
-    .final-trust {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px;
-      margin-top: 26px; color: #52525b; font-size: 14px;
-    }
 
     @media (max-width: 900px) {
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -362,7 +357,7 @@ fbq('track', 'PageView');
       /* 正文在手机上不低于 16px */
       .step-desc, .pricing-desc, .faq-answer-inner, .research-text, .brain-text,
       .feature-list li, .pricing-features li { font-size: 16px; }
-      .hero-trust, .final-trust { font-size: 15px; }
+      .hero-trust { font-size: 15px; }
       .pricing-best-for { font-size: 14px; }
 
       /* 点击区域够大 */
@@ -523,18 +518,8 @@ fbq('track', 'PageView');
           <li><span class="check-icon">✓</span><span>Requests balanced across the pool, so no plan's quota goes to waste</span></li>
           <li><span class="check-icon">✓</span><span>Per-user and per-team spending limits</span></li>
           <li><span class="check-icon">✓</span><span>Rate limiting and access control built in</span></li>
-          <li><span class="check-icon">✓</span><span>Supports OpenAI, Anthropic, Gemini, Mistral, and local models</span></li>
+          <li><span class="check-icon">✓</span><span>Supports 300+ models from 30+ leading labs and coding plans</span></li>
         </ul>
-        <div class="stat-badges">
-          <div class="stat-badge">
-            <div class="badge-num gradient-text">20x</div>
-            <div class="badge-label">Subscriptions → 1 account</div>
-          </div>
-          <div class="stat-badge">
-            <div class="badge-num gradient-text">100%</div>
-            <div class="badge-label">Data stays on-prem</div>
-          </div>
-        </div>
       </div>
       <div class="feature-visual">
         <div class="feature-img-card">
@@ -668,7 +653,7 @@ fbq('track', 'PageView');
         <div class="pricing-price"><span class="pricing-price-amount">$10</span><span class="pricing-price-unit">per employee / month</span></div>
         <p class="pricing-billing-note">AI token costs bill directly to your existing vendor accounts.</p>
         <p class="pricing-desc">
-          You supply your own coding plan subscriptions and API keys (OpenAI, Anthropic, Google, or any supported vendor). Token Station pools them across your team so every plan's quota gets used, and adds the gateway, smart routing, per-user limits, and token usage reports on top. We never touch your vendor billing.
+          You supply your own coding plan subscriptions and API keys. Token Station supports 300+ models from 30+ leading labs and coding plans, pools your plans and keys across the team so every plan's quota gets used, and adds the gateway, smart routing, per-user limits, and token usage reports on top. We never touch your vendor billing.
         </p>
         <p class="pricing-best-for">Best for teams already paying for coding plans or API keys</p>
         <ul class="pricing-features">
@@ -694,7 +679,6 @@ fbq('track', 'PageView');
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your On-Prem pilot →</button>
         </form>
         <p class="form-message"></p>
-        <p class="pricing-note">No credit card required · Cancel anytime</p>
       </div>
 
       <!-- Cloud plan -->
@@ -729,7 +713,6 @@ fbq('track', 'PageView');
           <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your Cloud pilot →</button>
         </form>
         <p class="form-message"></p>
-        <p class="pricing-note">No credit card required · Cancel anytime</p>
       </div>
 
     </div>
@@ -827,12 +810,6 @@ fbq('track', 'PageView');
         <button type="submit" class="btn-primary" onclick="gtag('event', 'cta_click')">Start your 30-day free pilot →</button>
       </form>
       <p class="form-message" id="final-msg" style="text-align:center;"></p>
-      <div class="final-trust">
-        <span>✓ No credit card</span>
-        <span>✓ Guided setup</span>
-        <span>✓ Data stays on-prem</span>
-        <span>✓ Founder pricing locked</span>
-      </div>
     </div>
   </div>
 </section>
