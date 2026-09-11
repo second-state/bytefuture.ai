@@ -436,7 +436,7 @@ fbq('track', 'PageView');
         <p class="form-message" id="hero-msg"></p>
         <div class="hero-trust">
           <span><span class="check">✓</span> Self-hosted on your infrastructure</span>
-          <span><span class="check">✓</span> No data leaves your network</span>
+          <span><span class="check">✓</span> Never routed through our servers</span>
           <span><span class="check">✓</span> We set it up with you</span>
         </div>
       </div>
@@ -729,16 +729,27 @@ fbq('track', 'PageView');
     <div>
       <div class="faq-item animate-on-scroll anim-delay-1">
         <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Does our data ever leave our network?</span>
+          <span>Where does our data go?</span>
           <span class="faq-arrow">▼</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No. Token Station is fully self-hosted on your own infrastructure: Olares Mini, your on-prem servers, or your private cloud. The gateway sits inside your network. Your prompts and responses never touch our servers. Token usage metadata (who used what, when) is also stored locally.
+            Requests to cloud models go from your own Token Station straight to the AI providers, just as they would if your team used those tools directly. They never pass through ByteFuture's servers, on either plan. When your pool and routing span several labs, no single upstream AI sees your team's complete data. For sensitive work, route requests to local models that stay inside your network, or turn on the optional PII filter to mask or reject personal data before it reaches a cloud AI.
           </div>
         </div>
       </div>
       <div class="faq-item animate-on-scroll anim-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How does pooling coding plan subscriptions save money?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Coding plans are bought one per person, but usage is uneven: a few people hit their limits mid-week while other seats sit mostly idle. Token Station puts the coding plan subscriptions and API keys your team already pays for into one pool and spreads requests across it, so spare quota covers your heaviest users and you stop buying extra plans to keep them unblocked. Per-user limits stop any one person from draining the pool, and usage reports show who used what.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll anim-delay-3">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>Does my team have to change how they work?</span>
           <span class="faq-arrow">▼</span>
@@ -749,7 +760,7 @@ fbq('track', 'PageView');
           </div>
         </div>
       </div>
-      <div class="faq-item animate-on-scroll anim-delay-3">
+      <div class="faq-item animate-on-scroll anim-delay-4">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>What hardware do I need?</span>
           <span class="faq-arrow">▼</span>
@@ -760,7 +771,7 @@ fbq('track', 'PageView');
           </div>
         </div>
       </div>
-      <div class="faq-item animate-on-scroll anim-delay-4">
+      <div class="faq-item animate-on-scroll anim-delay-5">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>How does smart routing work? Will it affect response quality?</span>
           <span class="faq-arrow">▼</span>
@@ -773,12 +784,23 @@ fbq('track', 'PageView');
       </div>
       <div class="faq-item animate-on-scroll anim-delay-5">
         <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is the company brain, and where is it stored?</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            It's an optional feature you can turn on when your team is ready. Token Station analyzes how AI solves problems for your team and extracts that knowledge into a searchable company brain, stored locally on your own Token Station. Anyone on your team can look up how a problem was already solved, and future AI interactions build on what the team has already learned.
+          </div>
+        </div>
+      </div>
+      <div class="faq-item animate-on-scroll anim-delay-5">
+        <button class="faq-question" onclick="toggleFaq(this)">
           <span>Is the $10 per seat price locked in?</span>
           <span class="faq-arrow">▼</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Pilot partners keep $10 per employee per month as founder pricing for as long as the deployment stays active. Token costs sit outside that seat fee: on On-Prem they bill straight to your own vendor accounts, and on Cloud they are metered in $50 increments at published provider rates with zero markup. The 30-day pilot needs no credit card.
+            Pilot partners keep $10 per employee per month as founder pricing for as long as the deployment stays active. Token costs sit outside that seat fee: on On-Prem they bill straight to your own vendor accounts, and on Cloud they are metered in $50 increments at published provider rates with zero markup.
           </div>
         </div>
       </div>
